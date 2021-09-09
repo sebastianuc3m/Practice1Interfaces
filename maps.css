@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+}
+
+header {
+  display: grid;
+  grid-template-areas:
+  'left middle-left middle-right right';
+  background-color: beige;
+  height: 100px;
+}
+
+#logo {
+  grid-area: left;
+  width: 50px;
+  margin: auto;
+}
+
+#title {
+  grid-area: middle-left;
+  margin: auto;
+}
+
+#menu {
+  grid-area: middle-right;
+  margin: auto
+}
+
+#menu a {
+  text-decoration: none;
+  color: black;
+  margin-right: 5px;
+}
+
+#button-div {
+  grid-area: right;
+  margin: auto;
+}
+
+.buttons {
+  background-color: rgba(245,245,245,0.9);
+  text-align: center;
+  border-radius: 3px;
+  width: 90px;
+  height: 30px;
+}
+
+.buttons:active {
+  background-color: rgba(245,245,245,0.75);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border: none;
+  width: 90px;
+  height: 30px;
+}
+
+.img-map {
+  width: 100%;
+}
+
+p {
+  width: 80%;
+  margin: auto;
+  text-align: justify;
+}
+
+h1 {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
