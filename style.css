@@ -1,5 +1,26 @@
+@font-face {
+  font-family: Custom;
+  src: url(InterconnectedDemo-Regular.ttf);
+}
+
 * {
   margin: 0;
+  font-family: Custom;
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+p {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
 }
 
 header {
@@ -10,31 +31,15 @@ header {
   height: 100px;
 }
 
-#logo {
-  grid-area: left;
-  width: 50px;
-  margin: auto;
-}
-
-#title {
-  grid-area: middle-left;
-  margin: auto;
-}
-
-#menu {
-  grid-area: middle-right;
-  margin: auto
-}
+#logo {grid-area: left; width: 50px; margin: auto}
+#title {grid-area: middle-left}
+#menu {grid-area: middle-right; margin: auto}
+#button-div {grid-area: right; margin: auto}
 
 #menu a {
   text-decoration: none;
   color: black;
   margin-right: 5px;
-}
-
-#button-div {
-  grid-area: right;
-  margin: auto;
 }
 
 .buttons {
@@ -46,8 +51,8 @@ header {
 }
 
 .buttons:active {
-  background-color: rgba(245,245,245,0.75);
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: rgba(0,0,0,0.125);
+  box-shadow: 0 12px 16px 0 rgba(255,255,255,0.9), 0 17px 50px 0 rgba(255,255,255,0.81);
   border: none;
   width: 90px;
   height: 30px;
@@ -69,4 +74,61 @@ section {
 
 #map {
   width: 100%;
+}
+
+#section-search {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+  'top top'
+  'left right';
+  background-color: beige;
+  padding: 30px 0px;
+}
+
+#title-search {grid-area: top; margin: auto}
+#button-search {grid-area: right; margin-right: auto}
+#in-search {grid-area: left; margin-left: auto; height: 22px; width: 200px}
+
+#section-exp {
+  width: 80%;
+  margin: auto;
+  display: block;
+  background-color: beige
+}
+
+.column {
+  display: block;
+  float: left;  margin: auto;
+
+}
+
+.block {
+  display: flex;  margin: auto;
+
+}
+
+.experience {
+  margin-top: 10px;
+  width: 200px
+
+}
+
+#section-exp img {
+  width: 200px
+}
+
+footer {
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+}
+
+#logo-footer {
+  width: 50px
+}
+
+.footer-menu {
 }

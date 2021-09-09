@@ -1,5 +1,11 @@
+@font-face {
+  font-family: Custom;
+  src: url(InterconnectedDemo-Regular.ttf);
+}
+
 * {
   margin: 0;
+  font-family: Custom;
 }
 
 header {
@@ -61,10 +67,18 @@ p {
   width: 80%;
   margin: auto;
   text-align: justify;
+  font-family: 'Courier New', monospace;
 }
 
 h1 {
   width: 80%;
   text-align: center;
   margin: auto;
+}
+
+#experiences img {
+  display: flex;
+  float: left;
+  width: 17.5%;
+  margin: 0% 1.125%;
 }
