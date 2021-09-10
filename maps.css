@@ -16,26 +16,15 @@ header {
   height: 100px;
 }
 
-#logo {
-  grid-area: left;
-  width: 50px;
-  margin: auto;
-}
-
-#title {
-  grid-area: middle-left;
-  margin: auto;
-}
-
-#menu {
-  grid-area: middle-right;
-  margin: auto
-}
+#logo {grid-area: left; width: 50px; margin: auto}
+#title {grid-area: middle-left}
+#menu {grid-area: middle-right; margin: auto}
+#button-div {grid-area: right; margin: auto}
 
 #menu a {
   text-decoration: none;
   color: black;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 #button-div {
@@ -80,5 +69,40 @@ h1 {
   display: flex;
   float: left;
   width: 17.5%;
-  margin: 0% 1.125%;
+  height: 150px;
+  margin: 0% 1.125% 1%;
+}
+
+
+footer {
+  width: 100%;
+  height: 75px;
+  background-color: rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center
+}
+
+#logo-footer {
+  width: 50px
+}
+
+.footer-item {
+  margin: auto;
+}
+
+footer menu {
+  display: grid;
+  grid-template-areas:
+  'top'
+  'bottom';
+  grid-row-gap: 8px
+}
+
+footer a {
+  text-decoration: none;
+  color: black
+}
+
+.footer-item img {
+  width: 25px
 }

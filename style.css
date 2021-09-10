@@ -39,7 +39,7 @@ header {
 #menu a {
   text-decoration: none;
   color: black;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 .buttons {
@@ -95,7 +95,8 @@ section {
   width: 80%;
   margin: auto;
   display: block;
-  background-color: beige
+  background-color: beige;
+  padding-bottom: 1%
 }
 
 .column {
@@ -111,8 +112,7 @@ section {
 
 .experience {
   margin-top: 10px;
-  width: 200px
-
+  width: 200px;
 }
 
 #section-exp img {
@@ -121,14 +121,33 @@ section {
 
 footer {
   width: 100%;
-  background-color: grey;
+  height: 75px;
+  background-color: rgba(0,0,0,0.1);
   display: flex;
-  align-items: center;
+  align-items: center
 }
 
 #logo-footer {
   width: 50px
 }
 
-.footer-menu {
+.footer-item {
+  margin: auto;
+}
+
+footer menu {
+  display: grid;
+  grid-template-areas:
+  'top'
+  'bottom';
+  grid-row-gap: 8px
+}
+
+footer a {
+  text-decoration: none;
+  color: black
+}
+
+.footer-item img {
+  width: 25px
 }
