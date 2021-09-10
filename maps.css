@@ -59,10 +59,19 @@ p {
   font-family: 'Courier New', monospace;
 }
 
-h1 {
+h1, h2 {
   width: 80%;
   text-align: center;
   margin: auto;
+}
+
+#summary {
+  background-color: rgba(255,0,0,0.1)
+}
+
+#experiences {
+  background-color: rgba(255,0,255,0.075);
+  height: 190px
 }
 
 #experiences img {
@@ -70,9 +79,8 @@ h1 {
   float: left;
   width: 17.5%;
   height: 150px;
-  margin: 0% 1.125% 1%;
+  margin: 0% 1.125%;
 }
-
 
 footer {
   width: 100%;
@@ -90,7 +98,7 @@ footer {
   margin: auto;
 }
 
-footer menu {
+footer div {
   display: grid;
   grid-template-areas:
   'top'

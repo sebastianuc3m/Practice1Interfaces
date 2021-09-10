@@ -8,12 +8,12 @@
   font-family: Custom;
 }
 
-h1 {
+h1, h2 {
   margin: auto;
   text-align: center;
 }
 
-h2 {
+h3 {
   font-size: 16px;
   line-height: 22px;
 }
@@ -135,7 +135,7 @@ footer {
   margin: auto;
 }
 
-footer menu {
+footer div {
   display: grid;
   grid-template-areas:
   'top'
@@ -148,6 +148,6 @@ footer a {
   color: black
 }
 
-.footer-item img {
+.footer-img {
   width: 25px
 }
