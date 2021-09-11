@@ -70,10 +70,12 @@ section {
 #section-map {
   display: flex;
   align-items: center;
+  background-color: rgba(0,255,0,0.1)
 }
 
 #map {
-  width: 100%;
+  width: 600px;
+  margin: auto;
 }
 
 #section-search {
