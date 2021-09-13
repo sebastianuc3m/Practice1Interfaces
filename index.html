@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!--Here we will link the css file which contains the styling of the website
+    and we'll give a name to the window-->
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <title>Travel Experiences</title>
   </head>
   <body>
     <header>
+      <!--The header will contain a logo, a title, a menu element with 3 links
+      and a nav element with 2 buttons-->
       <img id="logo" src="images/logo.png" alt="earth from space logo">
       <h1 id="title">Travel Experiences 2021 (covid friendly)</h1>
       <div id="menu">
+        <!--As written in the statement, these link won't do anything-->
         <a href="#">Home</a>
         <a href="#">About Us</a>
         <a href="#">Contact Us</a>
       </div>
       <nav id="button-div">
+        <!--This nav element will contain two useless buttons-->
         <button type="button" name="login" class="buttons">Log-in</button>
         <button type="button" name="signin" class="buttons">Sign-up</button>
       </nav>
     </header>
+    <!--Here is where the 3 sections of the website start-->
     <section id="section-map">
+      <!--The first section only contains a image with a map in order to make it
+      interactive. W3 Validator gives out a warning here, as this section has no
+      title and it requires one by definiton, we have decided to ignore this-->
       <img id="map" src="images/map.png" alt="Europe Map" usemap="#travel-map">
+      <map name="travel-map">
+        <area shape="rect" coords="165,310,210,345" href="barcelona.html" alt="Barcelona, Spain">
+        <area shape="rect" coords="335,200,365,230" href="vienna.html" alt="Vienna, Austria">
+        <area shape="rect" coords="255,230,280,290" href="milan.html" alt="Milan, Italy">
+      </map>
     </section>
-    <map name="travel-map">
-      <area shape="rect" coords="165,310,210,345" href="barcelona.html" alt="Barcelona, Spain">
-      <area shape="rect" coords="335,200,365,230" href="vienna.html" alt="Vienna, Austria">
-      <area shape="rect" coords="255,230,280,290" href="milan.html" alt="Milan, Italy">
-    </map>
     <section id="section-search">
+      <!--Section two contains a title and a useless search input and button-->
       <h2 id="title-search">Search Bar</h2>
       <input id="in-search" type="text" name="search-input" value="">
       <button id="button-search" type="button" name="search-button" class="buttons">Search</button>
     </section>
     <section id="section-exp">
+      <!--Section three contains a title and a series of experiences-->
       <h2>Travel experiences</h2>
+      <!--The experiences are all inside a div container, this div contains
+      3 smaller divs, each one being a column of experiences-->
       <div class="block">
         <div class="column">
+          <!--Each column contains a series of article containters-->
           <article class="experience">
+            <!--These article containers contain an image, title and descripion
+            about the experience-->
             <img src="images/barcelona-dess.jpg" alt="Barcelona, Desserts">
             <h3>Barcelona</h3>
             <p>Desserts in La Pastisseria</p>
@@ -47,12 +64,13 @@
             <p>Walk by the river</p>
           </article>
           <article class="experience">
-            <img src="images/prague.jpg" alt="Prague, cathedral">
-            <h3>Prague</h3>
-            <p>Admiring the great cathedral</p>
+            <img src="images/bruges.jpg" alt="Bruges">
+            <h3>Bruges</h3>
+            <p>Boat trip through the city</p>
           </article>
         </div>
         <div class="column">
+          <!--Column-2 contains more experiences than the other two columns-->
           <article class="experience">
             <img src="images/rome.jpg" alt="Rome, Fontana di Trevi'">
             <h3>Rome</h3>
@@ -66,7 +84,7 @@
           <article class="experience">
             <img src="images/budapest-mem.jpg" alt="Budapest, Memorial">
             <h3>Budapest</h3>
-            <p>World War II Memorial/p>
+            <p>World War II Memorial</p>
           </article>
           <article class="experience">
             <img src="images/budapest-st.jpg" alt="Milan, vertical garden'">
@@ -78,7 +96,7 @@
           <article class="experience">
             <img src="images/bratislava-blue.jpg" alt="Bratislava Blue church">
             <h3>Bratislava</h3>
-            <p>Colorful adventure by the blue churck</p>
+            <p>Colorful adventure by the blue church</p>
           </article>
           <article class="experience">
             <img src="images/brand.jpg" alt="Berlin, Brandenburg gate">
@@ -86,16 +104,19 @@
             <p>Passing through the Brandenburg gate</p>
           </article>
           <article class="experience">
-            <img src="images/bruges.jpg" alt="Bruges">
-            <h3>Bruges</h3>
-            <p>Boat trip through the city</p>
+            <img src="images/prague.jpg" alt="Prague, cathedral">
+            <h3>Prague</h3>
+            <p>Admiring the great cathedral</p>
           </article>
         </div>
       </div>
     </section>
     <footer>
-      <img class="footer-item" id="logo-footer" src="images/logo.png" alt="earth from space logo">
-      <div class="footer-item">
+      <!--The footer contains a logo and two div containers, one for the social
+      profiles and one for the final links. We considered making these "menu",
+      but W3 Validator gives out an error saying we cannot do that-->
+      <img id="logo-footer" src="images/logo.png" alt="earth from space logo">
+      <div class="footer-item" id="social">
         <img class="footer-img" src="images/facebook.png" alt="facebook">
         <img class="footer-img" src="images/instagram.png" alt="instagram">
       </div>
