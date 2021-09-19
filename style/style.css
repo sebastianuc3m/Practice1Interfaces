@@ -6,6 +6,15 @@
   src: url(InterconnectedDemo-Regular.ttf);
 }
 
+/*
+[class*="x"]
+
+Selects all classes which start by "x"
+
+The first element after a floating element needs a property called "clear: both"
+*/
+
+
 html {
   height: 100%
 }
@@ -14,6 +23,7 @@ html {
   /*We need to remove the margins and change the font for the whole website*/
   margin: 0;
   font-family: Custom;
+  box-sizing: border-box;
 }
 
 h1, h2 {
@@ -48,6 +58,8 @@ header {
   display: flex;
   background-color: beige;
   height: 100px;
+  padding: 0px 50px;
+
 }
 
 /*The logo, menu and button-div will all have margin: auto as styling, the logo
@@ -55,18 +67,13 @@ will have a bigger left margin and the menu will have a fixed width*/
 #logo {
   width: 50px;
   margin: auto;
-  margin-left: 25px
 }
 
-#menu {
-  margin: auto;
-  width: 300px
-}
-
-#button-div {
+#menu, #button-div {
   margin: auto
 }
 
+/*We want the links (a alements) to be spaced appart fromm each other*/
 #menu a {
   margin-right: 15px;
 }
@@ -74,11 +81,10 @@ will have a bigger left margin and the menu will have a fixed width*/
 /*We will style the buttons, as well as make them changed when clicked*/
 .buttons {
   background-color: rgba(245,245,245,0.9);
-  text-align: center;
   border-radius: 3px;
   width: 90px;
   height: 30px;
-  margin-top: 5px
+  margin: 5px auto 0px
 }
 
 .buttons:active {
@@ -96,7 +102,7 @@ section {
 }
 
 /*The map needs to be centered and have the section needs a background.
-Furthermore, we will give the map a fixed size*/
+Furthermore, we will give the image a fixed size*/
 #section-map {
   display: flex;
   background-color: rgba(0,255,0,0.1)
@@ -127,7 +133,7 @@ input on the bottom-left and the button on the bottom-right*/
 #button-search {grid-area: right; margin-right: auto; margin-top: 0px}
 #in-search {grid-area: left; margin-left: auto; height: 22px; width: 200px}
 
-/*The last section need to be centered, have a background and a small padding
+/*The last section needs to be centered, have a background and a small padding
 on the bottom side*/
 #section-exp {
   width: 80%;
@@ -152,11 +158,11 @@ them using margins*/
 /*As the columns have display:block, the experiences will align vertically*/
 .experience {
   margin-top: 10px;
-  width: 200px;
+  width: 15vw;
 }
 
 #section-exp img {
-  width: 200px
+  width: 15vw
 }
 
 /*The footer needs a display flex in order to split the contents*/
@@ -189,9 +195,10 @@ align vertically, display:block was not achieving it*/
 
 /*For devices with screens thinner than 768px, we only had to change the header
 and the map sizes*/
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-device-width: 769px) {
   header {
-    height: 70px
+    height: 70px;
+    padding: 0px
   }
 
   #title {
@@ -203,12 +210,22 @@ and the map sizes*/
     width: 600px;
     height: 400px
   }
+
+  .experience {
+    width: 20vw;
+  }
+
+  #section-exp img {
+    width: 20vw;
+  }
+
 }
 
 /*For even smaller devices, we needed more changes*/
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-device-width: 601px) {
   header {
-    height: 75px
+    height: 75px;
+    padding: 0px
   }
 
 /*Different header alignments, here links are stacked vertically, as well as buttons*/
@@ -217,7 +234,7 @@ and the map sizes*/
   }
 
   #title {
-    font-size: 18px;
+    font-size: 18px !important;
     width: 175px;
     margin: auto 10px;
     }
@@ -244,12 +261,25 @@ and the map sizes*/
     height: 400px
   }
 
-/*The experiences are thinned by 60px, from 200px to 140px*/
+/*The experiences are thikened, from 25vw to 30vw*/
   .experience {
-    width: 140px;
+    width: 30vw;
   }
 
   #section-exp img {
-    width: 140px;
+    width: 30vw;
   }
+
+/*The experiences will now be aligned in 2 columns on top and one below*/
+  .block {
+    display: grid;
+    grid-template-areas:
+    'left right'
+    'bottom bottom';
+  }
+
+  #col1 {grid-area: left}
+  #col2 {grid-area: bottom}
+  #col3 {grid-area: right}
+
 }

@@ -4,7 +4,8 @@
     <!--Here we will link the css file which contains the styling of the website
     and we'll give a name to the window-->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style_phone_first.css">
     <title>Travel Experiences</title>
   </head>
   <body>
@@ -22,20 +23,21 @@
       <nav id="button-div">
         <!--This nav element will contain two useless buttons-->
         <button type="button" name="login" class="buttons">Log-in</button>
-        <button type="button" name="signin" class="buttons">Sign-up</button>
+        <button type="button" name="signup" class="buttons">Sign-up</button>
       </nav>
     </header>
     <!--Here is where the 3 sections of the website start-->
     <section id="section-map">
-      <!--The first section only contains a image with a map in order to make it
+      <!--The first section only contains an image with a map in order to make it
       interactive. W3 Validator gives out a warning here, as this section has no
-      title and it requires one by definiton, we have decided to ignore this-->
+      title, and it requires one by definition, we have decided to ignore this-->
       <img id="map" src="images/map.png" alt="Europe Map" usemap="#travel-map">
       <map name="travel-map">
-        <area shape="rect" coords="165,310,210,345" href="barcelona.html" alt="Barcelona, Spain">
-        <area shape="rect" coords="335,200,365,230" href="vienna.html" alt="Vienna, Austria">
-        <area shape="rect" coords="255,230,280,290" href="milan.html" alt="Milan, Italy">
+        <area id="barna-area" shape="rect" coords="185,350,250,375" href="barcelona.html" alt="Barcelona, Spain">
+        <area id="vienna-area" shape="rect" coords="390,210,430,260" href="vienna.html" alt="Vienna, Austria">
+        <area id="milan-area" shape="rect" coords="315,255,360,310" href="milan.html" alt="Milan, Italy">
       </map>
+      <script src="script/script.js"></script>
     </section>
     <section id="section-search">
       <!--Section two contains a title and a useless search input and button-->
@@ -49,10 +51,10 @@
       <!--The experiences are all inside a div container, this div contains
       3 smaller divs, each one being a column of experiences-->
       <div class="block">
-        <div class="column">
-          <!--Each column contains a series of article containters-->
+        <div class="column" id="col-1">
+          <!--Each column contains a series of article containers-->
           <article class="experience">
-            <!--These article containers contain an image, title and descripion
+            <!--These article containers contain an image, title and description
             about the experience-->
             <img src="images/barcelona-dess.jpg" alt="Barcelona, Desserts">
             <h3>Barcelona</h3>
@@ -69,7 +71,7 @@
             <p>Boat trip through the city</p>
           </article>
         </div>
-        <div class="column">
+        <div class="column" id="col2">
           <!--Column-2 contains more experiences than the other two columns-->
           <article class="experience">
             <img src="images/rome.jpg" alt="Rome, Fontana di Trevi'">
@@ -92,7 +94,7 @@
             <p>Buda and Pest separated by the Danube</p>
           </article>
         </div>
-        <div class="column">
+        <div class="column" id="col3">
           <article class="experience">
             <img src="images/bratislava-blue.jpg" alt="Bratislava Blue church">
             <h3>Bratislava</h3>
@@ -127,3 +129,5 @@
     </footer>
   </body>
 </html>
+
+

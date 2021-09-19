@@ -70,8 +70,14 @@ h1, h2 {
 }
 
 #experiences {
+  display: block;
   background-color: rgba(255,0,255,0.075);
   height: 190px
+}
+
+#experiences article {
+  margin-bottom: 10px;
+  height: 150px
 }
 
 #experiences img {
