@@ -1,0 +1,325 @@
+/*This CSS file contains the styling for the "HOME" website.*/
+
+@font-face {
+  /*We have imported this custom font, as it makes it more homey*/
+  font-family: Custom;
+  src: url(InterconnectedDemo-Regular.ttf);
+}
+
+/*
+[class*="x"]
+
+Selects all classes which start by "x"
+
+The first element after a floating element needs a property called "clear: both"
+*/
+
+
+html {
+  height: 100%
+}
+
+* {
+  /*We need to remove the margins and change the font for the whole website*/
+  margin: 0;
+  font-family: Custom;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  /*Header title and section headlines need to be centered, we also changed their colour*/
+  margin: auto;
+  text-align: center;
+  color: rgb(96,20,4)
+}
+
+p {
+  /*We chose Courier New for plain text as it is more readable*/
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+h3 {
+  /*These are usedd as titles for experiences, we need them to be a bit bigger
+  than the rest of the text*/
+  font-size: 16px;
+  line-height: 22px;
+  color: rgb(96,20,40)
+}
+
+/*We dont want links to be blue nor underlined*/
+a {
+  text-decoration: none;
+  color: black
+}
+
+header {
+  /*Header will have a display flex and a background colour*/
+  display: flex;
+  background-color: beige;
+  height: 85px;
+  padding: 0px;
+}
+
+/*The logo, menu and button-div will all have margin: auto as styling, the logo
+will have a bigger left margin and the menu will have a fixed width*/
+/*#logo {
+  width: 50px;
+  margin: auto auto auto 27px;
+}*/
+
+
+#title {
+  font-size: 18px;
+  width: 175px;
+  margin: auto 10px;
+  }
+
+/*We want the links (a alements) and the buttons to be stacked vertically*/
+#menu, #button-div {
+  margin: auto;
+  display: grid;
+  grid-template:
+  'top'
+  'mid'
+  'bottom';
+}
+
+#menu {
+  width: 100px;
+  font-size: 14px;
+}
+
+#menu a {
+  margin: auto;
+}
+
+/*We will style the buttons, as well as make them changed when clicked*/
+.buttons {
+  background-color: rgba(245,245,245,0.9);
+  border-radius: 3px;
+  width: 90px;
+  height: 30px;
+  margin: 5px auto 0px
+}
+
+.buttons:hover {
+  cursor: pointer;
+}
+
+.buttons:active {
+  background-color: rgba(0,0,0,0.125);
+  box-shadow: 0 12px 16px 0 rgba(255,255,255,0.9), 0 17px 50px 0 rgba(255,255,255,0.81);
+  border: none;
+  width: 90px;
+  height: 30px;
+}
+
+/*Sections need to have full height and width*/
+section {
+  width: 100%;
+  height: 100%;
+}
+
+/*The map needs to be centered and have the section needs a background.
+Furthermore, we will give the image a fixed size*/
+#section-map {
+  display: flex;
+  background-color: rgba(0,255,0,0.1)
+}
+
+#map {
+  width: 500px;
+  height: 400px;
+  margin: auto;
+}
+
+/*The search section will have a grid-template, the title will be on the top
+area, the input on the bottom-left and the button on the bottom-right*/
+#section-search {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+  'top top'
+  'left right';
+  grid-column-gap: 5px;
+  background-color: beige;
+  padding: 30px 0px;
+}
+
+#title-search {grid-area: top; margin: auto}
+#in-search {grid-area: left; margin: auto 0px auto auto; height: 28px; width: 200px}
+#button-search {grid-area: right; margin: auto auto auto 0px; margin-top: 0px}
+
+/*The last section needs to be centered, have a background and a small padding
+on the bottom side*/
+#section-exp {
+  width: 80%;
+  margin: auto;
+  background-color: beige;
+  padding-bottom: 1%
+}
+
+/*Columns will be aligned using display:flex and float:left, we also center
+them using margins*/
+.block {
+  display: grid;
+  grid-template-areas:
+  'left right'
+  'bottom bottom';
+  margin: auto;
+}
+
+#col1 {grid-area: left}
+#col2 {grid-area: bottom}
+#col3 {grid-area: right}
+
+.column {
+  display: block;
+  float: left;
+  margin: auto;
+}
+
+/*As the columns have display:block, the experiences will align vertically*/
+.experience {
+  margin-top: 10px;
+  width: 30vw;
+}
+
+#section-exp img {
+  width: 30vw
+}
+
+/*The footer needs a display flex in order to split the contents*/
+footer {
+  width: 100%;
+  height: 75px;
+  background-color: rgba(0,0,0,0.1);
+  display: flex;
+}
+
+#logo-footer {
+  width: 50px;
+  margin: auto
+}
+
+/*The social and link divs use a grid-template in order to make the contents
+align vertically, display:block was not achieving it*/
+.footer-item {
+  display: grid;
+  grid-template-areas:
+  'top'
+  'bottom';
+  grid-row-gap: 6px;
+  margin: auto;
+}
+
+.footer-img {
+  width: 20px
+}
+
+
+
+
+/*Móvil 600px o tablet? Porque así 600px es tablet*/
+
+
+
+
+/*For even smaller devices, we needed more changes*/
+@media only screen and (min-device-width: 601px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+  header {
+    height: 85px;
+    padding: 0px
+  }
+
+  /*#logo {
+    margin-left: auto;
+  }*/
+
+  #title {
+    font-size: 20px;
+    width: 200px;
+    }
+
+  #map {
+    width: 600px;
+    height: 400px
+  }
+
+  #button-div {
+    display: flex;
+  }
+
+  #button-div button {
+    margin-right: 10px
+  }
+
+  .block {
+    display: flex;
+  }
+
+  .experience {
+    width: 22vw;
+  }
+
+  #section-exp img {
+    width: 22vw;
+  }
+}
+
+/*For devices with screens thiker than 768px, we only to change the header and
+the map sizes*/
+@media only screen and (min-device-width: 769px) {
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+  header {
+    height: 100px;
+  }
+
+  #logo {
+    margin-left: 30px
+  }
+
+  #title {
+    font-size: 26px;
+    width: 350px
+  }
+
+  #menu {
+    display: flex;
+    width: 230px;
+    font-size: 18px
+  }
+
+  #map {
+    width: 700px;
+    height: 470px;
+  }
+
+}
