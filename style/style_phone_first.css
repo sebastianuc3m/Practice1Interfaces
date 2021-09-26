@@ -6,15 +6,6 @@
   src: url(InterconnectedDemo-Regular.ttf);
 }
 
-/*
-[class*="x"]
-
-Selects all classes which start by "x"
-
-The first element after a floating element needs a property called "clear: both"
-*/
-
-
 html {
   height: 100%
 }
@@ -188,7 +179,8 @@ them using margins*/
 }
 
 #section-exp img {
-  width: 30vw
+  width: 30vw;
+  border-radius: 5%
 }
 
 /*The footer needs a display flex in order to split the contents*/

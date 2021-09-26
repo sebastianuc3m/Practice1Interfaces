@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style/maps.css">
+    <link rel="stylesheet" href="style/maps_phone_first.css">
     <title>Barcelona</title>
   </head>
   <body>
@@ -20,41 +20,50 @@
       </nav>
     </header>
     <section id="summary">
-      <img class="img-map" src="images/barna.jpg" alt="Sagrada Famillia from outside">
+      <img class="img-map" src="images/barcelona/barna.jpg" alt="Sagrada Famillia from outside">
       <h2>Barcelona</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-         voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-         non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-         amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-         ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-         qui officia deserunt mollit anim id est laborum. Quis nostrud exercitation ullamco laboris nisi.</p>
+      <p>Barcelona posee una impresionante oferta cultural, contando con algunos
+        interesantes museos como la Fundación Joan Miró o el Museo Picasso,
+        aunque donde se aprecia realmente el arte que envuelve la ciudad es
+        paseando por sus calles llenas de historia y cargadas de encanto.
+        <br>
+        Barcelona tuvo la enorme fortuna de caer en manos de Antonio Gaudí,
+        un artista que dedicó sus años a llenar de vida y de magia la ciudad
+        para enamorarnos a través de emblemáticas obras de arte como la
+        conocidísima Sagrada Familia, el hermoso edificio modernista de La
+        Pedrera o el sorprendente Parque Güell.
+        <br>
+        Dejando de lado sus museos y monumentos, Barcelona no es sólo arte,
+        sino que también posee un lado más relajado que se muestra en forma de
+        soleadas playas que combinan a la perfección con una sugerente oferta
+        gastronómica, detalles que convierten la ciudad condal en un auténtico
+        paraíso para todo tipo de visitantes que deseen hacer turismo en Bacelona.</p>
     </section>
     <section id="experiences">
       <h2>Experiences in Barcelona</h2>
-      <div>
-        <img src="images/barna1.jpeg" alt="Palau Guell, colorfull towers">
-        <img src="images/barna2.jpeg" alt="Sant Pau Hospital from outside">
-        <img src="images/barna3.jpeg" alt="Palau de la Musica interior">
-        <img src="images/barna4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
-        <img src="images/barna5.jpeg" alt="Cascada Moumental">
+      <div id="images">
+        <img src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
+        <img src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
+        <img src="images/barcelona/im3.jpeg" alt="Palau de la Musica interior">
+        <img src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
+        <img src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
       </div>
-      <div>
-        <!--<video src="videofile.ogg" autoplay poster="posterimage.jpg"></video>
-        <video src="videofile.ogg" autoplay poster="posterimage.jpg"></video>
-        <video src="videofile.ogg" autoplay poster="posterimage.jpg"></video>
-        <video src="videofile.ogg" autoplay poster="posterimage.jpg"></video>
-        <video src="videofile.ogg" autoplay poster="posterimage.jpg"></video> -->
+      <div id="videos">
+        <video controls src="images/barcelona/v1.mp4" poster="images/barcelona/p1.jpg"></video>
+        <video controls src="images/barcelona/v2.mp4" poster="images/barcelona/p2.jpg"></video>
+        <video controls src="images/barcelona/v3.mp4" poster="images/barcelona/p3.jpg"></video>
+        <video controls src="images/barcelona/v4.mp4" poster="images/barcelona/p4.jpg"></video>
+        <video controls src="images/barcelona/v5.mp4" poster="images/barcelona/p5.jpg"></video>
       </div>
     </section>
     <footer>
-      <img class="footer-item" id="logo-footer" src="images/logo.png" alt="earth from space logo">
-      <div class="footer-item">
-        <img src="images/facebook.png" alt="facebook">
-        <img src="images/instagram.png" alt="instagram">
+      <!--The footer contains a logo and two div containers, one for the social
+      profiles and one for the final links. We considered making these "menu",
+      but W3 Validator gives out an error saying we cannot do that-->
+      <img id="logo-footer" src="images/logo.png" alt="earth from space logo">
+      <div class="footer-item" id="social">
+        <img class="footer-img" src="images/facebook.png" alt="facebook">
+        <img class="footer-img" src="images/instagram.png" alt="instagram">
       </div>
       <div class="footer-item">
         <a href="#">FAQs</a>
