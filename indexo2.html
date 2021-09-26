@@ -12,18 +12,18 @@
     <header>
       <!--The header will contain a logo, a title, a menu element with 3 links
       and a nav element with 2 buttons-->
-      <img id="logo" class="col-3 col-s-3" src="images/logo.png" alt="earth from space logo">
-      <h1 id="title" class="col-4 col-s-4">Travel Experiences 2021 (covid friendly)</h1>
-      <div id="menu" class="col-3 col-s-3">
+      <img id="logo" class="col-2 col-s-2 col-m-2" src="images/logo.png" alt="earth from space logo">
+      <h1 id="title" class="col-4 col-s-4 col-m-4">Travel Experiences 2021 (covid friendly)</h1>
+      <div id="menu" class="col-2 col-s-2 col-m-2">
         <!--As written in the statement, these link won't do anything-->
-        <a href="#" class="col-4 col-s-12">Home</a>
-        <a href="#" class="col-4 col-s-12">About Us</a>
-        <a href="#" class="col-4 col-s-12">Contact Us</a>
+        <a href="#" class="upmenu col-4 col-s-12 col-m-12">Home</a>
+        <a href="#" class="upmenu col-4 col-s-12 col-m-12">About Us</a>
+        <a href="#" class="upmenu col-4 col-s-12 col-m-12">Contact Us</a>
       </div>
-      <nav id="button-div" class="col-2 col-s-2">
+      <nav id="button-div" class="col-2 col-s-2 col-m-2">
         <!--This nav element will contain two useless buttons-->
-        <button type="button" name="login" class="buttons col-5 col-s-5">Log-in</button>
-        <button type="button" name="signup" class="buttons col-5 col-s-5">Sign-up</button>
+        <button type="button" name="login" class="buttonshead col-5 col-s-3 col-m-3">Log-in</button>
+        <button type="button" name="signup" class="buttonshead col-5 col-s-3 col-m-3">Sign-up</button>
       </nav>
     </header>
     <!--Here is where the 3 sections of the website start-->
@@ -31,7 +31,7 @@
       <!--The first section only contains an image with a map in order to make it
       interactive. W3 Validator gives out a warning here, as this section has no
       title, and it requires one by definition, we have decided to ignore this-->
-      <img id="map" src="images/map.png" alt="Europe Map" usemap="#travel-map">
+      <img id="map" src="images/map.png" class= "col-7 col-s-12 col-m-12" alt="Europe Map" usemap="#travel-map">
       <map name="travel-map">
         <area id="barna-area" shape="rect" coords="185,350,250,375" href="barcelona.html" alt="Barcelona, Spain">
         <area id="vienna-area" shape="rect" coords="390,210,430,260" href="vienna.html" alt="Vienna, Austria">
@@ -42,7 +42,7 @@
     <section id="section-search">
       <!--Section two contains a title and a useless search input and button-->
       <h2 id="title-search">Search Bar</h2>
-      <input id="in-search" type="text" name="search-input" value="">
+      <input id="in-search" type="text" name="search-input" class= "col-3 col-s-4 col-m-5" value="">
       <button id="button-search" type="button" name="search-button" class="buttons">Search</button>
     </section>
     <section id="section-exp">
