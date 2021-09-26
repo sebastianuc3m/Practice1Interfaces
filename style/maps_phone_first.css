@@ -1,0 +1,178 @@
+/*This CSS file contains the styling for the "HOME" website.*/
+
+@font-face {
+  /*We have imported this custom font, as it makes it more homey*/
+  font-family: Custom;
+  src: url(InterconnectedDemo-Regular.ttf);
+}
+
+html {
+  height: 100%
+}
+
+* {
+  /*We need to remove the margins and change the font for the whole website*/
+  margin: 0;
+  font-family: Custom;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  /*Header title and section headlines need to be centered, we also changed their colour*/
+  margin: auto;
+  text-align: center;
+  color: rgb(96,20,4)
+}
+
+p {
+  /*We chose Courier New for plain text as it is more readable*/
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+h3 {
+  /*These are usedd as titles for experiences, we need them to be a bit bigger
+  than the rest of the text*/
+  font-size: 16px;
+  line-height: 22px;
+  color: rgb(96,20,40)
+}
+
+/*We dont want links to be blue nor underlined*/
+a {
+  text-decoration: none;
+  color: black
+}
+
+header {
+  /*Header will have a display flex and a background colour*/
+  display: flex;
+  background-color: beige;
+  height: 85px;
+  padding: 0px;
+}
+
+/*The logo, menu and button-div will all have margin: auto as styling, the logo
+will have a bigger left margin and the menu will have a fixed width*/
+#logo {
+  width: 50px;
+  margin: auto auto auto 27px;
+}
+
+
+#title {
+  font-size: 18px;
+  width: 175px;
+  margin: auto 10px;
+  }
+
+/*We want the links (a alements) and the buttons to be stacked vertically*/
+#menu, #button-div {
+  margin: auto;
+  display: grid;
+  grid-template:
+  'top'
+  'mid'
+  'bottom';
+}
+
+#menu {
+  width: 100px;
+  font-size: 14px;
+}
+
+#menu a {
+  margin: auto;
+}
+
+/*We will style the buttons, as well as make them changed when clicked*/
+.buttons {
+  background-color: rgba(245,245,245,0.9);
+  border-radius: 3px;
+  width: 90px;
+  height: 30px;
+  margin: 5px auto 0px
+}
+
+.buttons:hover {
+  cursor: pointer;
+}
+
+.buttons:active {
+  background-color: rgba(0,0,0,0.125);
+  box-shadow: 0 12px 16px 0 rgba(255,255,255,0.9), 0 17px 50px 0 rgba(255,255,255,0.81);
+  border: none;
+  width: 90px;
+  height: 30px;
+}
+
+.img-map {
+  width: 100%;
+}
+
+p {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+br {
+  margin-bottom: 20px
+}
+
+h1, h2 {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+#summary {
+  background-color: rgba(255,0,0,0.1);
+  padding-bottom: 20px;
+}
+
+#experiences {
+  display: block;
+  background-color: rgba(255,0,255,0.075);
+  padding-bottom: 20px
+}
+
+#images, #videos {
+  display: flex;
+  flex-direction: column;
+}
+
+#images img, #videos video {
+  width: 75vw;
+  margin: 0px auto 20px;
+  object-fit: cover;
+}
+
+/*The footer needs a display flex in order to split the contents*/
+footer {
+  width: 100%;
+  height: 75px;
+  background-color: rgba(0,0,0,0.1);
+  display: flex;
+}
+
+#logo-footer {
+  width: 50px;
+  margin: auto
+}
+
+/*The social and link divs use a grid-template in order to make the contents
+align vertically, display:block was not achieving it*/
+.footer-item {
+  display: grid;
+  grid-template-areas:
+  'top'
+  'bottom';
+  grid-row-gap: 6px;
+  margin: auto;
+}
+
+.footer-img {
+  width: 20px
+}
