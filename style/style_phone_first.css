@@ -159,7 +159,7 @@ Furthermore, we will give the image a fixed size*/
 /*The search section will have a grid-template, the title will be on the top
 area, the input on the bottom-left and the button on the bottom-right*/
 #section-search {
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: grid;
   grid-template-areas:
@@ -167,7 +167,7 @@ area, the input on the bottom-left and the button on the bottom-right*/
   'left right';
   grid-column-gap: 5px;
   background-color: beige;
-  padding: 30px 0px;
+  padding: 30px 0px 50px;
 }
 
 #title-search {grid-area: top; margin: auto}
@@ -177,7 +177,7 @@ area, the input on the bottom-left and the button on the bottom-right*/
 /*The last section needs to be centered, have a background and a small padding
 on the bottom side*/
 #section-exp {
-  width: 80%;
+  width: 100%;
   margin: auto;
   background-color: beige;
   padding-bottom: 1%
