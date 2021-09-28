@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!--Here we will link the css file which contains the styling of the website
+    and we'll give a name to the window-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/maps_phone_first.css">
+    <title>Milan</title>
+  </head>
+  <body>
+    <header>
+      <!--The header will be the same as the index.html, but the Home button and
+      the Logo will have a reference to index.html-->
+      <a id="logo" href="index.html"><img src="images/logo.png" alt="earth from space logo"></a>
+      <h1 id="title">Travel Experiences 2021 (covid friendly)</h1>
+      <div id="menu">
+        <a href="index.html">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <nav id="button-div">
+        <button type="button" name="button" class="buttons">Log-in</button>
+        <button type="button" name="button" class="buttons">Sign-up</button>
+      </nav>
+    </header>
+    <section id="summary">
+      <!--As asked, this section has a 100% width image, a title and a
+      description of the city-->
+      <img class="img-map" src="images/milan/milan.jpeg" alt="Piazza Duomo">
+      <h2>Milan</h2>
+      <p> Milan has been interesting and vibrant at least since it was the
+        capital of the western half of the Roman Empire. It was one of the most
+        glorious of the Italian Comuni during the Middle Ages. It housed one of
+        Italy’s most spectacular courts during the Renaissance. And so on.
+        Leonardo da Vinci came from Florence looking for work and ended up
+        staying a long time and achieving quite a lot, like many others have
+        done since. Having always been in the thick of things, Milano is gifted
+        with an impressive part of Italy’s heritage: it is a great city of art.
+        <br>
+        Have a look at the imposing marble Duomo, at our churches, palaces and
+        museums. You will also be delighted by contemporary art and architecture.
+        Countless works of art are waiting for you, and nearly all of them are
+        within walking distance.
+        <br>
+        While you visit, let the atmosphere of Italy’s most modern and advanced
+        city seep in. You will be captured by the elegance and style; by the
+        energy and the international flair. An incredible shopping experience
+        for all tastes and pockets, in a place where design and fashion have
+        made their home.
+        <br>
+        Milan is the hub of Italian culture, music, media and sports. If you
+        are a music lover, you can’t miss La Scala. If you are a sports fan,
+        no other city can probably boast two soccer powerhouses like Inter
+        Milan and AC Milan. With so many things to do and see, take the time to
+        simply enjoy yourself – relax and sip an aperitivo while you consider your
+        options for dinner. Milan provides an overwhelming dining experience, as
+        all Italian regional cuisines are richly represented, along with many
+        others from the rest of the world.
+      </p>
+    </section>
+    <section id="experiences">
+      <h2>Experiences in Milan</h2>
+      <!--The experiences have 2 ways of being shown, in the mobile version, they
+      are displayed vertically, in the tablet and desktop versions, we have 5
+      columns and 2 buttons. These buttons will let us scroll through the images
+      but will be hidden in the mobile version-->
+      <div id="images">
+        <button type="button" id="left-img" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+        <img id="img1" src="images/milan/im1.jpeg" alt="Palau Guell, colorfull towers">
+        <img id="img2" src="images/milan/im2.jpeg" alt="Sant Pau Hospital from outside">
+        <img id="img3" src="images/milan/im3.jpeg" alt="Palau de la Musica interior">
+        <img id="img4" src="images/milan/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
+        <img id="img5" src="images/milan/im5.jpeg" alt="Cascada Moumental">
+        <button type="button" id="right-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+      </div>
+      <div id="videos">
+        <button type="button" id="left-vid" onclick="moveLeft('vid')"><img src="images/left-arrow.png" alt=""></button>
+        <video id="vid1" controls src="images/milan/v1.mp4"></video>
+        <video id="vid2" controls src="images/milan/v2.mp4"></video>
+        <video id="vid3" controls src="images/milan/v3.mp4"></video>
+        <video id="vid4" controls src="images/milan/v4.mp4"></video>
+        <video id="vid5" controls src="images/milan/v5.mp4"></video>
+        <button type="button" id="right-vid" onclick="moveRight('vid')"><img src="images/right-arrow.png" alt=""></button>
+    </section>
+    <footer>
+      <!--The footer contains a logo and two div containers, one for the social
+      profiles and one for the final links. We considered making these "menu",
+      but W3 Validator gives out an error saying we cannot do that-->
+      <img id="logo-footer" src="images/logo.png" alt="earth from space logo">
+      <div class="footer-item" id="social">
+        <img class="footer-img" src="images/facebook.png" alt="facebook">
+        <img class="footer-img" src="images/instagram.png" alt="instagram">
+      </div>
+      <div class="footer-item">
+        <a href="#">FAQs</a>
+        <a href="#">Policy</a>
+      </div>
+    </footer>
+  </body>
+  <script src="script/maps.js"></script>
+</html>

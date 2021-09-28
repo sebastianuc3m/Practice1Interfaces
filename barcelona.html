@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!--Here we will link the css file which contains the styling of the website
+    and we'll give a name to the window-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/maps_phone_first.css">
+    <title>Barcelona</title>
+  </head>
+  <body>
+    <header>
+      <!--The header will be the same as the index.html, but the Home button and
+      the Logo will have a reference to index.html-->
+      <a id="logo" href="index.html"><img src="images/logo.png" alt="earth from space logo"></a>
+      <h1 id="title">Travel Experiences 2021 (covid friendly)</h1>
+      <div id="menu">
+        <a href="index.html">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <nav id="button-div">
+        <button type="button" name="button" class="buttons">Log-in</button>
+        <button type="button" name="button" class="buttons">Sign-up</button>
+      </nav>
+    </header>
+    <section id="summary">
+      <!--As asked, this section has a 100% width image, a title and a
+      description of the city-->
+      <img class="img-map" src="images/barcelona/barna.jpg" alt="Sagrada Famillia from outside">
+      <h2>Barcelona</h2>
+      <p>Barcelona has an impressive cultural offer, with some
+        interesting museums such as the Joan Miró Foundation or the Picasso Museum,
+        although where the art that surrounds the city is really appreciated is
+        walking through its streets full of history and full of charm.
+        <br>
+        The Joan Miró Foundation was created as a reference space for Miró's work
+        and to try to make modern art known to the world. Today it is among the
+        three most visited museums in Barcelona.
+        <br>
+        Barcelona had the enormous fortune of falling into Antonio Gaudí's hands,
+        an artist who dedicated his years to fill the city with life and magic and
+        letting people fall in love through emblematic works of art such as the
+        well-known Sagrada Familia, the beautiful modernist building of La
+        Pedrera or the surprising Park Güell.
+        <br>
+        Leaving aside its museums and monuments, Barcelona is not just art,
+        but also has a more relaxed side that is shown in the form of
+        sunny beaches that combine perfectly with a suggestive offer
+        gastronomic, details that make the city of Barcelona an authentic
+        paradise for all kinds of visitors who wish to do tourism in Bacelona.</p>
+    </section>
+    <section id="experiences">
+      <h2>Experiences in Barcelona</h2>
+      <!--The experiences have 2 ways of being shown, in the mobile version, they
+      are displayed vertically, in the tablet and desktop versions, we have 5
+      columns and 2 buttons. These buttons will let us scroll through the images
+      but will be hidden in the mobile version-->
+      <div id="images">
+        <button type="button" id="left-img" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+        <img id="img1" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
+        <img id="img2" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
+        <img id="img3" src="images/barcelona/im3.jpeg" alt="Palau de la Musica interior">
+        <img id="img4" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
+        <img id="img5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
+        <button type="button" id="right-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+      </div>
+      <div id="videos">
+        <button type="button" id="left-vid" onclick="moveLeft('vid')"><img src="images/left-arrow.png" alt=""></button>
+        <video id="vid1" controls src="images/barcelona/v1.mp4" poster="images/barcelona/p1.jpg"></video>
+        <video id="vid2" controls src="images/barcelona/v2.mp4" poster="images/barcelona/p2.jpg"></video>
+        <video id="vid3" controls src="images/barcelona/v3.mp4" poster="images/barcelona/p3.jpg"></video>
+        <video id="vid4" controls src="images/barcelona/v4.mp4" poster="images/barcelona/p4.jpg"></video>
+        <video id="vid5" controls src="images/barcelona/v5.mp4" poster="images/barcelona/p5.jpg"></video>
+        <button type="button" id="right-vid" onclick="moveRight('vid')"><img src="images/right-arrow.png" alt=""></button>
+      </div>
+    </section>
+    <footer>
+      <!--The footer contains a logo and two div containers, one for the social
+      profiles and one for the final links. We considered making these "menu",
+      but W3 Validator gives out an error saying we cannot do that-->
+      <img id="logo-footer" src="images/logo.png" alt="earth from space logo">
+      <div class="footer-item" id="social">
+        <img class="footer-img" src="images/facebook.png" alt="facebook">
+        <img class="footer-img" src="images/instagram.png" alt="instagram">
+      </div>
+      <div class="footer-item">
+        <a href="#">FAQs</a>
+        <a href="#">Policy</a>
+      </div>
+    </footer>
+  </body>
+  <script src="script/maps.js"></script>
+</html>
