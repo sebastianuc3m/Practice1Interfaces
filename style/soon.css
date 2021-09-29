@@ -1,0 +1,219 @@
+/*This CSS file contains the styling for the "SOON" website.*/
+
+@font-face {
+  /*We have imported this custom font, as it makes it more homey*/
+  font-family: Custom;
+  src: url(InterconnectedDemo-Regular.ttf);
+}
+
+html {
+  height: 100%
+}
+
+* {
+  /*We need to remove the margins and change the font for the whole website*/
+  margin: 0;
+  font-family: Custom;
+  box-sizing: border-box;
+  background-color: beige;
+}
+
+/*We dont want links to be blue nor underlined*/
+a {
+  text-decoration: none;
+  color: black
+}
+
+header {
+  /*Header will have a display flex and a background colour*/
+  display: flex;
+  background-color: beige;
+  height: 85px;
+  padding: 0px;
+}
+
+/*The logo, menu and button-div will all have margin: auto as styling, the logo
+will have a bigger left margin and the menu will have a fixed width*/
+#logo {
+  width: 50px;
+  margin: auto auto auto 27px;
+  cursor: pointer;
+}
+
+#logo img {
+  width: 50px;
+}
+
+#title {
+  font-size: 18px;
+  width: 175px;
+  margin: auto 10px;
+  }
+
+/*We want the links (a alements) and the buttons to be stacked vertically*/
+#menu, #button-div {
+  margin: auto;
+  display: grid;
+  grid-template:
+  'top'
+  'mid'
+  'bottom';
+}
+
+#menu {
+  width: 100px;
+  font-size: 14px;
+}
+
+#menu a {
+  margin: auto;
+}
+
+/*When hovering over the menu options, we want them to change color*/
+#menu a:hover, #return a:hover {
+  color: #ee7f44;
+  transition-duration: 500ms;
+}
+
+/*We will style the buttons, as well as make them changed when clicked*/
+.buttons {
+  background-color: rgba(245,245,245,0.9);
+  border-radius: 3px;
+  width: 90px;
+  height: 30px;
+  margin: 5px auto 0px
+}
+
+/*Hovering and clicking over buttons will change colors*/
+.buttons:hover {
+  cursor: pointer;
+  background-color: #ee7f44;
+  transition-duration: 750ms;
+  color: white;
+}
+
+.buttons:active {
+  background-color: rgba(0,0,0,0.125);
+  box-shadow: 0 12px 16px 0 rgba(255,255,255,0.9), 0 17px 50px 0 rgba(255,255,255,0.81);
+  border: none;
+  width: 90px;
+  height: 30px;
+  transition-duration: 0ms;
+  color: black
+}
+
+/*Sections need to have and width, we'll set the height to put the footer at the botton*/
+section {
+  clear:both;
+  width: 100%;
+  height: 80vh;
+}
+
+h1, h2 {
+  /*Header title and section headlines need to be centered, we also changed their colour*/
+  margin: auto;
+  text-align: center;
+  color: rgb(96,20,4)
+}
+
+/* The title will be centered and separated from the header section with a padding */
+h2 {
+  padding: 7%;
+  background-color: white;
+  font-size: 35px;
+  margin: auto;
+}
+
+/* The return link is separated from the "comming soon" title */
+#return {
+  margin-top: 50px;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+/*The footer needs a display flex in order to split the contents*/
+footer {
+  width: 100%;
+  height: 75px;
+  background-color: rgba(0,0,0,0.15);
+  display: flex;
+}
+
+#logo-footer {
+  width: 50px;
+  margin: auto
+}
+
+/*The social and link divs use a grid-template in order to make the contents
+align vertically, display:block was not achieving it*/
+.footer-item {
+  display: grid;
+  grid-template-areas:
+  'top'
+  'bottom';
+  grid-row-gap: 6px;
+  margin: auto;
+}
+
+.footer-img {
+  width: 20px
+}
+
+/*The social media images in the footer will change the type of mouse when pointing them*/
+#social img {
+  cursor: pointer;
+}
+
+/*For even smaller devices, we needed more changes*/
+@media only screen and (min-device-width: 601px) {
+  header {
+    height: 85px;
+    padding: 0px
+  }
+
+  #logo {
+    margin-left: auto;
+  }
+
+  #title {
+    font-size: 20px;
+    width: 200px;
+    }
+
+  #button-div {
+    display: flex;
+  }
+
+  #button-div button {
+    margin-right: 10px
+  }
+
+  .block {
+    display: flex;
+  }
+
+}
+
+/*For devices with screens thiker than 768px, we only to change the header and
+the map sizes*/
+@media only screen and (min-device-width: 769px) {
+  header {
+    height: 100px;
+  }
+
+  #logo {
+    margin-left: 30px
+  }
+
+  #title {
+    font-size: 26px;
+    width: 350px
+  }
+
+  #menu {
+    display: flex;
+    width: 230px;
+    font-size: 18px
+  }
+}
