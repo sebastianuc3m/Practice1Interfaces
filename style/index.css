@@ -135,14 +135,8 @@ Furthermore, we will give the image a fixed size*/
   background-color: rgba(255,0,0,0.03);
 }
 
-#map {
-  width: 70%;
-  margin: auto;
-  display: flex;
-}
-
 #map svg {
-  width: 70%;
+  width: 120vw;
   margin: auto
 }
 
@@ -191,6 +185,7 @@ them using margins*/
   'left right'
   'bottom bottom';
   margin: auto;
+  width: 80vw;
 }
 
 #col1 {grid-area: left}
@@ -244,6 +239,31 @@ align vertically, display:block was not achieving it*/
 
 #social img {
   cursor: pointer;
+}
+
+/*In this css file we will also style the "comming soon" webpages*/
+/*In these pages, the h2 has to be bigger*/
+#soon h2 {
+  margin-top: 40px;
+  font-size: 50px;
+}
+
+/*The return link is separated from the "comming soon" title and will have a
+background*/
+#return {
+  margin: 50px auto 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  background-color: rgba(255,122,0,0.15);
+  height: 40vh;
+  display: flex
+}
+
+/*The return text has to be bigger as well*/
+#return a {
+  font-size: 30px;
+  margin: auto auto 25vh;
 }
 
 /*For even smaller devices, we needed more changes*/
