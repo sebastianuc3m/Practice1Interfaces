@@ -222,6 +222,10 @@ footer {
   margin: auto
 }
 
+#logo-footer img {
+  width: 50px
+}
+
 /*The social and link divs use a grid-template in order to make the contents
 align vertically, display:block was not achieving it*/
 .footer-item {
