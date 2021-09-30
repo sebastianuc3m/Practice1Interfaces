@@ -236,8 +236,8 @@ align vertically, display:block was not achieving it*/
   margin: auto;
 }
 
-.footer-img {
-  width: 20px
+.footer-img, .footer-img img {
+  width: 23px
 }
 
 #social img {
