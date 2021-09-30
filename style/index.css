@@ -135,7 +135,7 @@ Furthermore, we will give the image a fixed size*/
   background-color: rgba(255,0,0,0.03);
 }
 
-#map svg {
+#section-map svg {
   width: 120vw;
   margin: auto
 }
@@ -294,6 +294,11 @@ background*/
     margin-right: 10px
   }
 
+  #section-map svg {
+    width: 90vw;
+    margin: auto
+  }
+
   .block {
     display: flex;
   }
@@ -321,6 +326,11 @@ the map sizes*/
   #title {
     font-size: 26px;
     width: 350px
+  }
+
+  #section-map svg {
+    width: 65vw;
+    margin: auto
   }
 
   #menu {
