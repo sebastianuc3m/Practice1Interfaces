@@ -21,7 +21,8 @@ h1, h2 {
   /*Header title and section headlines need to be centered, we also changed their colour*/
   margin: auto;
   text-align: center;
-  color: rgb(96,20,4)
+  color: rgb(96,20,4);
+  display: block;
 }
 
 p {
@@ -268,6 +269,36 @@ background*/
   font-size: 30px;
   margin: auto auto 25vh;
 }
+
+.popup {
+  text-align: right;
+  width: 50vh;
+  margin: 20px;
+  margin-left: 75vh;
+  background-color: beige;
+  padding: 5px;
+}
+
+.popup h1 {
+  margin-bottom: 10px;
+}
+
+.form-info {
+  text-align: center;
+  display:flex;
+  margin-left: 15%;
+}
+
+.form-fields {
+  display: block;
+  text-align: right;
+}
+
+.btn-login {
+  height: 40px;
+  margin-left: 10px;
+}
+
 
 /*For even smaller devices, we needed more changes*/
 @media only screen and (min-device-width: 601px) {

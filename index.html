@@ -23,10 +23,30 @@
       </div>
       <nav id="button-div">
         <!--This nav element will contain two useless buttons-->
-        <button type="button" name="login" class="buttons">Log-in</button>
+        <button type="button" name="login" class="buttons" onclick="openForm()">Log-in</button>
         <button type="button" name="signup" class="buttons">Sign-up</button>
       </nav>
     </header>
+    <!-- Pop up login window. -->
+    <div class="popup" id=login>
+      <form action="/action_page.php" class="form-container">
+        <button type="button" class="btn-cancel" onclick="closeForm()">x</button>
+        <h1>Login</h1>
+        <div class="form-info">
+          <div class="form-fields">
+            <div class="field">
+              <label for="username"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="username" required>
+            </div>
+            <div class="field"> 
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required> 
+            </div>
+          </div>
+          <button type="submit" class="btn-login">Login</button>
+        </div> 
+    </form>
+    </div>
     <!--Here is where the 3 sections of the website start-->
     <section id="section-map">
       <!--The first section only contains an image with a map. To implement this,
@@ -159,4 +179,5 @@
       </div>
     </footer>
   </body>
+  <script src="script/popups.js"></script>
 </html>
