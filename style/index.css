@@ -271,31 +271,37 @@ background*/
 }
 
 .popup {
+  position: absolute;
+  display: none;
+  top: 35vh;
+  left: 35vw;
+  flex-direction: column;
   text-align: right;
-  width: 60vh;
-  margin: 20px;
-  margin-left: 75vh;
+  width: 400px;
+  margin: auto;
   background-color: beige;
   padding: 5px;
 }
 
-.popup h1 {
-  margin-bottom: 10px;
+#title-pop{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px
 }
 
-.form-info {
+#title-pop h2 {
+  margin: auto 150px auto auto
+}
+
+.form-container {
   text-align: center;
   display:flex;
+  flex-direction: row;
   margin-left: 10%;
 }
 
-.form-fields {
-  display: block;
-  text-align: right;
-}
-
 .btn-login {
-  height: 40px;
+  height: 45px;
   margin-left: 10px;
 }
 

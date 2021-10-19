@@ -5,10 +5,30 @@
     and we'll give a name to the window-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="style/index.css">
     <title>Travel Experiences</title>
   </head>
-  <body>
+  <body><!-- Pop up login window. -->
+    <div class="popup" id=login>
+      <div id="title-pop">
+        <h2>Login</h2>
+        <button type="button" class="btn-cancel" onclick="closeForm()">x</button>
+      </div>
+      <form action="" class="form-container">
+        <div class="form-fields">
+          <article class="field">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+          </article>
+          <article class="field">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+          </article>
+        </div>
+        <button type="submit" id="submit-log">Login</button>
+      </form>
+    </div>
     <header>
       <!--The header will contain a logo, a title, a menu element with 3 links
       and a nav element with 2 buttons. The home link, won't do anything, however
@@ -27,26 +47,6 @@
         <button type="button" name="signup" class="buttons">Sign-up</button>
       </nav>
     </header>
-    <!-- Pop up login window. -->
-    <div class="popup" id=login>
-      <form action="/action_page.php" class="form-container">
-        <button type="button" class="btn-cancel" onclick="closeForm()">x</button>
-        <h1>Login</h1>
-        <div class="form-info">
-          <div class="form-fields">
-            <div class="field">
-              <label for="username"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="username" required>
-            </div>
-            <div class="field"> 
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required> 
-            </div>
-          </div>
-          <button type="submit" class="btn-login">Login</button>
-        </div> 
-    </form>
-    </div>
     <!--Here is where the 3 sections of the website start-->
     <section id="section-map">
       <!--The first section only contains an image with a map. To implement this,
