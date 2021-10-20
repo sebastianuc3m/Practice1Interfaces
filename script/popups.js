@@ -28,16 +28,31 @@ $(document).ready(function() {
   var pwd;
   var username;
 
+/*
   function getLog() {
     log = getCookie("logged");
     console.log(log);
-    if (log != null) {
-      console.log("hola");
+    if (log === "") {
+      //console.log("hola");
       $("#login-but").innerHTML = "Log-out";
     }
+  }*/
+
+  function pfpHide(){
+    var islogged = getCookie("logged");
+    if (islogged === ""){
+      console.log(islogged === "");
+      $("#pfp").hide();
+      $("#button-div").show();
+    } else {
+      $("#pfp").show();
+      $("#button-div").hide();
+    }
+    
   }
 
-  getLog();
+  //getLog();
+  pfpHide();
 
   $("#login-but").click(function() {
     if ($(this).html() == "Log-in"){
@@ -66,17 +81,26 @@ $(document).ready(function() {
     pwd = $('#pwd').val();
     console.log(username);
 
-    if ($(this).html() == "Log-in") {
-      var stored = getCookie(username);
-      if (pwd == stored) {
-        setCookie("logged", "c", 1);
-      }
-    }
-    else {
+    if ($(this).html() == "Sign-up") {
       setCookie(username, pwd, 71);
     }
-    getLog();
+    var stored = getCookie(username);
+    if (pwd == stored) {
+      setCookie("logged", username, 1);
+    }
+    //getLog();
     console.log(log);
     $("#log").css("display", "none");
+    $("#show-username").html(username);
+    pfpHide();
+
   })
+
+  $("#log-out").click(function(){
+    setCookie("logged", "", 71);
+    pfpHide();
+
+  })
+
+
 })

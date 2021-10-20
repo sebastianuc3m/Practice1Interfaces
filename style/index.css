@@ -269,7 +269,7 @@ background*/
   font-size: 30px;
   margin: auto auto 25vh;
 }
-
+/* popup code */
 .popup {
   position: absolute;
   display: none;
@@ -305,6 +305,36 @@ background*/
   margin-left: 10px;
 }
 
+.form-fields {
+  text-align: right;
+  margin-right: 5px;
+}
+
+/*pfp menu*/
+#pfp {
+  width: 30vh;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+#pfp div {
+  margin-right: 15px;
+}
+
+#pfp-menu{
+  width: 80%;
+  margin: auto 0px;
+  padding: 5px;
+  background-color: white;
+}
+
+#pfp-img {
+  width: 70px;
+  border-radius: 50%;
+  margin: 5px 10px auto auto;
+  
+}
 
 /*For even smaller devices, we needed more changes*/
 @media only screen and (min-device-width: 601px) {
@@ -326,6 +356,10 @@ background*/
     display: flex;
   }
 
+  #menu {
+    margin: auto, 10px;
+  }
+
   #button-div button {
     margin-right: 10px
   }
@@ -345,6 +379,22 @@ background*/
 
   #section-exp img {
     width: 22vw;
+  }
+  #pfp {
+    flex-direction: row;
+  }
+  #pfp-img{
+    width: 70px;
+  }
+
+  #pfp div {
+
+  }
+
+  #pfp-menu{
+    
+    background-color: transparent;
+    margin: auto
   }
 }
 
@@ -373,5 +423,17 @@ the map sizes*/
     display: flex;
     width: 230px;
     font-size: 18px
+  }
+  #pfp {
+    flex-direction: row;
+  }
+
+  #pfp-img{
+    width: 90px;
+  }
+  #pfp-menu{
+    
+    background-color: transparent;
+    margin: auto
   }
 }
