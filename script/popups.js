@@ -1,5 +1,6 @@
 // document.cookie = ["A=a"; "b=gasdf"; expires=hadsfa]
 $(document).ready(function() {
+
   function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -24,6 +25,8 @@ $(document).ready(function() {
 
   var e = new Event("look", {"cancelable":true});
   var log;
+  var pwd;
+  var username;
 
   function getLog() {
     log = getCookie("logged");
@@ -59,13 +62,14 @@ $(document).ready(function() {
 
   $("#submit").click(function(e) {
     e.preventDefault();
-    var username = document.getElementById('username').value;
-    var pwd = document.getElementById('pwd').value;
+    username = $('#username').val();
+    pwd = $('#pwd').val();
+    console.log(username);
 
     if ($(this).html() == "Log-in") {
       var stored = getCookie(username);
       if (pwd == stored) {
-        document.cookie = "logged = " + username;
+        setCookie("logged", "c", 1);
       }
     }
     else {
