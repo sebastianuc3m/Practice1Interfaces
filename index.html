@@ -10,10 +10,10 @@
     <title>Travel Experiences</title>
   </head>
   <body><!-- Pop up login window. -->
-    <div class="popup" id=login>
+    <div class="popup" id="log">
       <div id="title-pop">
-        <h2>Login</h2>
-        <button type="button" class="btn-cancel" onclick="closeForm()">x</button>
+        <h2 id="title-log">Log-in</h2>
+        <button type="button" id="btn-cancel">x</button>
       </div>
       <form action="" class="form-container">
         <div class="form-fields">
@@ -23,10 +23,10 @@
           </article>
           <article class="field">
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+            <input type="password" placeholder="Enter Password" name="psw" id="pwd" required>
           </article>
         </div>
-        <button type="submit" id="submit-log">Login</button>
+        <button type="submit" id="submit">Log-in</button>
       </form>
     </div>
     <header>
@@ -42,9 +42,8 @@
         <a href="soon.html">Contact Us</a>
       </div>
       <nav id="button-div">
-        <!--This nav element will contain two useless buttons-->
-        <button type="button" name="login" class="buttons" onclick="openForm()">Log-in</button>
-        <button type="button" name="signup" class="buttons">Sign-up</button>
+        <button type="button" id="login-but" class="buttons">Log-in</button>
+        <button type="button" id="signup-but" class="buttons">Sign-up</button>
       </nav>
     </header>
     <!--Here is where the 3 sections of the website start-->
