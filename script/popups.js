@@ -56,7 +56,8 @@ $(document).ready(function() {
 
   $("#login-but").click(function() {
     if ($(this).html() == "Log-in"){
-      $("#log").css("display", "flex");
+      $("#log").show();
+      $("#sign").hide();
       $("#title-log").html("Log-in");
       $("#submit").html("Log-in");
     }
@@ -66,15 +67,35 @@ $(document).ready(function() {
   })
 
   $("#signup-but").click(function() {
-    $("#log").css("display", "flex");
+    $("#log").hide();
+    $("#sign").show();
     $("#title-log").html("Sign-up");
     $("#submit").html("Sign-up");
   })
 
-  $("#btn-cancel").click(function() {
-    $("#log").css("display", "none");
-  })
+  $(".btn-cancel").click(function() {
+    $("#log").hide();
+    $("#sign").hide();
 
+  })
+  $("#submit").click(function(e) {
+    e.preventDefault();
+    let data = [$('#username-sign').val(), $('#pwd-sign').val(), 
+    $('#name').val(), $('#surname').val(), $('#birthdate').val(),
+    $('#interests option.selected').text()];
+    var email = $('#email').val();
+    console.log(email);
+    setCookie(email, data, 71);
+    var stored = getCookie(email);
+    if (data == stored) {
+      setCookie("logged", email, 1);
+    }
+    $("#sign").hide();
+    $("#show-username").html(username);
+    pfpHide();
+
+  })
+  /*
   $("#submit").click(function(e) {
     e.preventDefault();
     username = $('#username').val();
@@ -95,6 +116,7 @@ $(document).ready(function() {
     pfpHide();
 
   })
+  */
 
   $("#log-out").click(function(){
     setCookie("logged", "", 71);

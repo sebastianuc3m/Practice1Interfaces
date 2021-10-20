@@ -9,26 +9,81 @@
     <link rel="stylesheet" href="style/index.css">
     <title>Travel Experiences</title>
   </head>
-  <body><!-- Pop up login window. -->
+  <body>
+    <!-- Pop up log-in window. -->
     <div class="popup" id="log">
-      <div id="title-pop">
+      <div class="title-pop">
         <h2 id="title-log">Log-in</h2>
-        <button type="button" id="btn-cancel">x</button>
+        <button type="button" class="btn-cancel">x</button>
       </div>
       <form action="" class="form-container">
         <div class="form-fields">
           <article class="field">
             <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+            <input type="text" placeholder="Enter Username" name="username" id="username-log" required>
           </article>
           <article class="field">
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" id="pwd" required>
+            <input type="password" placeholder="Enter Password" name="psw" id="pwd-log" required>
           </article>
         </div>
-        <button type="submit" id="submit">Log-in</button>
+        <button type="submit" id="submit-log">Submit</button>
       </form>
     </div>
+    <!-- Pop up sign-up window. -->
+    <div class="popup" id="sign">
+      <div class="title-pop">
+        <h2 id="title-log">Sign-up</h2>
+        <button type="button" class="btn-cancel">x</button>
+      </div>
+      <form action="" class="form-container" enctype="multipart/form-data">
+        <div class="form-fields">
+          <article class="field">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter username" name="username" id="username-sign" required>
+          </article>
+          <article class="field">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter password" name="psw" id="pwd-sign" required>
+          </article>
+          <article class="field">
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter email" name="email" id="email" required>
+          </article>
+          <article class="field">
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter name" name="name" id="name" required>
+          </article>
+          <article class="field">
+            <label for="surname"><b>Surname</b></label>
+            <input type="text" placeholder="Enter surname" name="surname" id="surname" required>
+          </article>
+          <article class="field">
+            <label for="name"><b>Date of birth</b></label>
+            <input type="date" name="birthdate" id="birthdate" required>
+          </article>
+          <article class="field">
+            <label for="input-pfp"><b>Profile picture</b></label>
+            <input type="file" accept="image/png, image/gif, image/jpeg" name="input-pfp" id="input-pfp">
+          </article>
+          <article class="field">
+            <label for="interests"><b>Interests</b></label>
+            <select id="interests">
+             <option value="1">Cultural</option> 
+             <option value="2">Ecotourism</option> 
+             <option value="3">Beach tourism</option>
+             <option value="3">Rural tourism</option>
+            </select>
+          <article class="field">
+            <label for="terms-of-use"><b>I accept all the terms of use.</b></label>
+            <input type="checkbox" name="terms-of-use" id="terms-of-use" required>
+          </article>
+          </article>
+        </div>
+        <button type="submit" id="submit-sign">Submit</button>
+      </form>
+    </div>
+    <!-- header -->
     <header>
       <!--The header will contain a logo, a title, a menu element with 3 links
       and a nav element with 2 buttons. The home link, won't do anything, however

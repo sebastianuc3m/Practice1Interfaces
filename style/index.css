@@ -283,13 +283,13 @@ background*/
   padding: 5px;
 }
 
-#title-pop{
+.title-pop{
   display: flex;
   flex-direction: row;
   margin-bottom: 20px
 }
 
-#title-pop h2 {
+.title-pop h2 {
   margin: auto 150px auto auto
 }
 
