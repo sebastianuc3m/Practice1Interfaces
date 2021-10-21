@@ -54,7 +54,6 @@ $(document).ready(function() {
   function pfpHide(){
     var islogged = getCookie("logged");
     if (islogged === ""){
-      console.log(islogged === "");
       $("#pfp").hide();
       $("#button-div").show();
     } else {
@@ -93,22 +92,17 @@ $(document).ready(function() {
   })
   
   $("#sign-form").submit(function() {
-    //e.preventDefault();
-    var checked = $('#interests label input:checked').val();
-    var counter = 0;
-    var interests = [];
-    /*
-    for (var i = 0; i<checked.length; i++){
-      if (checked[i].value()) == true{
-        interests[i] = checked[i].text();
+    // e.preventDefault();
+    var interests = "";
+    $('.interests:checked').each(
+      function() {
+          interests += ($(this).val()+ "_");
       }
-    }
-  */
-
-    
+    )
+    console.log(interests);
     let data = [$('#username-sign').val(), $('#pwd-sign').val(), 
     $('#name').val(), $('#surname').val(), $('#birthdate').val(),
-    interests.toString(), $('#input-pfp').val()];
+    interests, $('#input-pfp').val()];
     var email = $('#email').val();
 
     
