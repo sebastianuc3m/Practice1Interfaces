@@ -36,7 +36,7 @@
         <h2 id="title-log">Sign-up</h2>
         <button type="button" class="btn-cancel">x</button>
       </div>
-      <form action="" class="form-container" enctype="multipart/form-data">
+      <form class="form-container" enctype="multipart/form-data" id="sign-form">
         <div class="form-fields">
           <article class="field">
             <label for="username"><b>Username</b></label>
@@ -68,12 +68,12 @@
           </article>
           <article class="field">
             <label for="interests"><b>Interests</b></label>
-            <select id="interests">
-             <option value="1">Cultural</option> 
-             <option value="2">Ecotourism</option> 
-             <option value="3">Beach tourism</option>
-             <option value="3">Rural tourism</option>
-            </select>
+            <div id="interests">
+              <label for="cultural"><input type="checkbox" name="cultural"></input>Cultural</label>
+              <label for="ecotourism"><input type="checkbox" name="ecotourism"></input>Ecotourism</label>
+              <label for="beach"><input type="checkbox" name="beach"></input>Beach</label>
+            <!-- <label for="rural"><input type="checkbox" name="rural"></input>Rural</label> -->
+            </div>
           <article class="field">
             <label for="terms-of-use"><b>I accept all the terms of use.</b></label>
             <input type="checkbox" name="terms-of-use" id="terms-of-use" required>
@@ -83,6 +83,14 @@
         <button type="submit" id="submit-sign">Submit</button>
       </form>
     </div>
+    <section>
+      <div id="my-profile">
+        <h2 id="prf-user"></h2>
+        <p id="prf-email"></p>
+        <p id=prf-></p>
+        <p></p>
+      </div>
+    </section>
     <!-- header -->
     <header>
       <!--The header will contain a logo, a title, a menu element with 3 links

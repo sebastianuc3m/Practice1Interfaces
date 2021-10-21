@@ -28,6 +28,19 @@ $(document).ready(function() {
   var pwd;
   var username;
 
+  var expanded = false;
+
+  function showCheckboxes() {
+    var checkboxes = $("#checkboxes");
+    if (!expanded) {
+      checkboxes.show();
+      expanded = true;
+    } else {
+      checkboxes.hide();
+      expanded = false;
+    }
+  }
+
 /*
   function getLog() {
     log = getCookie("logged");
@@ -78,24 +91,45 @@ $(document).ready(function() {
     $("#sign").hide();
 
   })
-  $("#submit").click(function(e) {
-    e.preventDefault();
+  
+  $("#sign-form").submit(function() {
+    //e.preventDefault();
+    var checked = $('#interests label input:checked').val();
+    var counter = 0;
+    var interests = [];
+    /*
+    for (var i = 0; i<checked.length; i++){
+      if (checked[i].value()) == true{
+        interests[i] = checked[i].text();
+      }
+    }
+  */
+
+    
     let data = [$('#username-sign').val(), $('#pwd-sign').val(), 
     $('#name').val(), $('#surname').val(), $('#birthdate').val(),
-    $('#interests option.selected').text()];
+    interests.toString(), $('#input-pfp').val()];
     var email = $('#email').val();
-    console.log(email);
+
+    
     setCookie(email, data, 71);
+    setCookie("logged", email, 1);
+    
     var stored = getCookie(email);
     if (data == stored) {
       setCookie("logged", email, 1);
     }
+    
+    
     $("#sign").hide();
     $("#show-username").html(username);
-    pfpHide();
+    pfpHide(); 
+    
+    
 
   })
   /*
+  
   $("#submit").click(function(e) {
     e.preventDefault();
     username = $('#username').val();
