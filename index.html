@@ -16,7 +16,7 @@
         <h2 id="title-log">Log-in</h2>
         <button type="button" class="btn-cancel">x</button>
       </div>
-      <form action="" class="form-container">
+      <form class="form-container" enctype="multipart/form-data" id="log-form">
         <div class="form-fields">
           <article class="field">
             <label for="username"><b>Username</b></label>
@@ -84,10 +84,14 @@
       </form>
     </div>
     <section>
-      <div id="my-profile">
+      <div id="my-profile-menu">
+        <img id=prf-img alt="profile picture">
         <h2 id="prf-user"></h2>
         <p id="prf-email"></p>
-        <p id=prf-></p>
+        <p id=prf-name></p>
+        <p id=prf-surname></p>
+        <p id=prf-birthdate></p>
+        <p id=prf-interests></p>
         <p></p>
       </div>
     </section>
@@ -115,8 +119,8 @@
           <h3 id="show-username"></h3>
         </div> 
         <nav id="pfp-menu">
-          <p>Mi profile</p>
-          <p>My experiences</p>
+          <p id="my-profile">Mi profile</p>
+          <p id="my-exp">My experiences</p>
           <p id="log-out">Log out</p>
         </nav> 
       </nav>

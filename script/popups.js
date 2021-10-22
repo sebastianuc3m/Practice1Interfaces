@@ -1,156 +1,187 @@
 // document.cookie = ["A=a"; "b=gasdf"; expires=hadsfa]
 $(document).ready(function() {
 
-  function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
+	function setCookie(cname, cvalue, exdays) {
+		const d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		let expires = "expires="+ d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
 
-  function getCookie(cname) {
-    let name = cname + "=";
-    let ca = document.cookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
+	function getCookie(cname) {
+		let name = cname + "=";
+		let ca = document.cookie.split(';');
+		for(let i = 0; i <ca.length; i++) {
+			let c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
 
-  var e = new Event("look", {"cancelable":true});
-  var log;
-  var pwd;
-  var username;
+	function getAllCookies(){
+		let word = "";
+		let clist = [];
+		let ca = document.cookie.split(';');
+		for (let i = 0; i<ca.length;i++){
+			for(let j = 0; j<ca[i].length;j++){
+				if (ca[i][j]==="="){
+					clist[i] = word;
+					word = "";
+					break;
+				} else if (ca[i][j]!==" "){
+					word+= ca[i][j];
+					
+				}
+			}
+		}
+		return clist;
+	}
 
-  var expanded = false;
+	function parseCookie(cname) {
+		let word = "";
+		let clist = [];
+		let wordcounter = 0;
+		cookie = getCookie(cname);
+		for (let i = 0; i<cookie.length;i++){
+			if (cookie[i]===","){
+				clist[wordcounter] = word;
+				wordcounter++;
+				word = "";
+			} else {
+				word+= cookie[i];
+			}
+		}
+		clist[wordcounter] = word;
+		return clist;
+	}
 
-  function showCheckboxes() {
-    var checkboxes = $("#checkboxes");
-    if (!expanded) {
-      checkboxes.show();
-      expanded = true;
-    } else {
-      checkboxes.hide();
-      expanded = false;
-    }
-  }
+	function logIn(username, password){
+		let cookies = getAllCookies();
+		let log = false;
+		for (let i = 0; i<cookies.length; i++){
+			values = parseCookie(cookies[i]);
+			if (values[0]===username && values[1]===password){
+				setCookie('logged', cookies[i], 1);
+				log = true;
+			}
+		}
+		console.log(log);
+		if (log){
+			$("#show-username").html(username);
+			return true;
+		} else{
+			return false;
+		}
 
-/*
-  function getLog() {
-    log = getCookie("logged");
-    console.log(log);
-    if (log === "") {
-      //console.log("hola");
-      $("#login-but").innerHTML = "Log-out";
-    }
-  }*/
+	}
 
-  function pfpHide(){
-    var islogged = getCookie("logged");
-    if (islogged === ""){
-      $("#pfp").hide();
-      $("#button-div").show();
-    } else {
-      $("#pfp").show();
-      $("#button-div").hide();
-    }
-    
-  }
 
-  //getLog();
-  pfpHide();
+	var e = new Event("look", {"cancelable":true});
+	var log;
+	var pwd;
+	var username;
 
-  $("#login-but").click(function() {
-    if ($(this).html() == "Log-in"){
-      $("#log").show();
-      $("#sign").hide();
-      $("#title-log").html("Log-in");
-      $("#submit").html("Log-in");
-    }
-    else {
-      setCookie("logged", "", 71);
-    }
-  })
+	var expanded = false;
+	/*
+	function showCheckboxes() {
+		var checkboxes = $("#checkboxes");
+		if (!expanded) {
+			checkboxes.show();
+			expanded = true;
+		} else {
+			checkboxes.hide();
+			expanded = false;
+		}
+	}*/
 
-  $("#signup-but").click(function() {
-    $("#log").hide();
-    $("#sign").show();
-    $("#title-log").html("Sign-up");
-    $("#submit").html("Sign-up");
-  })
+	function pfpHide(){
+		var islogged = getCookie("logged");
+		if (islogged === ""){
+			$("#pfp").hide();
+			$("#button-div").show();
+		} else {
+			$("#pfp").show();
+			$("#button-div").hide();
+		}
+		
+	}
 
-  $(".btn-cancel").click(function() {
-    $("#log").hide();
-    $("#sign").hide();
+	//getLog();
+	pfpHide();
 
-  })
-  
-  $("#sign-form").submit(function() {
-    // e.preventDefault();
-    var interests = "";
-    $('.interests:checked').each(
-      function() {
-          interests += ($(this).val()+ "_");
-      }
-    )
-    console.log(interests);
-    let data = [$('#username-sign').val(), $('#pwd-sign').val(), 
-    $('#name').val(), $('#surname').val(), $('#birthdate').val(),
-    interests, $('#input-pfp').val()];
-    var email = $('#email').val();
+	$("#login-but").click(function() {
+		if ($(this).html() == "Log-in"){
+			$("#log").show();
+			$("#sign").hide();
+		}
+	})
 
-    
-    setCookie(email, data, 71);
-    setCookie("logged", email, 1);
-    
-    var stored = getCookie(email);
-    if (data == stored) {
-      setCookie("logged", email, 1);
-    }
-    
-    
-    $("#sign").hide();
-    $("#show-username").html(username);
-    pfpHide(); 
-    
-    
+	$("#signup-but").click(function() {
+		$("#log").hide();
+		$("#sign").show();
+	})
 
-  })
-  /*
-  
-  $("#submit").click(function(e) {
-    e.preventDefault();
-    username = $('#username').val();
-    pwd = $('#pwd').val();
-    console.log(username);
+	$(".btn-cancel").click(function() {
+		$("#log").hide();
+		$("#sign").hide();
 
-    if ($(this).html() == "Sign-up") {
-      setCookie(username, pwd, 71);
-    }
-    var stored = getCookie(username);
-    if (pwd == stored) {
-      setCookie("logged", username, 1);
-    }
-    //getLog();
-    console.log(log);
-    $("#log").css("display", "none");
-    $("#show-username").html(username);
-    pfpHide();
+	})
+	$("#log-form").submit(function(e){
+		e.preventDefault();
+		let username = $("#username-log").val();
+		let password = $("#pwd-log").val();
+		console.log('oaoaoa');
+		if (logIn(username, password)){
+			console.log('aaa');
+			$("#log").hide();
+			$("#show-username").html(username);
+			pfpHide();
 
-  })
-  */
+		}
+	})
+	
+	$("#sign-form").submit(function(e) {
+		e.preventDefault();
+		var interests = "";
+		$('.interests:checked').each(
+			function() {
+					interests += ($(this).val()+ "_");
+			}
+		)
+		let data = [$('#username-sign').val(), $('#pwd-sign').val(), 
+		$('#name').val(), $('#surname').val(), $('#birthdate').val(),
+		interests, $('#input-pfp').val()];
+		var email = $('#email').val();    
+		setCookie(email, data, 71);   		
+		$("#sign").hide();
+		logIn($('#username-sign').val(), $('#pwd-sign').val());
+		pfpHide();
+	})
 
-  $("#log-out").click(function(){
-    setCookie("logged", "", 71);
-    pfpHide();
+	$("#my-profile").click(function(){
+		console.log('aaa')
+		let logmail = getCookie('logged');
+		let loginfo = parseCookie(logmail);
+		$("#prf-email").html() = logmail;
+		$("#prf-user").html() = loginfo[0];
+		$("#prf-name").html() = loginfo[2];
+		$("#prf-surname").html() = loginfo[3];
+		$("#prf-birthdate").html() = loginfo[4];
+		$("#prf-interests").html() = loginfo[5];
+		$("#prf-img").html() = loginfo[6];
+		$("#my-profile-menu").show();
+	})
 
-  })
+	$("#log-out").click(function(){
+		setCookie("logged", "", 71);
+		pfpHide();
+
+	})
 
 
 })

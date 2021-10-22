@@ -336,6 +336,11 @@ background*/
   
 }
 
+/*my profile*/
+#my-profile-menu{
+  display: none;
+}
+
 /*For even smaller devices, we needed more changes*/
 @media only screen and (min-device-width: 601px) {
   header {
