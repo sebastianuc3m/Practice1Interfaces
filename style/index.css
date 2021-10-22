@@ -310,6 +310,12 @@ background*/
   margin-right: 5px;
 }
 
+#sign-btns {
+  display:flex;
+  flex-direction: column;
+  margin: auto;
+}
+
 /*pfp menu*/
 #pfp {
   width: 30vh;
@@ -337,7 +343,7 @@ background*/
 }
 
 /*my profile*/
-#my-profile-menu{
+#my-profile-menu, #my-experiences-menu {
   display: none;
 }
 

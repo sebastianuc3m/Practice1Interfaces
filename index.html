@@ -80,19 +80,29 @@
           </article>
           </article>
         </div>
-        <button type="submit" id="submit-sign">Submit</button>
+        <div id="sign-btns">
+          <button type="submit" id="submit-sign">Submit</button>
+          <button type="reset">Reset</button>          
+        </div>
       </form>
     </div>
+    <!-- Menus when logged in -->
     <section>
       <div id="my-profile-menu">
         <img id=prf-img alt="profile picture">
+        <button type="button" id="change-pfp">Change profile picture</button>
         <h2 id="prf-user"></h2>
+        <button type="button" id="change-user">Change user</button>
         <p id="prf-email"></p>
         <p id=prf-name></p>
         <p id=prf-surname></p>
         <p id=prf-birthdate></p>
         <p id=prf-interests></p>
+        <button type="button" id="change-user">Change interests</button>
         <p></p>
+      </div>
+      <div id="my-experiences-menu">
+        
       </div>
     </section>
     <!-- header -->
@@ -119,7 +129,7 @@
           <h3 id="show-username"></h3>
         </div> 
         <nav id="pfp-menu">
-          <p id="my-profile">Mi profile</p>
+          <p id="my-profile">My profile</p>
           <p id="my-exp">My experiences</p>
           <p id="log-out">Log out</p>
         </nav> 

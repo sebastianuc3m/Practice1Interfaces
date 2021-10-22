@@ -108,6 +108,7 @@ $(document).ready(function() {
 			$("#pfp").show();
 			$("#button-div").hide();
 		}
+		$("#my-profile-menu").hide();
 		
 	}
 
@@ -164,23 +165,43 @@ $(document).ready(function() {
 	})
 
 	$("#my-profile").click(function(){
-		console.log('aaa')
-		let logmail = getCookie('logged');
-		let loginfo = parseCookie(logmail);
-		$("#prf-email").html() = logmail;
-		$("#prf-user").html() = loginfo[0];
-		$("#prf-name").html() = loginfo[2];
-		$("#prf-surname").html() = loginfo[3];
-		$("#prf-birthdate").html() = loginfo[4];
-		$("#prf-interests").html() = loginfo[5];
-		$("#prf-img").html() = loginfo[6];
-		$("#my-profile-menu").show();
+		if ($("#my-profile-menu").is(':hidden')){
+			let logmail = getCookie('logged');
+			let loginfo = parseCookie(logmail);
+			$("#prf-email").html(logmail);
+			console.log('aaaa');
+			$("#prf-user").html(loginfo[0]); 
+			$("#prf-name").html(loginfo[2]);
+			$("#prf-surname").html(loginfo[3]);
+			$("#prf-birthdate").html(loginfo[4]);
+			$("#prf-interests").html(loginfo[5]);
+			$("#prf-img").attr('src',loginfo[6]);
+			$("#my-experiences-menu").hide();
+			$("#my-profile-menu").show();
+		} else {
+			$("#my-profile-menu").hide();
+		}
+		
 	})
 
 	$("#log-out").click(function(){
 		setCookie("logged", "", 71);
 		pfpHide();
 
+	})
+
+	$("#change-user").click(function(){
+		let cookie = getCookie('logged');
+		data = parseCookie(cookie);
+		console.log(data);
+		let newuser = prompt("Type the new user:", data[0]);
+		if (newuser != null){
+			data[0] = newuser;
+			setCookie(cookie, data, 71);
+			$("#show-username").html(newuser);
+			$("#prf-user").html(newuser);
+		}
+		
 	})
 
 
