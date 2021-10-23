@@ -185,9 +185,11 @@ $(document).ready(function() {
 	})
 
 	$("#log-out").click(function(){
-		setCookie("logged", "", 71);
-		pfpHide();
-
+		let confirmation = confirm("Are you sure you want to log out?");
+		if (confirmation){
+			setCookie("logged", "", 71);
+			pfpHide();
+		}
 	})
 
 	$("#change-user").click(function(){
@@ -203,6 +205,5 @@ $(document).ready(function() {
 		}
 		
 	})
-
 
 })

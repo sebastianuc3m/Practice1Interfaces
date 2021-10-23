@@ -1,0 +1,507 @@
+/*This CSS file contains the styling for the "HOME" website.*/
+
+@font-face {
+  /*We have imported this custom font, as it makes it more homey*/
+  font-family: Custom;
+  src: url(InterconnectedDemo-Regular.ttf);
+}
+
+html {
+  height: 100%
+}
+
+* {
+  /*We need to remove the margins and change the font for the whole website*/
+  margin: 0;
+  font-family: Custom;
+  box-sizing: border-box;
+}
+  /* For smartphones: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+h1, h2 {
+  /*Header title and section headlines need to be centered, we also changed their colour*/
+  margin: auto;
+  text-align: center;
+  color: rgb(96,20,4);
+  display: block;
+}
+
+p {
+  /*We chose Courier New for plain text as it is more readable*/
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+h3 {
+  /*These are usedd as titles for experiences, we need them to be a bit bigger
+  than the rest of the text*/
+  font-size: 16px;
+  line-height: 22px;
+  color: rgb(96,20,40)
+}
+
+/*We dont want links to be blue nor underlined*/
+a {
+  text-decoration: none;
+  color: black
+}
+
+header {
+  /*Header will have a display flex and a background colour*/
+  display: flex;
+  background-color: beige;
+  height: 85px;
+  padding: 0px;
+}
+
+/*The logo, menu and button-div will all have margin: auto as styling, the logo
+will have a bigger left margin and the menu will have a fixed width*/
+#logo {
+  width: 40px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#logo img {
+  width: 40px;
+}
+
+#title {
+  font-size: 15px;
+  margin: auto;
+  text-align: center;
+  }
+
+
+/*We want the links (a alements) and the buttons to be stacked vertically
+#menu, #button-div {
+  margin: auto;
+  display: grid;
+  grid-template:
+  'top'
+  'mid'
+  'bottom';
+}*/
+
+#menu {
+  font-size: 14px;
+}
+
+#menu a {
+  margin: auto;
+}
+
+/*When hovering over the menu options, we want them to change color*/
+#menu a:hover {
+  color: #ee7f44;
+  transition-duration: 500ms;
+}
+
+/*We will style the buttons, as well as make them changed when clicked*/
+.buttons {
+  background-color: rgba(245,245,245,0.9);
+  border-radius: 3px;
+  width: 90px;
+  height: 30px;
+  margin: 5px auto 0px
+}
+
+/*Hovering and clicking over buttons will change colors*/
+.buttons:hover {
+  cursor: pointer;
+  background-color: #ee7f44;
+  transition-duration: 750ms;
+  color: white;
+}
+
+.buttons:active {
+  background-color: rgba(0,0,0,0.125);
+  box-shadow: 0 12px 16px 0 rgba(255,255,255,0.9), 0 17px 50px 0 rgba(255,255,255,0.81);
+  border: none;
+  width: 90px;
+  height: 30px;
+  transition-duration: 0ms;
+  color: black
+}
+
+#header-elem{
+  display: flex;
+  flex-direction: column;
+}
+
+#header-elem article {
+  display: flex;
+}
+
+
+/*Sections need to have full height and width*/
+section {
+  width: 100%;
+  height: 100%;
+}
+
+/*The map needs to be centered and have the section needs a background.
+Furthermore, we will give the image a fixed size*/
+#section-map {
+  display: flex;
+  background-color: rgba(255,0,0,0.03);
+}
+
+#section-map svg {
+  width: 120vw;
+  margin: auto
+}
+
+#ES, #AT, #IT {
+  fill: rgba(238, 127, 68, 0.75);
+  stroke: black;
+}
+
+#ES:hover, #AT:hover, #IT:hover {
+  fill: #ee7f44;
+  cursor: pointer;
+}
+
+/*The search section will have a grid-template, the title will be on the top
+area, the input on the bottom-left and the button on the bottom-right*/
+#section-search {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+  'top top'
+  'left right';
+  grid-column-gap: 5px;
+  background-color: beige;
+  padding: 30px 0px 50px;
+}
+
+#title-search {grid-area: top; margin: auto}
+#in-search {grid-area: left; margin: auto 0px auto auto; height: 28px; width: 200px}
+#button-search {grid-area: right; margin: auto auto auto 0px; margin-top: 0px}
+
+/*The last section needs to be centered, have a background and a small padding
+on the bottom side*/
+#section-exp {
+  width: 80%;
+  margin: auto;
+  background-color: beige;
+  padding-bottom: 1%
+}
+
+/*Columns will be aligned using display:flex and float:left, we also center
+them using margins*/
+.block {
+  display: grid;
+  grid-template-areas:
+  'left right'
+  'bottom bottom';
+  margin: auto;
+}
+
+#col1 {grid-area: left}
+#col2 {grid-area: bottom}
+#col3 {grid-area: right}
+
+.column {
+  display: block;
+  float: left;
+  margin: auto;
+}
+
+/*As the columns have display:block, the experiences will align vertically*/
+.experience {
+  margin-top: 10px;
+  width: 30vw;
+}
+
+#section-exp img {
+  width: 30vw;
+  border-radius: 5%
+}
+
+/*The footer needs a display flex in order to split the contents*/
+footer {
+  width: 100%;
+  height: 75px;
+  background-color: rgba(0,0,0,0.1);
+  display: flex;
+}
+
+#logo-footer {
+  width: 50px;
+  margin: auto
+}
+
+#logo-footer img {
+  width: 50px
+}
+
+/*The social and link divs use a grid-template in order to make the contents
+align vertically, display:block was not achieving it*/
+.footer-item {
+  display: grid;
+  grid-template-areas:
+  'top'
+  'bottom';
+  grid-row-gap: 6px;
+  margin: auto;
+}
+
+.footer-img, .footer-img img {
+  width: 23px
+}
+
+#social img {
+  cursor: pointer;
+}
+
+/*In this css file we will also style the "comming soon" webpages*/
+/*In these pages, the h2 has to be bigger*/
+#soon h2 {
+  margin-top: 40px;
+  font-size: 50px;
+}
+
+/*The return link is separated from the "comming soon" title and will have a
+background*/
+#return {
+  margin: 50px auto 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  background-color: rgba(255,122,0,0.15);
+  height: 40vh;
+  display: flex
+}
+
+/*The return text has to be bigger as well*/
+#return a {
+  font-size: 30px;
+  margin: auto auto 25vh;
+}
+/* popup code */
+.popup {
+  position: absolute;
+  display: none;
+  top: 35vh;
+  left: 35vw;
+  flex-direction: column;
+  text-align: right;
+  width: 400px;
+  margin: auto;
+  background-color: beige;
+  padding: 5px;
+}
+
+.title-pop{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px
+}
+
+.title-pop h2 {
+  margin: auto 150px auto auto
+}
+
+.form-container {
+  text-align: center;
+  display:flex;
+  flex-direction: row;
+  margin-left: 10%;
+}
+
+#btn-login {
+  height: 45px;
+  margin-left: 10px;
+}
+
+.form-fields {
+  text-align: right;
+  margin-right: 5px;
+}
+
+#sign-btns {
+  display:flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+/*pfp menu*/
+#pfp {
+  width: 30vh;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+#pfp div {
+  margin-right: 15px;
+}
+
+#pfp-menu{
+  width: 80%;
+  margin: auto 0px;
+  padding: 5px;
+  background-color: white;
+}
+
+#pfp-img {
+  width: 70px;
+  border-radius: 50%;
+  margin: 5px 10px auto auto;
+  
+}
+
+/*my profile*/
+#my-profile-menu, #my-experiences-menu {
+  display: none;
+}
+
+/*For even smaller devices, we needed more changes*/
+@media only screen and (min-device-width: 601px) {
+    /* For tablets: */
+  .col-t-1 {width: 8.33%;}
+  .col-t-2 {width: 16.66%;}
+  .col-t-3 {width: 25%;}
+  .col-t-4 {width: 33.33%;}
+  .col-t-5 {width: 41.66%;}
+  .col-t-6 {width: 50%;}
+  .col-t-7 {width: 58.33%;}
+  .col-t-8 {width: 66.66%;}
+  .col-t-9 {width: 75%;}
+  .col-t-10 {width: 83.33%;}
+  .col-t-11 {width: 91.66%;}
+  .col-t-12 {width: 100%;}
+
+  header {
+    height: 85px;
+    padding: 0px
+  }
+
+  #logo {
+    margin-left: auto;
+  }
+
+  #title {
+    font-size: 20px;
+    }
+
+  #button-div {
+    display: flex;
+  }
+
+  #header-elem{
+
+  }
+
+  #menu {
+    margin-left: 12vw;
+
+  }
+
+  #button-div button {
+    margin-right: 10px
+  }
+
+  #section-map svg {
+    width: 90vw;
+    margin: auto
+  }
+
+  .block {
+    display: flex;
+  }
+
+  .experience {
+    width: 22vw;
+  }
+
+  #section-exp img {
+    width: 22vw;
+  }
+  #pfp {
+    flex-direction: row;
+  }
+  #pfp-img{
+    width: 70px;
+  }
+
+  #pfp div {
+
+  }
+
+  #pfp-menu{
+    
+    background-color: transparent;
+    margin: auto
+  }
+}
+
+/*For devices with screens thiker than 768px, we only to change the header and
+the map sizes*/
+@media only screen and (min-device-width: 769px) {
+    /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  header {
+    height: 100px;
+  }
+
+  #logo {
+    /*margin-left: 30px*/
+  }
+
+  #title {
+    font-size: 24px;
+  }
+
+  #header-elem {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #section-map svg {
+    width: 65vw;
+    margin: auto
+  }
+
+  #menu {
+    display: flex;
+    font-size: 18px
+  }
+  #pfp {
+    flex-direction: row;
+  }
+
+  #pfp-img{
+    width: 90px;
+  }
+  #pfp-menu{
+    background-color: transparent;
+    margin: auto
+  }
+}
