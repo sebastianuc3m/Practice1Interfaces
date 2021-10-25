@@ -165,6 +165,55 @@ Furthermore, we will give the image a fixed size*/
   margin: auto
 }
 
+/*Now we will style the different sections of the website*/
+#summary {
+  background-color: rgba(255,0,0,0.1);
+  padding-bottom: 20px;
+}
+
+#summary p {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+br {
+  margin-bottom: 20px
+}
+
+.map-headings {
+  width: 80%;
+  text-align: center;
+  margin: auto
+}
+
+/*In the mobile version, the iamges and videos will be stacked vertically*/
+#experiences {
+  display: block;
+  background-color: rgba(255,0,255,0.075);
+  padding-bottom: 20px
+}
+
+#images, #videos {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+/*Each video and image will occupy 75% of the whole screen. For this we use vw*/
+[id^="img"], [id^="vid"] {
+  width: 75vw;
+  margin: 0px auto 20px;
+  object-fit: cover;
+}
+
+/*As we said in the html file, the buttons for this section will not be shown in
+the mobile vesion*/
+#experiences button {
+  display: none
+}
+
 #ES, #AT, #IT {
   fill: rgba(238, 127, 68, 0.75);
   stroke: black;
@@ -200,6 +249,10 @@ on the bottom side*/
   margin: auto;
   background-color: beige;
   padding-bottom: 1%
+}
+
+#title-exp {
+  text-align: center;
 }
 
 /*Columns will be aligned using display:flex and float:left, we also center
@@ -363,7 +416,7 @@ background*/
   width: 70px;
   border-radius: 50%;
   margin: 5px 10px auto auto;
-  
+
 }
 
 /*my profile*/
@@ -410,7 +463,6 @@ background*/
 
   #menu {
     margin-left: 12vw;
-
   }
 
   #button-div button {
@@ -445,9 +497,65 @@ background*/
   }
 
   #pfp-menu{
-    
+
     background-color: transparent;
     margin: auto
+  }
+
+  /*In this version, the experiences will be divided into 5 columns an the
+  buttons will be shown.*/
+  #experiences {
+    padding-bottom: 0px
+  }
+
+  #experiences h2 {
+    margin-bottom: 5px
+  }
+
+  #images, #videos {
+    flex-direction: row;
+    padding-bottom: 20px;
+  }
+
+  [id^="img"], [id^="vid"] {
+    margin: auto;
+  }
+
+  /*Depending on which column the image/video is located, it will have a
+  different width*/
+  #img1, #img5, #vid1, #vid5 {
+    width: 11vw;
+    height: 8vw;
+  }
+
+  #img2, #img4, #vid2, #vid4 {
+    width: 18vw;
+    height: 12vw;
+  }
+
+  #img3, #vid3 {
+    width: 28vw;
+    height: 20vw;
+  }
+
+  /*Styling for the buttons. They will not have border not background and will
+  only display the image they have inside*/
+  #experiences button {
+    display: block;
+    height: 20px;
+    margin: auto;
+    border: none;
+    background: none
+  }
+
+  #experiences button:hover {
+    cursor: pointer;
+  }
+
+  #experiences button img {
+    width: 20px;
+    height: 20px;
+    margin: auto;
   }
 }
 
@@ -503,5 +611,9 @@ the map sizes*/
   #pfp-menu{
     background-color: transparent;
     margin: auto
+  }
+
+  #menu a {
+    font-size: 18px;
   }
 }
