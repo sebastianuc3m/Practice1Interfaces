@@ -335,6 +335,10 @@ background*/
   background-color: white;
 }
 
+#pfp-menu p{
+  cursor: pointer;
+}
+
 #pfp-img {
   width: 70px;
   border-radius: 50%;
