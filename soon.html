@@ -3,25 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/index2.css">
     <title>Comming Soon</title>
   </head>
   <body>
     <header>
       <!--The header will contain a logo, a title, a menu element with 3 links
-      and a nav element with 2 buttons-->
-      <a id="logo" href="index.html"><img src="images/logo.png" alt="earth from space logo"></a>
-      <h1 id="title">Travel Experiences 2021 (covid friendly)</h1>
-      <div id="menu">
-        <!--We will use the Home link to go to the index, the rest of them won't do anything.-->
-        <a href="index.html">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
+      and a nav element with 2 buttons. The home link, won't do anything, however
+      the other two will lead the user to the soon.html page.-->
+      <div id="header-elem" class="col-s-10 col-t-10 col-10">
+        <article class="col-s-12 col-t-12 col-7">
+          <a id="logo" href="#"><img src="images/logo.png" alt="earth from space logo"></a>
+          <h1 id="title" class="col-s-12 col-t-10 col-12">Travel Experiences 2021 (covid friendly)</h1>
+        </article>
+        <article id="menu" class="col-s-12 col-t-8 col-5">
+          <!--As written in the statement, these link won't do anything-->
+          <a class="col-12" href="index.html">Home</a>
+          <a class="col-12" href="#">About Us</a>
+          <a class="col-12" href="#">Contact Us</a>
+        </article>
       </div>
-      <nav id="button-div">
-        <!--This nav element will contain two useless buttons-->
-        <button type="button" name="login" class="buttons">Log-in</button>
-        <button type="button" name="signup" class="buttons">Sign-up</button>
+      <nav id="button-div" class="col-s-4 col-t-5 col-2">
+        <button type="button" id="login-but" class="buttons">Log-in</button>
+        <button type="button" id="signup-but" class="buttons">Sign-up</button>
+      </nav>
+      <!-- pfp menu html -->
+      <nav id="pfp" class="col-s-4 col-t-4 col-4">
+        <div class="col-s-12 col-t-4 col-4">
+          <img id="pfp-img" src="images/pfp.png">
+          <h3 id="show-username"></h3>
+        </div>
+        <nav id="pfp-menu" class="col-s-12 col-t-8 col-8">
+          <p id="my-profile">My profile</p>
+          <p id="my-exp">My experiences</p>
+          <p id="log-out">Log out</p>
+        </nav>
       </nav>
     </header>
     <section id="soon">
@@ -46,5 +63,6 @@
         <a href="https://www.uc3m.es/inicio/informacion-legal/politica-privacidad">Policy</a>
       </div>
     </footer>
+    <script src="script/popups.js"></script>
   </body>
 </html>

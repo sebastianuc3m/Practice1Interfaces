@@ -66,38 +66,28 @@ $(document).ready(function() {
 		for (let i = 0; i<cookies.length; i++){
 			values = parseCookie(cookies[i]);
 			if (values[0]===username && values[1]===password){
-				setCookie('logged', cookies[i], 1);
+				setCookie('logged', cookies[i], 71);
+				var email = cookies[i];
 				log = true;
 			}
 		}
-		console.log(log);
 		if (log){
 			$("#show-username").html(username);
+			let user_exps = email+'_exp';
+			console.log(user_exps);
+			all_exps = parseCookie(user_exps);
+			if (all_exps[0]!==""){
+				for (let i=0; i<all_exps.length; i++){
+					addExperience(all_exps[i]);
+				}
+			} else {
+				$("#no-exp").show()
+			}
 			return true;
 		} else{
 			return false;
 		}
-
 	}
-
-
-	var e = new Event("look", {"cancelable":true});
-	var log;
-	var pwd;
-	var username;
-
-	var expanded = false;
-	/*
-	function showCheckboxes() {
-		var checkboxes = $("#checkboxes");
-		if (!expanded) {
-			checkboxes.show();
-			expanded = true;
-		} else {
-			checkboxes.hide();
-			expanded = false;
-		}
-	}*/
 
 	function pfpHide(){
 		var islogged = getCookie("logged");
@@ -108,11 +98,51 @@ $(document).ready(function() {
 			$("#pfp").show();
 			$("#button-div").hide();
 		}
-		$("#my-profile-menu").hide();
-		
+		$("#my-profile-menu").hide();		
 	}
 
-	//getLog();
+	function addExperience(title){
+		$("#no-exp").hide()
+		experience = parseCookie(title);
+		console.log(experience);
+		var idexp = 'exp-'+title;
+		var newexp = $("<article></article>").attr('id', idexp);
+		$('#added-exp').append(newexp);
+		var close_btn = $("<button></button>");
+		close_btn.onclick = "deleteExperience()";
+		close_btn.html('delete experience');
+		close_btn.addClass('delete-exp');
+		close_btn.attr('type', 'button');
+		var title_a = $("<h4></h4>").html(title);
+		var location = $("<h3></h3>").html(experience[1]);
+		var desc = $("<p></p>").html(experience[0]);
+		$('#'+idexp).append(title_a, location, desc, close_btn);
+	}
+
+	function deleteExperience(){
+		var title = $(this).closest('h4').html();
+		deletecookie = getCookie(title);
+		setCookie(title,null,-1);
+		var user = getCookie('logged');
+		user = user + '-exp';
+		let cookie = parseCookie(user);
+		cookie = cookie.filter(function(item) {
+    		return item !== title})
+		console.log('mismuertos');
+		$(this).closest('article').remove();
+	}
+
+	var e = new Event("look", {"cancelable":true});
+	var log;
+	var pwd;
+	var username;
+
+	var expanded = false;
+	$("#my-profile-menu").hide();
+	$("#my-experiences-menu").hide();
+	$("#add-exp").hide();
+	$("#log").hide();
+	$("#sign").hide();
 	pfpHide();
 
 	$("#login-but").click(function() {
@@ -132,11 +162,24 @@ $(document).ready(function() {
 		$("#sign").hide();
 
 	})
+	/*
+	$(".delete-exp").click(function(){
+			console.log('hola');
+			var title = $(this).closest('h4').html();
+			console.log(title);
+			$.cookie(title, null, { path: '/' });
+			var user = getCookie('logged');
+			user = user + '-exp';
+			var cookie = parseCookie(user);
+			cookie.remove(title);
+			$(this).closest('article').remove();
+		})*/
+	
+
 	$("#log-form").submit(function(e){
 		e.preventDefault();
 		let username = $("#username-log").val();
 		let password = $("#pwd-log").val();
-		console.log('oaoaoa');
 		if (logIn(username, password)){
 			console.log('aaa');
 			$("#log").hide();
@@ -169,7 +212,6 @@ $(document).ready(function() {
 			let logmail = getCookie('logged');
 			let loginfo = parseCookie(logmail);
 			$("#prf-email").html(logmail);
-			console.log('aaaa');
 			$("#prf-user").html(loginfo[0]); 
 			$("#prf-name").html(loginfo[2]);
 			$("#prf-surname").html(loginfo[3]);
@@ -180,8 +222,7 @@ $(document).ready(function() {
 			$("#my-profile-menu").show();
 		} else {
 			$("#my-profile-menu").hide();
-		}
-		
+		}		
 	})
 
 	$("#log-out").click(function(){
@@ -205,5 +246,47 @@ $(document).ready(function() {
 		}
 		
 	})
+	$("#my-exp").click(function(e){
+		e.preventDefault();
+		if ($("#my-experiences-menu").is(':hidden')){
+			$("#my-profile-menu").hide();
+			$("#my-experiences-menu").show();
+		} else {
+			$("#my-experiences-menu").hide();
+		}
+	})
+
+	$("#create-exp").click(function(e){
+		e.preventDefault();
+		if ($("#add-exp").is(':hidden')){
+			$("#add-exp").show();
+		} else {
+			$("#add-exp").hide();
+		}
+	})
+
+	$("#add-exp-form").submit(function(e) {
+		e.preventDefault();
+		let title = $('#add-title-exp').val();
+		console.log(title);
+		let data = [$('#add-desc-exp').val(),
+		$('#add-location-exp').val(), $('#add-img-exp').val()];
+		var expcookie = getCookie('logged') + "_exp";
+		var experiences = parseCookie(expcookie);
+		if (experiences.includes(title)==false){
+			if (experiences[0] === ""){
+				experiences = [title];				
+			} else {
+				experiences.push(title);
+			}
+			setCookie(expcookie, experiences, 71);
+			setCookie(title, data, 71);
+			addExperience(title);
+		} else {
+			window.alert("You can't create an experience with a title previously used.");
+		}
+		
+	})
+
 
 })

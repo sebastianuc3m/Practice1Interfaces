@@ -6,12 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/index2.css">
     <title>Travel Experiences</title>
   </head>
   <body>
     <!-- Pop up log-in window. -->
-    <div class="popup" id="log">
+    <div class="floating-screen" id="log">
       <div class="title-pop">
         <h2 id="title-log">Log-in</h2>
         <button type="button" class="btn-cancel">x</button>
@@ -31,7 +31,7 @@
       </form>
     </div>
     <!-- Pop up sign-up window. -->
-    <div class="popup" id="sign">
+    <div class="floating-screen" id="sign">
       <div class="title-pop">
         <h2 id="title-log">Sign-up</h2>
         <button type="button" class="btn-cancel">x</button>
@@ -88,10 +88,10 @@
     </div>
     <!-- Menus when logged in -->
     <section>
-      <div id="my-profile-menu">
+      <div id="my-profile-menu" class="floating-screen">
         <img id=prf-img alt="profile picture">
         <button type="button" id="change-pfp">Change profile picture</button>
-        <h2 id="prf-user"></h2>
+        <h3 id="prf-user"></h3>
         <button type="button" id="change-user">Change user</button>
         <p id="prf-email"></p>
         <p id=prf-name></p>
@@ -101,28 +101,36 @@
         <button type="button" id="change-user">Change interests</button>
         <p></p>
       </div>
-      <div id="my-experiences-menu">
-        <article id="added-exp">
-          <p>No experiences added yet.</p>
+      <div id="my-experiences-menu" class="floating-screen">
+        <article>
+          <h2>My experiences</h2>
+          <p id="no-exp">No experiences added yet.</p>
+          <div id="added-exp">
+            
+          </div>
+          <img src="images/separator.png" alt="separator">
         </article>
+        <button type="button" id="create-exp">Create experience</button>
         <article id="add-exp">
           <h3>New experience</h3>
-          <form>
-            <div class="field">
-              <label for="add-title-exp"><b>Title</b></label>
-              <input type="text" placeholder="Enter a title" name="add-title-exp" id="add-title-exp" required>
-            </div>
-            <div class="field">
-              <label for="add-desc-exp"><b>Desciption</b></label>
-              <input type="text" placeholder="Enter a description" name="add-desc-exp" id="add-desc-exp" required>
-            </div>
-            <div class="field">
-              <label for="add-location-exp"><b>Location</b></label>
-              <input type="text" placeholder="Enter a location" name="add-location-exp" id="add-location-exp" required>
-            </div>
-            <div class="field">
-              <label for="add-img-exp"><b>Image</b></label>
-              <input type="file" accept="image/png, image/gif, image/jpeg" name="add-img-exp" id="add-img-exp">
+          <form class="form-container" enctype="multipart/form-data" id="add-exp-form">
+            <div class="form-fields">
+              <div class="field">
+                <label for="add-title-exp"><b>Title</b></label>
+                <input type="text" placeholder="Enter a title" name="add-title-exp" id="add-title-exp" required>
+              </div>
+              <div class="field">
+                <label for="add-desc-exp"><b>Desciption</b></label>
+                <input type="text" placeholder="Enter a description" name="add-desc-exp" id="add-desc-exp" required>
+              </div>
+              <div class="field">
+                <label for="add-location-exp"><b>Location</b></label>
+                <input type="text" placeholder="Enter a location" name="add-location-exp" id="add-location-exp" required>
+              </div>
+              <div class="field">
+                <label for="add-img-exp"><b>Image</b></label>
+                <input type="file" accept="image/png, image/gif, image/jpeg" name="add-img-exp" id="add-img-exp">
+              </div>
             </div>
             <button type="submit" id="add-exp-submit">Add experience</button>
           </form>
@@ -139,14 +147,14 @@
           <a id="logo" href="#"><img src="images/logo.png" alt="earth from space logo"></a>
           <h1 id="title" class="col-s-12 col-t-10 col-12">Travel Experiences 2021 (covid friendly)</h1>
         </article>
-        <article id="menu" class="col-s-12 col-t-8 col-6">
+        <article id="menu" class="col-s-12 col-t-8 col-5">
           <!--As written in the statement, these link won't do anything-->
           <a class="col-12" href="#">Home</a>
           <a class="col-12" href="soon.html">About Us</a>
           <a class="col-12" href="soon.html">Contact Us</a>
         </article>
       </div>
-      <nav id="button-div" class="col-s-4 col-t-5 col-3">
+      <nav id="button-div" class="col-s-4 col-t-5 col-2">
         <button type="button" id="login-but" class="buttons">Log-in</button>
         <button type="button" id="signup-but" class="buttons">Sign-up</button>
       </nav>

@@ -106,7 +106,7 @@ will have a bigger left margin and the menu will have a fixed width*/
   border-radius: 3px;
   width: 70px;
   height: 30px;
-  margin: 5px auto 0px
+  margin: 5px auto 0px;
 }
 
 /*Hovering and clicking over buttons will change colors*/
@@ -141,7 +141,6 @@ will have a bigger left margin and the menu will have a fixed width*/
 #header-elem article {
   display: flex;
 }
-
 
 /*Sections need to have full height and width*/
 section {
@@ -363,12 +362,19 @@ background*/
   width: 70px;
   border-radius: 50%;
   margin: 5px 10px auto auto;
-  
 }
 
 /*my profile*/
 #my-profile-menu, #my-experiences-menu {
   display: none;
+  background-color: floralwhite;
+  padding: 5px;
+  position: absolute;
+}
+
+.field label{
+
+
 }
 
 /*For even smaller devices, we needed more changes*/
@@ -398,13 +404,6 @@ background*/
 
   #title {
     font-size: 20px;
-    }
-
-  #button-div {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    text-align: center;
   }
 
   #menu {
@@ -414,12 +413,13 @@ background*/
   #button-div button {
     display: flex;
     flex-direction: column;
-    margin: auto;
     text-align: center;
   }
 
   .buttons{
     width: 90px;
+    height: 30px;
+    margin: 2px auto;
   }
 
   #section-map svg {
@@ -495,7 +495,7 @@ the map sizes*/
 
   .buttons{
     width: 90px;
-  }
+  }|
 
   #section-map svg {
     width: 65vw;
