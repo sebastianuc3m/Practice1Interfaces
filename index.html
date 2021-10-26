@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="style/index2.css">
+    <link rel="stylesheet" href="style/index.css">
     <title>Travel Experiences</title>
   </head>
   <body>
@@ -102,7 +102,31 @@
         <p></p>
       </div>
       <div id="my-experiences-menu">
-
+        <article id="added-exp">
+          <p>No experiences added yet.</p>
+        </article>
+        <article id="add-exp">
+          <h3>New experience</h3>
+          <form>
+            <div class="field">
+              <label for="add-title-exp"><b>Title</b></label>
+              <input type="text" placeholder="Enter a title" name="add-title-exp" id="add-title-exp" required>
+            </div>
+            <div class="field">
+              <label for="add-desc-exp"><b>Desciption</b></label>
+              <input type="text" placeholder="Enter a description" name="add-desc-exp" id="add-desc-exp" required>
+            </div>
+            <div class="field">
+              <label for="add-location-exp"><b>Location</b></label>
+              <input type="text" placeholder="Enter a location" name="add-location-exp" id="add-location-exp" required>
+            </div>
+            <div class="field">
+              <label for="add-img-exp"><b>Image</b></label>
+              <input type="file" accept="image/png, image/gif, image/jpeg" name="add-img-exp" id="add-img-exp">
+            </div>
+            <button type="submit" id="add-exp-submit">Add experience</button>
+          </form>
+        </article>
       </div>
     </section>
     <!-- header -->

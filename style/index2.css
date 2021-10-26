@@ -29,7 +29,7 @@ html {
   .col-s-10 {width: 83.33%;}
   .col-s-11 {width: 91.66%;}
   .col-s-12 {width: 100%;}
-}
+
 
 h1, h2 {
   /*Header title and section headlines need to be centered, we also changed their colour*/
@@ -101,12 +101,11 @@ will have a bigger left margin and the menu will have a fixed width*/
 }
 
 
-
 /*We will style the buttons, as well as make them changed when clicked*/
 .buttons {
   background-color: rgba(245,245,245,0.9);
   border-radius: 3px;
-  width: 90px;
+  width: 70px;
   height: 30px;
   margin: 5px auto 0px
 }
