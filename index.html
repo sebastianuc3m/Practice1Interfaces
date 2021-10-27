@@ -13,8 +13,8 @@
     <!-- Pop up log-in window. -->
     <div class="floating-screen" id="log">
       <div class="title-pop">
-        <h2 id="title-log">Log-in</h2>
         <button type="button" class="btn-cancel">x</button>
+        <h2 id="title-log">Log-in</h2>
       </div>
       <form class="form-container" enctype="multipart/form-data" id="log-form">
         <div class="form-fields">
@@ -32,10 +32,8 @@
     </div>
     <!-- Pop up sign-up window. -->
     <div class="floating-screen" id="sign">
-      <div class="title-pop">
-        <h2 id="title-log">Sign-up</h2>
         <button type="button" class="btn-cancel">x</button>
-      </div>
+        <h2 id="title-log">Sign-up</h2>
       <form class="form-container" enctype="multipart/form-data" id="sign-form">
         <div class="form-fields">
           <article class="field">
@@ -44,7 +42,7 @@
           </article>
           <article class="field">
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter password" name="psw" id="pwd-sign" required>
+            <input type="password" pattern="[a-zA-Z0-9]{8}" placeholder="Enter password" name="psw" id="pwd-sign" required>
           </article>
           <article class="field">
             <label for="email"><b>Email</b></label>
@@ -66,19 +64,21 @@
             <label for="input-pfp"><b>Profile picture</b></label>
             <input type="file" accept="image/png, image/gif, image/jpeg" name="input-pfp" id="input-pfp">
           </article>
-          <article class="field">
+          <article class="field col-s-12" id="check-sign">
             <label for="interests"><b>Interests</b></label>
             <div>
-                <input type="checkbox" value="cultural" class="interests" name="cultural">Cultural</input>
-                <input type="checkbox" value="ecotourism" class="interests" name="ecotourism">Ecotourism</input>
-                <input type="checkbox" value="beach" class="interests" name="beach">Beach</input>
-            <!-- <label for="rural"><input type="checkbox" name="rural"></input>Rural</label> -->
+                <label><input type="checkbox" value="cultural" class="interests" id="cultural" name="cultural">Cultural</label>
+                <label><input type="checkbox" value="ecotourism" class="interests" id="ecotourism" name="ecotourism">Ecotourism</label>
+                <label><input type="checkbox" value="beach" class="interests" id="beach" name="beach">Beach</label>
             </div>
+          </article>
           <article class="field">
-            <label for="terms-of-use"><b>I accept all the terms of use.</b></label>
-            <input type="checkbox" name="terms-of-use" id="terms-of-use" required>
+            <label for="terms-of-use">
+              <input type="checkbox" name="terms-of-use" id="terms-of-use" required>I accept all the terms of use.
+            </label>
+            
           </article>
-          </article>
+          
         </div>
         <div id="sign-btns">
           <button type="submit" id="submit-sign">Submit</button>

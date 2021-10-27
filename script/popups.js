@@ -107,10 +107,10 @@ $(document).ready(function() {
 		var newexp = $("<article></article>").attr('id', idexp);
 		newexp.attr('class', 'exp-cr');
 		$('#added-exp').append(newexp);
-		var close_btn = $("<button></button>");
-		close_btn.html('delete experience');
-		close_btn.addClass('delete-exp');
-		close_btn.attr('type', 'button');
+		var close_btn = $("<input class='delete-exp' type='button'>");
+		//close_btn.html('delete experience');
+		//close_btn.addClass('delete-exp');
+		//close_btn.attr('type', 'button');
 		var title = $("<h4></h4>").html(title_txt);
 		var location = $("<h3></h3>").html(location_txt);
 		var desc = $("<p></p>").html(desc_txt);
@@ -169,16 +169,17 @@ $(document).ready(function() {
 	})
 
 	$(".delete-exp").click(function(){
-			console.log('hola');
-			var title = $(this).closest('h4').html();
-			console.log(title);
-			$.cookie(title, null, { path: '/' });
-			var user = getCookie('logged');
-			user = user + '-exp';
-			var cookie = parseCookie(user);
-			cookie.remove(title);
-			$(this).closest('article').remove();
-		})
+		var title = $(this).closest('h4').html();
+		deletecookie = getCookie(title);
+		setCookie(title,null,-1);
+		var user = getCookie('logged');
+		user = user + '-exp';
+		let cookie = parseCookie(user);
+		cookie = cookie.filter(function(item) {
+    		return item !== title})
+		console.log('mismuertos');
+		$(this).closest('article').remove();
+	})
 	
 
 	$("#log-form").submit(function(e){
@@ -290,20 +291,6 @@ $(document).ready(function() {
 		var imgurl ="";		
 		let img = document.getElementById('add-img-exp').files[0];
 		imgurl = URL.createObjectURL(img);
-		/*
-		let data = [$('#add-desc-exp').val(),
-		$('#add-location-exp').val(), $('#add-img-exp').val()];
-		var expcookie = getCookie('logged') + "_exp";
-		var experiences = parseCookie(expcookie);
-		if (experiences.includes(title)==false){
-			if (experiences[0] === ""){
-				experiences = [title];				
-			} else {
-				experiences.push(title);
-			}
-			setCookie(expcookie, experiences, 71);
-			setCookie(title, data, 71);
-			*/
 			addExperience(title, desc, location, imgurl);
 			document.getElementById("add-exp-form").reset();
 			//$("#add-exp-form").reset()	
@@ -315,9 +302,9 @@ $(document).ready(function() {
 		} else {			
 			$("#change-int-form").hide();
 		}
-
 	})
 
+	//Change interests
 	$("#change-int-form").submit(function(e){
 		e.preventDefault();
 		let interests="";
@@ -330,6 +317,15 @@ $(document).ready(function() {
 		var email = getCookie('logged');
 		setCookie(email+'_int', interests, 71);
 	})
+
+	//Search filter
+	$("#in-search").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $(".experience").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	$('#my-experiences-menu').scroll();
 
 
 })

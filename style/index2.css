@@ -143,7 +143,6 @@ will have a bigger left margin and the menu will have a fixed width*/
   display: flex;
 }
 
-
 /*Sections need to have full height and width*/
 section {
   width: 100%;
@@ -377,12 +376,28 @@ background*/
   margin-left: 10px;
 }
 
+.btn-cancel{
+  /*transform: translate(50%, 0);*/
+  margin-left: 95%;
+
+}
+
 .form-fields {
   text-align: right;
 }
 
 .field{
   margin: 10px, auto;
+}
+
+#check-sign article{
+  text-align: center;
+}
+
+.field div {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 #sign-btns {
@@ -426,6 +441,7 @@ background*/
   text-align: center;
   top: 30%;
   left: 50%;
+  max-height: 500px;
   transform: translate(-50%, 0);
   background-color: floralwhite;
   border-color: rgb(96,20,40);
@@ -433,6 +449,7 @@ background*/
   border-width: 2px;
   padding: 10px;
   position: absolute;
+  overflow:scroll;
 }
 
 #my-experiences-menu{
