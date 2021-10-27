@@ -1,11 +1,12 @@
 // document.cookie = ["A=a"; "b=gasdf"; expires=hadsfa]
 $(document).ready(function() {
 
-	function setCookie(cname, cvalue, exdays) {
+	function setCookie(cname, cvalue, exdays, path="") {
 		const d = new Date();
+		path_txt =path;
 		d.setTime(d.getTime() + (exdays*24*60*60*1000));
 		let expires = "expires="+ d.toUTCString();
-		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"+ path_txt;
 	}
 
 	function getCookie(cname) {
@@ -67,22 +68,14 @@ $(document).ready(function() {
 			values = parseCookie(cookies[i]);
 			if (values[0]===username && values[1]===password){
 				setCookie('logged', cookies[i], 71);
-				var email = cookies[i];
+				pfp = getCookie(cookies[i]+'_pfp');
+				$("#pfp-img").attr('src',pfp);
 				log = true;
 			}
 		}
 		if (log){
 			$("#show-username").html(username);
-			let user_exps = email+'_exp';
-			console.log(user_exps);
-			all_exps = parseCookie(user_exps);
-			if (all_exps[0]!==""){
-				for (let i=0; i<all_exps.length; i++){
-					addExperience(all_exps[i]);
-				}
-			} else {
-				$("#no-exp").show()
-			}
+			$("#no-exp").show();
 			return true;
 		} else{
 			return false;
@@ -94,32 +87,41 @@ $(document).ready(function() {
 		if (islogged === ""){
 			$("#pfp").hide();
 			$("#button-div").show();
+			$("#add-exp").hide();
+			$("#my-profile-menu").hide();
+			$("#my-experiences-menu").hide();
 		} else {
 			$("#pfp").show();
 			$("#button-div").hide();
+			$("#add-exp").hide();
+			$("#my-profile-menu").hide();
+			$("#my-experiences-menu").hide();
 		}
 		$("#my-profile-menu").hide();		
 	}
 
-	function addExperience(title){
+	function addExperience(title_txt, desc_txt, location_txt, img_path){
 		$("#no-exp").hide()
-		experience = parseCookie(title);
-		console.log(experience);
-		var idexp = 'exp-'+title;
+		//experience = parseCookie(title);
+		var idexp = 'exp-'+title_txt;
 		var newexp = $("<article></article>").attr('id', idexp);
+		newexp.attr('class', 'exp-cr');
 		$('#added-exp').append(newexp);
 		var close_btn = $("<button></button>");
-		close_btn.onclick = "deleteExperience()";
 		close_btn.html('delete experience');
 		close_btn.addClass('delete-exp');
 		close_btn.attr('type', 'button');
-		var title_a = $("<h4></h4>").html(title);
-		var location = $("<h3></h3>").html(experience[1]);
-		var desc = $("<p></p>").html(experience[0]);
-		$('#'+idexp).append(title_a, location, desc, close_btn);
+		var title = $("<h4></h4>").html(title_txt);
+		var location = $("<h3></h3>").html(location_txt);
+		var desc = $("<p></p>").html(desc_txt);
+		var img = $("<img>").attr('src',img_path);
+		$('#'+idexp).append(title, img, location, desc, close_btn);
+		$("#add-exp").hide();
+
 	}
 
 	function deleteExperience(){
+		console.log('entró');
 		var title = $(this).closest('h4').html();
 		deletecookie = getCookie(title);
 		setCookie(title,null,-1);
@@ -160,9 +162,12 @@ $(document).ready(function() {
 	$(".btn-cancel").click(function() {
 		$("#log").hide();
 		$("#sign").hide();
+		$("#add-exp").hide();
+		$("#my-profile-menu").hide();
+		$("#my-experiences-menu").hide();
 
 	})
-	/*
+
 	$(".delete-exp").click(function(){
 			console.log('hola');
 			var title = $(this).closest('h4').html();
@@ -173,7 +178,7 @@ $(document).ready(function() {
 			var cookie = parseCookie(user);
 			cookie.remove(title);
 			$(this).closest('article').remove();
-		})*/
+		})
 	
 
 	$("#log-form").submit(function(e){
@@ -191,16 +196,27 @@ $(document).ready(function() {
 	
 	$("#sign-form").submit(function(e) {
 		e.preventDefault();
-		var interests = "";
+		var interests = [];
+		pfp_img = "images/pfp.png";
+		let img = document.getElementById('input-pfp').files[0];
+		if (img != null) {
+			pfp_img = URL.createObjectURL(img);
+		}
 		$('.interests:checked').each(
 			function() {
-					interests += ($(this).val()+ "_");
+					if (interests.length == 0){
+						interests[0] = $(this).val();
+					} else{
+						interests.push($(this).val());
+					}
+					//interests += ($(this).val()+ ",");
 			}
 		)
 		let data = [$('#username-sign').val(), $('#pwd-sign').val(), 
-		$('#name').val(), $('#surname').val(), $('#birthdate').val(),
-		interests, $('#input-pfp').val()];
-		var email = $('#email').val();    
+		$('#name').val(), $('#surname').val(), $('#birthdate').val()];
+		var email = $('#email').val();
+		setCookie(email+'_pfp', pfp_img, 71);
+		setCookie(email+'_int', interests, 71);
 		setCookie(email, data, 71);   		
 		$("#sign").hide();
 		logIn($('#username-sign').val(), $('#pwd-sign').val());
@@ -216,8 +232,9 @@ $(document).ready(function() {
 			$("#prf-name").html(loginfo[2]);
 			$("#prf-surname").html(loginfo[3]);
 			$("#prf-birthdate").html(loginfo[4]);
-			$("#prf-interests").html(loginfo[5]);
-			$("#prf-img").attr('src',loginfo[6]);
+			let interests = getCookie(logmail+'_int');
+			$("#prf-interests").html(interests);
+			$("#prf-img").attr('src',$("#pfp-img").attr('src'));
 			$("#my-experiences-menu").hide();
 			$("#my-profile-menu").show();
 		} else {
@@ -268,7 +285,12 @@ $(document).ready(function() {
 	$("#add-exp-form").submit(function(e) {
 		e.preventDefault();
 		let title = $('#add-title-exp').val();
-		console.log(title);
+		let desc = $('#add-desc-exp').val();
+		let location = $('#add-location-exp').val();
+		var imgurl ="";		
+		let img = document.getElementById('add-img-exp').files[0];
+		imgurl = URL.createObjectURL(img);
+		/*
 		let data = [$('#add-desc-exp').val(),
 		$('#add-location-exp').val(), $('#add-img-exp').val()];
 		var expcookie = getCookie('logged') + "_exp";
@@ -281,11 +303,32 @@ $(document).ready(function() {
 			}
 			setCookie(expcookie, experiences, 71);
 			setCookie(title, data, 71);
-			addExperience(title);
-		} else {
-			window.alert("You can't create an experience with a title previously used.");
+			*/
+			addExperience(title, desc, location, imgurl);
+			document.getElementById("add-exp-form").reset();
+			//$("#add-exp-form").reset()	
+	})
+
+	$("#change-int").click(function(){
+		if ($("#change-int-form").is(':hidden')){
+			$("#change-int-form").show();
+		} else {			
+			$("#change-int-form").hide();
 		}
-		
+
+	})
+
+	$("#change-int-form").submit(function(e){
+		e.preventDefault();
+		let interests="";
+		$('.interests-c:checked').each(
+			function() {
+				interests+=$(this).val() + ","
+			})
+		interests = interests.slice(0, -1)
+		$("#prf-interests").html(interests);
+		var email = getCookie('logged');
+		setCookie(email+'_int', interests, 71);
 	})
 
 

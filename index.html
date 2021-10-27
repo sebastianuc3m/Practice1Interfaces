@@ -89,20 +89,42 @@
     <!-- Menus when logged in -->
     <section>
       <div id="my-profile-menu" class="floating-screen">
+        <button class="btn-cancel">x</button>
         <img id=prf-img alt="profile picture">
         <button type="button" id="change-pfp">Change profile picture</button>
         <h3 id="prf-user"></h3>
         <button type="button" id="change-user">Change user</button>
-        <p id="prf-email"></p>
-        <p id=prf-name></p>
-        <p id=prf-surname></p>
-        <p id=prf-birthdate></p>
-        <p id=prf-interests></p>
-        <button type="button" id="change-user">Change interests</button>
-        <p></p>
+        <div>
+          <label for="prf-email">Email:</label>  
+          <p id="prf-email"></p>
+        </div>
+        <div>
+          <label for="prf-name">Name: </label>  
+          <p id=prf-name></p>
+        </div>
+        <div>
+          <label for="prf-surname">Surname: </label>  
+          <p id=prf-surname></p>
+        </div>
+        <div>
+          <label for="prf-birthdate">Birthdate: </label>  
+          <p id=prf-birthdate></p>
+        </div>
+        <div>
+          <label for="prf-interests">Interests: </label>  
+          <p id=prf-interests></p>
+          <button type="button" id="change-int">Change interests</button>
+        </div>
+        <form id="change-int-form">
+            <input type="checkbox" value="cultural" class="interests-c" name="cultural">Cultural</input>
+            <input type="checkbox" value="ecotourism" class="interests-c" name="ecotourism">Ecotourism</input>
+            <input type="checkbox" value="beach" class="interests-c" name="beach">Beach</input>
+            <button type="submit" id="change-int-btn">save interests</button>
+        </form>
       </div>
       <div id="my-experiences-menu" class="floating-screen">
         <article>
+          <button class="btn-cancel">x</button>
           <h2>My experiences</h2>
           <p id="no-exp">No experiences added yet.</p>
           <div id="added-exp">
