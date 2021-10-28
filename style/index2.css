@@ -207,8 +207,8 @@ br {
 
 /*As we said in the html file, the buttons for this section will not be shown in
 the mobile vesion*/
-#experiences button {
-  display: none
+.arrow-img {
+  display: none;
 }
 
 #ES, #AT, #IT {
@@ -242,7 +242,6 @@ area, the input on the bottom-left and the button on the bottom-right*/
 /*The last section needs to be centered, have a background and a small padding
 on the bottom side*/
 #section-exp {
-  width: 80%;
   margin: auto;
   background-color: beige;
   padding-bottom: 1%
@@ -513,7 +512,6 @@ background*/
     margin-left: 12vw;
   }
 
-
   #section-map svg {
     width: 90vw;
     margin: auto
@@ -552,48 +550,53 @@ background*/
   #experiences h2 {
     margin-bottom: 5px
   }
-  /*
-  #images, #videos {
+  
+
+  .images, .videos {
     flex-direction: row;
     padding-bottom: 20px;
   }
 
   [id^="img"], [id^="vid"] {
-    margin: auto;
-  }*/
+    margin: 0px;
+  }
 
   /*Depending on which column the image/video is located, it will have a
-  different width
+  different width*/
   #img1, #img5, #vid1, #vid5 {
-    width: 11vw;
-    height: 8vw;
+    display: none;
   }
 
   #img2, #img4, #vid2, #vid4 {
-    width: 18vw;
-    height: 12vw;
+    height: 35%;
+    width: 35%;
   }
 
   #img3, #vid3 {
-    width: 28vw;
-    height: 20vw;
+    width: 100%;
+    height: 100%;
   }
-*/
+
+  .images .videos div{
+    display: flex;
+    flex-direction: row;
+  }
+
   /*Styling for the buttons. They will not have border not background and will
   only display the image they have inside*/
-  #experiences button {
+  .arrow-img {
     display: block;
     height: 20px;
     margin: auto;
     border: none;
-    background: none
+    background: none;
   }
 
-  #experiences button:hover {
+  .arrow-img:hover {
     cursor: pointer;
   }
 
-  #experiences button img {
+  .arrow-img img {
     width: 20px;
     height: 20px;
     margin: auto;

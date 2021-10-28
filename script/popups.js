@@ -313,6 +313,7 @@ $(document).ready(function() {
 	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 	    });
 	  });
+
 	$("#change-pfp").change(function(){
 		let img = document.getElementById('change-pfp').files[0];
 		pfp_img = URL.createObjectURL(img);
@@ -321,5 +322,10 @@ $(document).ready(function() {
 		$("#prf-img").attr('src',pfp_img);
 		$("#pfp-img").attr('src',pfp_img);
 
+	})
+	$(".experience").click(function() {
+		let exp = $(this).attr('id');
+		exp += '-pop'
+		$('#'+exp).show()
 	})
 })
