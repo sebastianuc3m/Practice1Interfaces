@@ -12,10 +12,8 @@
   <body>
     <!-- Pop up log-in window. -->
     <div class="floating-screen" id="log">
-      <div class="title-pop">
-        <button type="button" class="btn-cancel">x</button>
-        <h2 id="title-log">Log-in</h2>
-      </div>
+      <button type="button" class="btn-cancel">x</button>
+      <h2 id="title-log">Log-in</h2>
       <form class="form-container" enctype="multipart/form-data" id="log-form">
         <div class="form-fields">
           <article class="field">
@@ -67,18 +65,16 @@
           <article class="field col-s-12" id="check-sign">
             <label for="interests"><b>Interests</b></label>
             <div>
-                <label><input type="checkbox" value="cultural" class="interests" id="cultural" name="cultural">Cultural</label>
-                <label><input type="checkbox" value="ecotourism" class="interests" id="ecotourism" name="ecotourism">Ecotourism</label>
-                <label><input type="checkbox" value="beach" class="interests" id="beach" name="beach">Beach</label>
+              <label><input type="checkbox" value="cultural" class="interests" id="cultural" name="cultural">Cultural</label>
+              <label><input type="checkbox" value="ecotourism" class="interests" id="ecotourism" name="ecotourism">Ecotourism</label>
+              <label><input type="checkbox" value="beach" class="interests" id="beach" name="beach">Beach</label>
             </div>
           </article>
           <article class="field">
             <label for="terms-of-use">
               <input type="checkbox" name="terms-of-use" id="terms-of-use" required>I accept all the terms of use.
             </label>
-            
           </article>
-          
         </div>
         <div id="sign-btns">
           <button type="submit" id="submit-sign">Submit</button>
@@ -91,7 +87,7 @@
       <div id="my-profile-menu" class="floating-screen">
         <button class="btn-cancel">x</button>
         <img id=prf-img alt="profile picture">
-        <button type="button" id="change-pfp">Change profile picture</button>
+        <label>Change profile picture<input type="file" accept="image/png, image/gif, image/jpeg" id="change-pfp"></label>
         <h3 id="prf-user"></h3>
         <button type="button" id="change-user">Change user</button>
         <div>
@@ -236,12 +232,14 @@
        </path>
       </svg>
     </section>
+    <!-- SECTION TWO -->
     <section id="section-search">
       <!--Section two contains a title and a useless search input and button-->
       <h2 id="title-search">Search Bar</h2>
       <input id="in-search" type="text" name="search-input" value="">
       <button id="button-search" type="button" name="search-button" class="buttons">Search</button>
     </section>
+    <!-- SECTION THREE -->
     <section id="section-exp">
       <!--Section three contains a title and a series of experiences-->
       <h2 id="title-exp">Travel experiences</h2>

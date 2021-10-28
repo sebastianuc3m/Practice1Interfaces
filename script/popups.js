@@ -1,6 +1,3 @@
-// document.cookie = ["A=a"; "b=gasdf"; expires=hadsfa]
-$(document).ready(function() {
-
 	function setCookie(cname, cvalue, exdays, path="") {
 		const d = new Date();
 		path_txt =path;
@@ -107,10 +104,12 @@ $(document).ready(function() {
 		var newexp = $("<article></article>").attr('id', idexp);
 		newexp.attr('class', 'exp-cr');
 		$('#added-exp').append(newexp);
-		var close_btn = $("<input class='delete-exp' type='button'>");
-		//close_btn.html('delete experience');
+		//var close_btn = $("<input class='delete-exp' type='button'>");
+		var close_btn = $("<button></button>");
+		close_btn.attr('onclick', 'deleteExperience(this)');
+		close_btn.html('delete experience');
 		//close_btn.addClass('delete-exp');
-		//close_btn.attr('type', 'button');
+		close_btn.attr('type', 'button');
 		var title = $("<h4></h4>").html(title_txt);
 		var location = $("<h3></h3>").html(location_txt);
 		var desc = $("<p></p>").html(desc_txt);
@@ -120,25 +119,17 @@ $(document).ready(function() {
 
 	}
 
-	function deleteExperience(){
-		console.log('entró');
-		var title = $(this).closest('h4').html();
-		deletecookie = getCookie(title);
-		setCookie(title,null,-1);
-		var user = getCookie('logged');
-		user = user + '-exp';
-		let cookie = parseCookie(user);
-		cookie = cookie.filter(function(item) {
-    		return item !== title})
-		console.log('mismuertos');
-		$(this).closest('article').remove();
+	function deleteExperience(but){
+		var this_exp = $(but).parent();
+		this_exp.remove();
 	}
 
+// document.cookie = ["A=a"; "b=gasdf"; expires=hadsfa]
+$(document).ready(function() {
 	var e = new Event("look", {"cancelable":true});
 	var log;
 	var pwd;
 	var username;
-
 	var expanded = false;
 	$("#my-profile-menu").hide();
 	$("#my-experiences-menu").hide();
@@ -165,7 +156,6 @@ $(document).ready(function() {
 		$("#add-exp").hide();
 		$("#my-profile-menu").hide();
 		$("#my-experiences-menu").hide();
-
 	})
 
 	$(".delete-exp").click(function(){
@@ -181,7 +171,6 @@ $(document).ready(function() {
 		$(this).closest('article').remove();
 	})
 	
-
 	$("#log-form").submit(function(e){
 		e.preventDefault();
 		let username = $("#username-log").val();
@@ -191,7 +180,6 @@ $(document).ready(function() {
 			$("#log").hide();
 			$("#show-username").html(username);
 			pfpHide();
-
 		}
 	})
 	
@@ -205,12 +193,11 @@ $(document).ready(function() {
 		}
 		$('.interests:checked').each(
 			function() {
-					if (interests.length == 0){
-						interests[0] = $(this).val();
-					} else{
-						interests.push($(this).val());
-					}
-					//interests += ($(this).val()+ ",");
+				if (interests.length == 0){
+					interests[0] = $(this).val();
+				} else{
+					interests.push($(this).val());
+				}
 			}
 		)
 		let data = [$('#username-sign').val(), $('#pwd-sign').val(), 
@@ -325,7 +312,13 @@ $(document).ready(function() {
 	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 	    });
 	  });
-	$('#my-experiences-menu').scroll();
+	$("#change-pfp").change(function(){
+		let img = document.getElementById('change-pfp').files[0];
+		pfp_img = URL.createObjectURL(img);
+		email = getCookie('logged');
+		setCookie(email+"_pfp",pfp_img,71);
+		$("#prf-img").attr('src',pfp_img);
+		$("#pfp-img").attr('src',pfp_img);
 
-
+	})
 })
