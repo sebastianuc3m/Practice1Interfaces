@@ -190,19 +190,20 @@ br {
   background-color: rgba(255,0,255,0.075);
   padding-bottom: 20px
 }
-
+/*
 #images, #videos {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%
 }
 
-/*Each video and image will occupy 75% of the whole screen. For this we use vw*/
 [id^="img"], [id^="vid"] {
   width: 75vw;
   margin: 0px auto 20px;
   object-fit: cover;
 }
+
+*/
 
 /*As we said in the html file, the buttons for this section will not be shown in
 the mobile vesion*/
@@ -277,10 +278,10 @@ them using margins*/
   width: 30vw;
 }
 
-#section-exp img {
+#section-exp div img {
   width: 30vw;
   border-radius: 5%
-}
+} 
 
 /*The footer needs a display flex in order to split the contents*/
 footer {
@@ -445,6 +446,7 @@ background*/
   top: 30%;
   left: 50%;
   max-height: 500px;
+  max-width: 75%;
   transform: translate(-50%, 0);
   background-color: floralwhite;
   border-color: rgb(96,20,40);
@@ -550,7 +552,7 @@ background*/
   #experiences h2 {
     margin-bottom: 5px
   }
-
+  /*
   #images, #videos {
     flex-direction: row;
     padding-bottom: 20px;
@@ -558,10 +560,10 @@ background*/
 
   [id^="img"], [id^="vid"] {
     margin: auto;
-  }
+  }*/
 
   /*Depending on which column the image/video is located, it will have a
-  different width*/
+  different width
   #img1, #img5, #vid1, #vid5 {
     width: 11vw;
     height: 8vw;
@@ -576,7 +578,7 @@ background*/
     width: 28vw;
     height: 20vw;
   }
-
+*/
   /*Styling for the buttons. They will not have border not background and will
   only display the image they have inside*/
   #experiences button {

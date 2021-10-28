@@ -156,6 +156,7 @@ $(document).ready(function() {
 		$("#add-exp").hide();
 		$("#my-profile-menu").hide();
 		$("#my-experiences-menu").hide();
+		$(".pop-experiences").hide()
 	})
 
 	$(".delete-exp").click(function(){
