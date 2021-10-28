@@ -326,6 +326,7 @@ $(document).ready(function() {
 	$(".experience").click(function() {
 		let exp = $(this).attr('id');
 		exp += '-pop'
+		console.log(exp);
 		$('#'+exp).show()
 	})
 })

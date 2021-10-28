@@ -247,6 +247,8 @@ on the bottom side*/
   padding-bottom: 1%
 }
 
+
+
 #title-exp {
   text-align: center;
 }
@@ -275,6 +277,8 @@ them using margins*/
 .experience {
   margin-top: 10px;
   width: 30vw;
+  cursor: pointer;
+
 }
 
 #section-exp div img {
@@ -454,6 +458,10 @@ background*/
   padding: 10px;
   position: absolute;
   overflow:scroll;
+}
+
+.pop-experiences{
+  top: 150%;
 }
 
 #my-experiences-menu{
