@@ -246,6 +246,12 @@ area, the input on the bottom-left and the button on the bottom-right*/
 #in-search {grid-area: left; margin: auto 0px auto auto; height: 28px; width: 200px}
 #button-search {grid-area: right; margin: auto auto auto 0px; margin-top: 0px}
 
+#error-search{
+  display: none;
+  margin: 30px auto;
+  text-align: center;
+}
+
 /*The last section needs to be centered, have a background and a small padding
 on the bottom side*/
 #section-exp {
@@ -475,7 +481,7 @@ background*/
 }
 
 .pop-experiences{
-  top: 150%;
+  display: none;
 }
 
 #my-experiences-menu{
@@ -579,9 +585,6 @@ background*/
     padding-bottom: 20px;
   }
 
-  [id^="img"], [id^="vid"] {
-    margin: 0px;
-  }
 
   /*Depending on which column the image/video is located, it will have a
   different width*/
@@ -591,11 +594,9 @@ background*/
   }
 
   .img2, .img4 {
-    height: 30vh;
   }
 
   .img3 {
-    height: 30vh;
   }
 
   .images{

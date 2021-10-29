@@ -193,6 +193,56 @@
     <section id="section-map">
       <!--The first section only contains an image with a map. To implement this,
       we have downloaded a svg map of Europe.-->
+      <div id="map-pop-up">
+        <article id="AT-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
+          <button class="btn-cancel">x</button>
+          <h2 class="map-headings">Experiences in Vienna</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <div class="images">
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <div>
+              <img class="img1 ex-img col-s-5" src="images/vienna/im1.jpg" alt="Palau Guell, colorfull towers">
+              <img class="img2 ex-img col-s-5" src="images/vienna/im2.jpg" alt="Sant Pau Hospital from outside">
+              <img class="img3 ex-img col-s-5" src="images/vienna/im3.jpg" alt="Palau de la Musica interior">
+              <img class="img4 ex-img col-s-5" src="images/vienna/im4.jpg" alt="Museu Nacional d'Art de Catalunya from outside">
+              <img class="img5 ex-img col-s-5" src="images/vienna/im5.jpg" alt="Cascada Moumental">
+            </div>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+          </div>
+        </article>
+        <article id="IT-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
+          <button class="btn-cancel">x</button>
+          <h2 class="map-headings">Experiences in Milan</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <div class="images">
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <div>
+              <img class="img1 ex-img col-s-5" src="images/milan/im1.jpeg" alt="Palau Guell, colorfull towers">
+              <img class="img2 ex-img col-s-5" src="images/milan/im2.jpeg" alt="Sant Pau Hospital from outside">
+              <img class="img3 ex-img col-s-5" src="images/milan/im3.jpeg" alt="Palau de la Musica interior">
+              <img class="img4 ex-img col-s-5" src="images/milan/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
+              <img class="img5 ex-img col-s-5" src="images/milan/im5.jpeg" alt="Cascada Moumental">
+            </div>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+          </div>
+        </article>
+        <article id="ES-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
+          <button class="btn-cancel">x</button>
+          <h2 class="map-headings">Experiences in Barcelona</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <div class="images">
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <div>
+              <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
+              <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
+              <img class="img3 ex-img col-s-5" src="images/barcelona/im3.jpeg" alt="Palau de la Musica interior">
+              <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
+              <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
+            </div>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+          </div>
+        </article>
+      </div>
       <svg version="1.2" viewbox="50 250 800 420" xmlns="http://www.w3.org/2000/svg">
        <path d="M423.4 528.8l-2.8 1.1-0.7-0.4 0-2.1 0.9-0.7 2.6 0.6 0 1.5z" id="AD">
        </path>
@@ -200,8 +250,8 @@
        </path>
        <path xmlns="http://www.w3.org/2000/svg" d="M452.2 392.5l-0.6 1.2-3.2 1.5-3.9-1.1-1.2 0.6-1.2-0.7-0.3-1.3 2.8-0.4 3.5 0.7 1.5-0.6 1.2 0.5 1.4-0.4z m-3.4-5.3l1.5 1.4-1.5 0.3-1.6-1 1.6-0.7z m18.1-8.5l-3-0.4-0.9-0.7 2.4-1.7 3.2-1.5 1.7 0.4 0.5 0.9-1.1 1.1-2.8 1.9z m-7.6-11.5l-1.1 1.1-0.6-1.4 1.7-1.4 0 1.7z m-7.1 25.3l-2.6-0.8-2.2 0.5-2.8-0.7-1.7-1.3 1.2-0.7 2.3-0.1 4 0.7 1.2-0.9-0.6-1-2.3-2.1 1.6-2.7 1.4-1 3.2-3.8 0.9-2 1.2-5.5 1-2 1.4 0.5 2-0.8 3.4-2 1-1.7 1-0.9 4-1.6 2.1-0.4 8.9-0.5 1.8 1.7 2.7 0.6 0.1 4.3-0.7 1.7-1.1 3.8-3.1-0.1-0.6 1.6 0.7 1 2.6 0.3 0.8 1-0.6 2.6-2.6 1.6-0.3 0.9 1 0.9-0.7 1-4.5 1.3-2.3-0.8-1.8 0.7-0.7 1.1 3.1 4.1 0 1.2-1.3 2.8 0.7 1.2-2.2 1.6-0.5 0.8 1.9 1.2-0.6 2.4-1.2-0.1-2.4-0.3-0.7-1.1 1.1-1.3 1-2.9-2.6-1.1-1.7-1.3-1.9 0.4-2.6-1.4-0.5-1.6-2.5 0.8-1.1-1.3-1.5 1-1.5-0.8-1.4 0.7 0.2 0.9-2.1-0.3z m18.1-15.6l0.9-0.9-0.5-1.9-2.1-0.3-0.5-0.8 0.4-2.5-2.8-0.4-0.4-2.5-1.5 0.3-2.3 1.5 0.6 1.3 1.6 1.6 0 0.9-2.1 0.7 0.1 2.6-0.2 1.6 5.4 1.4 3.4-2.6z" id="NL">
        </path>
-       <a href="vienna.html">
-         <path d="M607.8 434.9l-0.9 2.4 0.1 0.8 1.6 2.9 2.3 2.9-0.6 0.7-0.6 1.9 0.7 2-3.9 0.3-2.5-0.9-1.3 1.4 2.6 0.7 0.5 1.1-0.5 1.4-2.2 1.2 0.4 1.5-0.5 0.7 1.1 1.6-0.3 1.8-2.5 0.5-1.8 1.7-1.3 0.9-0.1 1.9-2.4-0.5-1.6 0.2-2.3 1.1-2.8-0.2-2.6 0.2-1.9 0.7-1 1.3-3 1.2-5-0.7-5-0.9-2.6-0.5-4-0.3-8.6-1.5-1.1-0.5-3.1-3.5 0-2.3-4.7 1.5-3.1-0.2-3.4 0.3-1.4 0.6-1.2 2.2-1.1 0.4-2.1-0.4-0.9-0.8-3-0.3-0.5-1.5-0.8-0.3-2 1.9-2.3-0.4-1.5-0.8-0.4-1-3.3-0.8 0.3-0.8-1.1-2.5 1-3-0.9-0.7 1.7-0.5 0.7-0.5 3.5 1.6 0.9 1.4 1.2 0.3-0.1 1.3 1.6-0.5 1-1.6 0.2-1.9 2.8-0.1 2.7 0.4 1.4 1.9 3.8-0.5 1.1-0.9 3.9-1.5 5.7-0.5 0.1-1.4 2 0.3 1.5 0.8 2.5-0.5 1.1 0.5 0.2 1.1 1.2 0.9 1.7 0.4 0.3-1.5-0.3-1.9-1.7-0.3 0.6-1.3-0.1-1.3-2.5-2.8 0.6-1.3 3.1-1.8 2.9-0.8 1-1 0.7-2.9 2.3 0.9 1.3-0.9 0.2-2.8 2.2 1.2 0.8 1.3 3.9 0.4 1.4-0.7 2.5 0.4 0.1-1.1 1.3-1.6 1.2 0 0.3-3.2 1.2-0.2 1.6 0.8 1.4-0.4 4.8 1.7 1.5-0.1 3 1.7 3.8 0.2 1.2-0.9 5.1 1.5 1 1.6z" id="AT">
+       <a >
+         <path d="M607.8 434.9l-0.9 2.4 0.1 0.8 1.6 2.9 2.3 2.9-0.6 0.7-0.6 1.9 0.7 2-3.9 0.3-2.5-0.9-1.3 1.4 2.6 0.7 0.5 1.1-0.5 1.4-2.2 1.2 0.4 1.5-0.5 0.7 1.1 1.6-0.3 1.8-2.5 0.5-1.8 1.7-1.3 0.9-0.1 1.9-2.4-0.5-1.6 0.2-2.3 1.1-2.8-0.2-2.6 0.2-1.9 0.7-1 1.3-3 1.2-5-0.7-5-0.9-2.6-0.5-4-0.3-8.6-1.5-1.1-0.5-3.1-3.5 0-2.3-4.7 1.5-3.1-0.2-3.4 0.3-1.4 0.6-1.2 2.2-1.1 0.4-2.1-0.4-0.9-0.8-3-0.3-0.5-1.5-0.8-0.3-2 1.9-2.3-0.4-1.5-0.8-0.4-1-3.3-0.8 0.3-0.8-1.1-2.5 1-3-0.9-0.7 1.7-0.5 0.7-0.5 3.5 1.6 0.9 1.4 1.2 0.3-0.1 1.3 1.6-0.5 1-1.6 0.2-1.9 2.8-0.1 2.7 0.4 1.4 1.9 3.8-0.5 1.1-0.9 3.9-1.5 5.7-0.5 0.1-1.4 2 0.3 1.5 0.8 2.5-0.5 1.1 0.5 0.2 1.1 1.2 0.9 1.7 0.4 0.3-1.5-0.3-1.9-1.7-0.3 0.6-1.3-0.1-1.3-2.5-2.8 0.6-1.3 3.1-1.8 2.9-0.8 1-1 0.7-2.9 2.3 0.9 1.3-0.9 0.2-2.8 2.2 1.2 0.8 1.3 3.9 0.4 1.4-0.7 2.5 0.4 0.1-1.1 1.3-1.6 1.2 0 0.3-3.2 1.2-0.2 1.6 0.8 1.4-0.4 4.8 1.7 1.5-0.1 3 1.7 3.8 0.2 1.2-0.9 5.1 1.5 1 1.6z" class="experience" id="AT">
          </path>
        </a>
        <path d="M470 401.8l1.6-0.5 0.8 0.8 1.2 0.1 3 2.3-0.4 1.5 1.7 0.7 0.4 2-2.3 1.3-0.6 1.7-1.7-0.7-1.3 1.3-1.4 2.5-0.2 1.7 2 2.4-1.1 1.7-3.4 0.4-2.8-2.6-3.3-1.5-1.7-0.1-0.4-2-0.6-0.6 0.8-2.7-1.9 0.6-0.5 1.4-1.3 0.6-2.2 0.3-2.3-0.3-0.5-0.6 0.7-1.4-0.7-0.7 0.4-1.6-1.6-1.1-3.6-0.4-0.9 0.3-0.6-2-4.2-1.1-0.5-2-1.6-1.8-3.2 1-2.9-2.4 0-1.2-0.9-2.2 5.1-2.5 4.7-1.7 0.3 1.3 1.2 0.7 1.2-0.6 3.9 1.1 3.2-1.5 0.6-1.2 2.1 0.3-0.2-0.9 1.4-0.7 1.5 0.8 1.5-1 1.1 1.3 2.5-0.8 0.5 1.6 2.6 1.4 1.9-0.4 1.7 1.3 2.6 1.1-1 2.9-1.1 1.3 0.7 1.1z" id="BE">
@@ -216,14 +266,14 @@
        </path>
        <path d="M329.3 352l0.7 1.1-2.2 0.4 1.5 5.2 0.6 0.9 0 4.1 0.9 3.2 0.1 2.5-1.3 1.8-0.9 2.1-0.2 1.8-1.6 2.1-1.5 0.9 1.6 1.5-2.8 0.8-2.6-0.3-1.3 0.8-3.9 0.2-3.7 0.7-1.7 1.8-2.5 0.7-1 1-2.3 0.8-1.7-1.2-1 0.2 0.2 2.1-2.9 1.3-1.8 0.3-1 0.7-5.8 1.4-1.9-0.5-3.3 0.8-1.2-0.1 1.6-1.8 1.6-1.3-3.8 0.6-1.4 0.5-0.6-0.6 3.2-1.9-3.3 0.1-3-0.4-0.4-1 2.9-2.3 2.4-0.9-0.1-0.9-5.1 0.1 0.5-1.1 1.7-1 1.8-0.1 1.5 0.6 1.1-0.8-0.6-1.7 3.9-2.3 3-0.3 3.3-0.7 3.3-0.8-2.4-1.2-2.3 1.8-2.6 0.3-1.9-0.5-2.1 0 2.7-2 1.6-1.7-0.8-0.7 2-2.3 3.6-1-1.6-1.3-3.9 0.2-1.4-1.3-2.6 0.1 0.4-1.2-3.5-0.2 0.5-1-0.6-1.1 2.8-0.6-0.2-2 1.9-0.8 2-0.4 0.1-1.1-2-0.2-2 0.4 0.8-2.1-0.8-1-0.4-1.7-0.9-1 2.8-0.2 1.2-0.5 4.7 0.1 1.9 1.3 1.7-1.2 4.8 0.9 0.6-2.6 3.8-1.5 1.2-2-3.7 0.4-3.6-1 0.7-0.8 2.1-0.7 1.9-1.6-0.3-1.1 1.7-2.7 3.1-0.8 2.4 0 1.6-0.9 1.2 2-1 1 0.6 0.9 1.2-0.8-0.5-2.1 0.9-1.3 1.9-0.3 0.6-0.8 3.2 1.7-2.5 1.5-0.5 0.7-1.9 0.9-1 2.3-1.2 1.6-2.2 0.8-1.6-0.1-0.2 0.8 1 1.4-2.9 0.9-1 1.4 2.7 2 0.2 1 2.1 0.4 0.8 0.7 2.9 0.3 2.4-1.8-0.5-0.9 1.9-1.6 1.3 0.5 1.8 2.7 1.4 0.5-0.1 1.5 2.9 0 2.1-0.4z" id="IE">
        </path>
-       <a href="milan.html">
-         <path d="M602.6 595.6l-1.2 2.5-2.8 4.3-1.5 5.1 0.3 2 1.6 1.4-0.7 0.5 1.6 1.8 0.1 1.3-1.8 1.9-0.4 1.7 0.1 1.5-2.9-0.6-1.4 0.3-3.7-1.4-1.9-2.8-3-2-3 0-1.4-0.5-2.9-1.9-3-1.4-2.6-2.1-1.7-0.4-1.5-1-2.9 0-2.3-1.6-1.3-2.3 1.3-3.7 1.4-0.8 0.9-1.2 2.3 2.3 1.8-0.8 1.4-1.6 2.4 0.1 0.5 0.9 1.4 0.3 2.5 1.6 1.4 0.4 3.4-1 3 0.4 2.8-0.5 1.7-0.6 1.2-1 1.4-0.3 3.5 0.3 2-1.2 0.8 0.2 2-1.2 1.1 1.1z m-78.3-41.5l0.7 0.9 1.8 5-0.6 1.6-1.3 2 0.8 2.8-0.6 11.5-0.6 2.9-0.9 0.4-2.9-1.2-1.5 0.3-1.2-0.6-0.3 3-1.8 2.1-3-0.2-0.7-0.6-2.4-3.8-0.4-4.3 0.6-1.3 0-2.5 1.1-0.1 0-1.7-1.8-1.2 0-1.9 0.7-1.4-0.1-2.6-0.8-0.9-0.8-2.3-2.2-2.4 0.1-3.4 3.4 0.6 1.3-0.3 3.1-1.5 2.1-2.5 1.4-0.5 1.5-1.8 0.7 0.9 2.2 0.8 1.2 1.5 0.9 0.5-0.7 1.4 1 0.8z m8.3-30.8l0.3 1.4-2.5 0.5-1.1-1.1 2.9-0.2 0.4-0.6z m37.9-56.6l-0.2 0.9-3.3 2.3 0.7 1.4 2.3 0.7-1.6 2.1 0.3 1 1.3 0.2-0.4 2 1.9 1.1 1.5 1.3 0.2 1.3-1.5 0.1 0.7-0.6-2-2.2-2 0.9-3.2-0.9-2.1 2-1.5 0.4-1.7 1.1-3.2 1.2-1.8-0.4-1 0.7-0.4 3.1 0.8 0.6 1.5 2.6 1.7 1.1-0.7 1.9-0.9 0.7-1.3-0.5-0.3 1.7 0.9 4.5 1.4 3.2 1.2 1.3 2.7 2.2 2.7 1.1 5.1 3.7 2.8 1.1 0.7 0.7 1.8 2.8 1.6 3.2 1.8 5.1 1.3 2.5 2.3 2.9 4.8 4.1 4.3 2.9 4 1.9 3 0.3 7-0.4 2.6 0.7 0.4 1.2-0.4 0.9-2.9 2.1 0 1.7 1.5 1.2 7.1 3.2 7.2 2.6 2.2 1.4 2.7 2.1 6.4 2.9 1.1 1.4 4 3 1.8 2.4 0.5 1.8-1.5 4.4-1.6-0.5-1.9-1.3-3.1-5.4-5-0.5-2.9-1.3-0.7-1.4-2.3-0.4-1.3 0.9-1.4 2-1.5 3-1.5 4.3 0 1.7 1.1 1.7 2.9 1 2.4 1.5 1.6 1.6 0.3 3.8 0.9 2.1-0.9 1.3-1.9-0.3-2.5 0.7-1.7 1.4-0.7 1.4 0.5 3.4-0.3 1.4-3.3 2.5-1.6 2.5-1 2.3-4.3 0-1.1-1.5-0.1-2.2 0.6-1.3 1.6-0.7 0.9-2.8-0.5-2 1.1-1.6 2.8-0.7 0-2.9-1.4-1.3-1.4-5.1-2.4-4.3-1.4-3.8-1.1-1.8-1.4-1-3.7-0.3-4.6-2.6-0.3-1.1 0.6-1.1-1.1-2.8-2-1.7-2.6 0.6-1.2-0.1-0.1-1.5-2-1.3-2.7-0.2-0.7-0.7-2.6-4-1.7-1.7-2.3 0.1-3.9-0.9-2 0.7-3.2-2.6-2.8-0.9-5.7-5.3-1.8-2-3.5-2.2-2.3-3.2-1.8-1.2-4-1.4-0.3-1.3-3.1-3.1-1.7-1-1.3-2.1-2.5-0.5 0.1-2.7-1.2-3.5-1.7-2.2-1.2-5.3-0.8-1.5-1.8-1.1-4-1.2-5.7-3.4-1.1-0.1-3.4-1.3-2.1-0.2-2.6 1.2-3.1 3.2-2.5 3.4-0.9 0.6-3.4 1.2-3 0.5-0.2-1.5 2.1-2.6-0.3-2-3.3 0.6-5.1-2.4-0.9-0.9-0.1-1.4-0.7-1.3 1.4-2.5 0.8-0.7-0.5-1.7-3.2-1.4-1.5-3.1 0.8-0.4 1.9 0.2 1.7-1.3 1.2-0.3 0.8-2.5-1.8-1.6-1.7-2.6-0.9-0.6-0.1-1.6 2.6-1.7 1.4 0.7 2.4-0.5 2.6-1 3.1 0.8 2.4-1.4 1.6-2.2-0.6-1.5 3.4-2.9 1 0.6 0.2 2.5 2.4 2 2.2 0.6-0.4 1.2 1.3 1.2 0.9 1.4 1.2-0.7-0.7-1.7 0.2-1 2.2-2.6 0.5-1.1 0-2.9 2-0.1 0.8 2.1 2 0.8 2.9-1.1 0.7 0.1 1.4 1.9 1.2-0.3-1.5-3.5 0.6-1.8 1.3-0.3 1 0.9 1.9 0.2-0.5-1.8 0.5-3.1 3 0.3 0.9 0.8 2.1 0.4 1.1-0.4 1.2-2.2 1.4-0.6 3.4-0.3 3.1 0.2 4.7-1.5 0 2.3 3.1 3.5 1.1 0.5 8.6 1.5 4 0.3 2.6 0.5z" id="IT">
+       <a id="italy">
+         <path d="M602.6 595.6l-1.2 2.5-2.8 4.3-1.5 5.1 0.3 2 1.6 1.4-0.7 0.5 1.6 1.8 0.1 1.3-1.8 1.9-0.4 1.7 0.1 1.5-2.9-0.6-1.4 0.3-3.7-1.4-1.9-2.8-3-2-3 0-1.4-0.5-2.9-1.9-3-1.4-2.6-2.1-1.7-0.4-1.5-1-2.9 0-2.3-1.6-1.3-2.3 1.3-3.7 1.4-0.8 0.9-1.2 2.3 2.3 1.8-0.8 1.4-1.6 2.4 0.1 0.5 0.9 1.4 0.3 2.5 1.6 1.4 0.4 3.4-1 3 0.4 2.8-0.5 1.7-0.6 1.2-1 1.4-0.3 3.5 0.3 2-1.2 0.8 0.2 2-1.2 1.1 1.1z m-78.3-41.5l0.7 0.9 1.8 5-0.6 1.6-1.3 2 0.8 2.8-0.6 11.5-0.6 2.9-0.9 0.4-2.9-1.2-1.5 0.3-1.2-0.6-0.3 3-1.8 2.1-3-0.2-0.7-0.6-2.4-3.8-0.4-4.3 0.6-1.3 0-2.5 1.1-0.1 0-1.7-1.8-1.2 0-1.9 0.7-1.4-0.1-2.6-0.8-0.9-0.8-2.3-2.2-2.4 0.1-3.4 3.4 0.6 1.3-0.3 3.1-1.5 2.1-2.5 1.4-0.5 1.5-1.8 0.7 0.9 2.2 0.8 1.2 1.5 0.9 0.5-0.7 1.4 1 0.8z m8.3-30.8l0.3 1.4-2.5 0.5-1.1-1.1 2.9-0.2 0.4-0.6z m37.9-56.6l-0.2 0.9-3.3 2.3 0.7 1.4 2.3 0.7-1.6 2.1 0.3 1 1.3 0.2-0.4 2 1.9 1.1 1.5 1.3 0.2 1.3-1.5 0.1 0.7-0.6-2-2.2-2 0.9-3.2-0.9-2.1 2-1.5 0.4-1.7 1.1-3.2 1.2-1.8-0.4-1 0.7-0.4 3.1 0.8 0.6 1.5 2.6 1.7 1.1-0.7 1.9-0.9 0.7-1.3-0.5-0.3 1.7 0.9 4.5 1.4 3.2 1.2 1.3 2.7 2.2 2.7 1.1 5.1 3.7 2.8 1.1 0.7 0.7 1.8 2.8 1.6 3.2 1.8 5.1 1.3 2.5 2.3 2.9 4.8 4.1 4.3 2.9 4 1.9 3 0.3 7-0.4 2.6 0.7 0.4 1.2-0.4 0.9-2.9 2.1 0 1.7 1.5 1.2 7.1 3.2 7.2 2.6 2.2 1.4 2.7 2.1 6.4 2.9 1.1 1.4 4 3 1.8 2.4 0.5 1.8-1.5 4.4-1.6-0.5-1.9-1.3-3.1-5.4-5-0.5-2.9-1.3-0.7-1.4-2.3-0.4-1.3 0.9-1.4 2-1.5 3-1.5 4.3 0 1.7 1.1 1.7 2.9 1 2.4 1.5 1.6 1.6 0.3 3.8 0.9 2.1-0.9 1.3-1.9-0.3-2.5 0.7-1.7 1.4-0.7 1.4 0.5 3.4-0.3 1.4-3.3 2.5-1.6 2.5-1 2.3-4.3 0-1.1-1.5-0.1-2.2 0.6-1.3 1.6-0.7 0.9-2.8-0.5-2 1.1-1.6 2.8-0.7 0-2.9-1.4-1.3-1.4-5.1-2.4-4.3-1.4-3.8-1.1-1.8-1.4-1-3.7-0.3-4.6-2.6-0.3-1.1 0.6-1.1-1.1-2.8-2-1.7-2.6 0.6-1.2-0.1-0.1-1.5-2-1.3-2.7-0.2-0.7-0.7-2.6-4-1.7-1.7-2.3 0.1-3.9-0.9-2 0.7-3.2-2.6-2.8-0.9-5.7-5.3-1.8-2-3.5-2.2-2.3-3.2-1.8-1.2-4-1.4-0.3-1.3-3.1-3.1-1.7-1-1.3-2.1-2.5-0.5 0.1-2.7-1.2-3.5-1.7-2.2-1.2-5.3-0.8-1.5-1.8-1.1-4-1.2-5.7-3.4-1.1-0.1-3.4-1.3-2.1-0.2-2.6 1.2-3.1 3.2-2.5 3.4-0.9 0.6-3.4 1.2-3 0.5-0.2-1.5 2.1-2.6-0.3-2-3.3 0.6-5.1-2.4-0.9-0.9-0.1-1.4-0.7-1.3 1.4-2.5 0.8-0.7-0.5-1.7-3.2-1.4-1.5-3.1 0.8-0.4 1.9 0.2 1.7-1.3 1.2-0.3 0.8-2.5-1.8-1.6-1.7-2.6-0.9-0.6-0.1-1.6 2.6-1.7 1.4 0.7 2.4-0.5 2.6-1 3.1 0.8 2.4-1.4 1.6-2.2-0.6-1.5 3.4-2.9 1 0.6 0.2 2.5 2.4 2 2.2 0.6-0.4 1.2 1.3 1.2 0.9 1.4 1.2-0.7-0.7-1.7 0.2-1 2.2-2.6 0.5-1.1 0-2.9 2-0.1 0.8 2.1 2 0.8 2.9-1.1 0.7 0.1 1.4 1.9 1.2-0.3-1.5-3.5 0.6-1.8 1.3-0.3 1 0.9 1.9 0.2-0.5-1.8 0.5-3.1 3 0.3 0.9 0.8 2.1 0.4 1.1-0.4 1.2-2.2 1.4-0.6 3.4-0.3 3.1 0.2 4.7-1.5 0 2.3 3.1 3.5 1.1 0.5 8.6 1.5 4 0.3 2.6 0.5z" class="experience" id="IT">
          </path>
        </a>
        <path d="M475.4 411.7l0.3 2.2 1.5 1.6 2.8 1.1 0 1.4-0.9 0.9-0.6 3-1.3-0.7-2 0.6-1.4 0-2.1-1.2 1.1-1.7-2-2.4 0.2-1.7 1.4-2.5 1.3-1.3 1.7 0.7z" id="LU">
        </path>
-       <a href="barcelona.html">
-         <path d="M420.4 584.7l-0.4 1-2-0.4 0-1.5 1.2-1.6 2.7-0.7 0.8 1.3-2.3 1.9z m21.7-13.6l1.2 0.5 1.3-0.5 1.4 0.4 0.2 1-2.2 3.5-0.6 1.4-2.1 1.3-4-1.7-0.3-1.6-1.4-0.7-1.7 1.3-1.4-1-0.3-1.2 5.3-3.7 1.5-0.9 3.2-0.9 0.5 1.2-0.6 1.6z m14.7-0.8l-0.3 0.2-3.9-1.9-1.6-0.4 0.1-1.4 2.6-0.2 2.1 0.7 1.2 1.8-0.2 1.2z m-77.4-55.5l0.5 1.3 4.3 1.3-0.3 3.2 1.8-0.4 4.4 1.7 2.2 0.2 2.2 2.1 3.6-0.4 3.2 2.1 3.1-0.4 0.7 0.4 4.7 0 0.8-2.4 4 1.1 2.5 1 1.7 0.3 1.1 1.5 0 2.1 0.7 0.4 2.8-1.1 2.8 1.2 1.3 1.2 2.1-1.1 4.7 1.2 1.2-0.8 3.8-1.1 3.1 0.6 1.2 2.2-1.8 0.5-0.2 1.4 1.2 1.3 0.1 2.1-3 2.8-8.7 4.7-2.9 2.7-6.6 1.5-4.5 1.5-2.2 0.5-4.1 3.8 1.1 0.3 1.2 1.2-0.4 0.6-2.5 1.1-0.9 0-2.9 4.6-2.6 3.3-1.5 1.5-1.5 2.1-3.2 5.6-0.1 1.6 1.6 5.5 2.2 2.7 2.4 1.1 0.6 1-0.8 1-2.4 1.7-4.3 2.3-1.8 1.9-0.3 1.8-1.3 0.8-0.5 2.5-1.8 4.4 1.3 1.2-1.3 0.8-6.5 0.3-4.1 2.8-2 2.4-1.9 4.5-2.2 2.6-1 0.5-1.5-1.2-1.9-0.1-1.9 0.3-1 1-1.5 0.5-1.5-0.5-4.6-0.2-2.3 0.8-1.9-0.5-3.2-0.3-7 0.6-4 3.4-3.4 0-3.1 1.2-2.1 3-0.5 1.6-1-0.3-0.3 1.2-2.1 0.8-2.4-1-2-1.5-1-0.1-1.6-2.2-1.2-3.1 0-1.1-1.5-0.6-0.3-1.4 0.2-1.6-1.2-2-5-3.7-3.7-0.3-3 0.5-1.1-6.4 0.8-2.2 3.5-4.3 2.1-0.6 0.7-2.4-1.7 0.2-3-4.3 0.9-4 3.2-3 0.6-2.4-0.5-0.8-1.7-0.4-1.6-3.2-0.3-1.9-1.4-1.2-1.1-1.9 1.1-0.3 4.3 0 1-0.5 1.7-3.5 0-1.9-1.4-1.3 0.2-1 2.7-2.1-0.4-1.1 0.4-3.8-0.4-3.5-0.8-2 2-1.6 1.1-1.6 1.6-1.4 2.1-1.1 2.5-2.5-0.3-1.1-1.9-0.9-1.9-0.2-0.1-3.1-0.7-1.1-5.2-0.1-1.5-0.5-0.8 1.4-2.5 0.9-1.4 0-2.2-0.8-2.9 0.1-3 1.1-0.9-1.3 1.3-1.9-1-1.8-4.1 1-1.9 0.9-1.2 1.1-1.3-0.1 0-2.5 2.6-2.6-1.6-0.2 1.2-1.9-1-1 0.1-2.6-2.3 0.9-0.5-1.2 1.4-2.2-1.4-0.2-2.3-2.5 0.8-3.1 2-1 1.9-1.5 2.6 0.3 1.7-0.3 3.6-1.6-0.4-1.5 0.4-0.7 3.2-1.7 2-0.2 1.9-0.9 1.3 0.5 1.1-0.1 1.3 0.6 1.7 1.6 2.5 0.6 2-0.5 3.6-0.1 1.7 0.2 3.2-0.3 1.8 0.1 2.9-0.8 2.3 1 4.4 0.4 2.6 0.8 7.2 1.4 2.7 0 3.7-0.8 1.6-0.5 1.5 0.3 2.1-0.6 2.3 1 4.7 1.3 2.1-1.3 3.4 0.6 3.3 1.3 1.8 0.1 2.6-0.3 2.5-1z" id="ES">
+       <a id="spain">
+         <path d="M420.4 584.7l-0.4 1-2-0.4 0-1.5 1.2-1.6 2.7-0.7 0.8 1.3-2.3 1.9z m21.7-13.6l1.2 0.5 1.3-0.5 1.4 0.4 0.2 1-2.2 3.5-0.6 1.4-2.1 1.3-4-1.7-0.3-1.6-1.4-0.7-1.7 1.3-1.4-1-0.3-1.2 5.3-3.7 1.5-0.9 3.2-0.9 0.5 1.2-0.6 1.6z m14.7-0.8l-0.3 0.2-3.9-1.9-1.6-0.4 0.1-1.4 2.6-0.2 2.1 0.7 1.2 1.8-0.2 1.2z m-77.4-55.5l0.5 1.3 4.3 1.3-0.3 3.2 1.8-0.4 4.4 1.7 2.2 0.2 2.2 2.1 3.6-0.4 3.2 2.1 3.1-0.4 0.7 0.4 4.7 0 0.8-2.4 4 1.1 2.5 1 1.7 0.3 1.1 1.5 0 2.1 0.7 0.4 2.8-1.1 2.8 1.2 1.3 1.2 2.1-1.1 4.7 1.2 1.2-0.8 3.8-1.1 3.1 0.6 1.2 2.2-1.8 0.5-0.2 1.4 1.2 1.3 0.1 2.1-3 2.8-8.7 4.7-2.9 2.7-6.6 1.5-4.5 1.5-2.2 0.5-4.1 3.8 1.1 0.3 1.2 1.2-0.4 0.6-2.5 1.1-0.9 0-2.9 4.6-2.6 3.3-1.5 1.5-1.5 2.1-3.2 5.6-0.1 1.6 1.6 5.5 2.2 2.7 2.4 1.1 0.6 1-0.8 1-2.4 1.7-4.3 2.3-1.8 1.9-0.3 1.8-1.3 0.8-0.5 2.5-1.8 4.4 1.3 1.2-1.3 0.8-6.5 0.3-4.1 2.8-2 2.4-1.9 4.5-2.2 2.6-1 0.5-1.5-1.2-1.9-0.1-1.9 0.3-1 1-1.5 0.5-1.5-0.5-4.6-0.2-2.3 0.8-1.9-0.5-3.2-0.3-7 0.6-4 3.4-3.4 0-3.1 1.2-2.1 3-0.5 1.6-1-0.3-0.3 1.2-2.1 0.8-2.4-1-2-1.5-1-0.1-1.6-2.2-1.2-3.1 0-1.1-1.5-0.6-0.3-1.4 0.2-1.6-1.2-2-5-3.7-3.7-0.3-3 0.5-1.1-6.4 0.8-2.2 3.5-4.3 2.1-0.6 0.7-2.4-1.7 0.2-3-4.3 0.9-4 3.2-3 0.6-2.4-0.5-0.8-1.7-0.4-1.6-3.2-0.3-1.9-1.4-1.2-1.1-1.9 1.1-0.3 4.3 0 1-0.5 1.7-3.5 0-1.9-1.4-1.3 0.2-1 2.7-2.1-0.4-1.1 0.4-3.8-0.4-3.5-0.8-2 2-1.6 1.1-1.6 1.6-1.4 2.1-1.1 2.5-2.5-0.3-1.1-1.9-0.9-1.9-0.2-0.1-3.1-0.7-1.1-5.2-0.1-1.5-0.5-0.8 1.4-2.5 0.9-1.4 0-2.2-0.8-2.9 0.1-3 1.1-0.9-1.3 1.3-1.9-1-1.8-4.1 1-1.9 0.9-1.2 1.1-1.3-0.1 0-2.5 2.6-2.6-1.6-0.2 1.2-1.9-1-1 0.1-2.6-2.3 0.9-0.5-1.2 1.4-2.2-1.4-0.2-2.3-2.5 0.8-3.1 2-1 1.9-1.5 2.6 0.3 1.7-0.3 3.6-1.6-0.4-1.5 0.4-0.7 3.2-1.7 2-0.2 1.9-0.9 1.3 0.5 1.1-0.1 1.3 0.6 1.7 1.6 2.5 0.6 2-0.5 3.6-0.1 1.7 0.2 3.2-0.3 1.8 0.1 2.9-0.8 2.3 1 4.4 0.4 2.6 0.8 7.2 1.4 2.7 0 3.7-0.8 1.6-0.5 1.5 0.3 2.1-0.6 2.3 1 4.7 1.3 2.1-1.3 3.4 0.6 3.3 1.3 1.8 0.1 2.6-0.3 2.5-1z" class="experience" id="ES">
          </path>
        </a>
        <path d="M521.2 524.1l-0.3 2.3 1 1.7 0.6 6.5-1.8 3.2 0.1 3-1.6 4.3-0.8 1.1-3.8-2-1.2-1.1 1-1.8-2.2-0.9 0.4-1.7-0.2-0.9-1.6-0.5 1-1.3 0-0.8-1.5-1-0.3-0.9 1.3-1.1-0.6-0.9 0.1-1.3 0.9-1.9 1.2-0.9 2.8-0.8 1.2-1.1 1.9 0.6 0.6-1.2-0.2-2.7 0.3-1.1 1.3 0.5 0.4 2.7z m-133.9-47.9l-0.4 1.4-1.9-2.4 1-0.5 1.3 1.5z m84.4-55.6l2.1 1.2 1.4 0 2-0.6 1.3 0.7 1.4 0.1 3.5 4.3 1.8-0.7 1.4 0.4 0.3 0.9 2.1 0.1 3-0.6 2 1.4 4.8 0.8 1.6 0.6 0.1 1.3-3.5 3.8-1.4 5.5-1 1.8-0.3 1.5 0.2 2.4-0.6 2 0 1.5 1.1 1.3-1.5 0.7-0.8 1.4-2.7 0.3-0.8-0.8-1.1 0-1.8 1.4 1.3 1.1-0.6 0.9-3.8 4-2.1 0.9-0.5 2.9-3 2.2-1.1 2.9 0.8 0.7-0.3 1.5-1.5 1 0 1 1.4 0.1 2.3-1.6-0.5-1.3 2.3-1.5 1.9-0.1 2.2 0.3 0.8 2.2-0.5 1.7 2.3 2.3 0.9 1.4-2.6 1.7 0.1 1.6 0.9 0.6 1.7 2.6 1.8 1.6-0.8 2.5-1.2 0.3-1.7 1.3-1.9-0.2-0.8 0.4 1.5 3.1 3.2 1.4 0.5 1.7-0.8 0.7-1.4 2.5 0.7 1.3 0.1 1.4 0.9 0.9 5.1 2.4 3.3-0.6 0.3 2-2.1 2.6 0.2 1.5-0.6 0.3-0.8 0.3-2.4 1.1-3.9 3.4-1.8 1-0.7 1.8-2 1.4-2.4 0.5-2.3 1-1.1-0.4-2.8 0-1.7-1.2-3.4-0.8-1.1-1.8-2.5-0.1-0.8-1.5-1.9 0.3-1.5 0.7-2-0.1-5.9-1.8-1.4-1.4-1.7 0.5-1.6 1.6-6.5 4.1-2.6 4.3-0.1 1.2 0.7 3.9 1.6 2.5-3.1-0.6-3.8 1.1-1.2 0.8-4.7-1.2-2.1 1.1-1.3-1.2-2.8-1.2 0-1.5-2.6-0.6-0.9 0.7-1.1-1.5-1.7-0.3-2.5-1-4-1.1-0.8 2.4-4.7 0-0.7-0.4-3.1 0.4-3.2-2.1-3.6 0.4-2.2-2.1-2.2-0.2-4.4-1.7-1.8 0.4 0.3-3.2-4.3-1.3-0.5-1.3 2-0.5 1.9-1.9 1.7-7.1 1.3-8.3 1-1.6 1.2-0.4-1-1.2-1.1 1.5 0.7-7.6 0.5-2.8 0.9-3 3.1 2.4 0.8 1 0.9 3.4 0.6 0.1-1.1-4.6-1.8-2.3-3.6-2.3-0.5-1.3 1.8-0.6-0.5-1.8-0.5-5.9-3-0.6-4.8-2.6-1.7-2.6-1.6-1.9-0.4-1.7 0.9-1.8-0.8-1.1-1.4-0.8 1.1-1.6-3-0.2-1.8-0.5-0.3-1.1 1.3-1.4-1.6-0.8-2.6 0.2-0.2-1.7-2.2 0.3-1.2-0.3-1.1-1.1-1.3 0.2-2.2-0.4-0.8-0.7-4.8-1.3-2-0.1-1.9 0.6-1.1-0.3-1.3-2.2-3.1-1.1 0.6-0.7 3.1-0.6 0.6-0.7-2.2-0.9-0.2-1.2 1.6 0.3 0.1-1.2-4 0.1-0.4-1.3 0.5-1.4 2.3-1.2 5.8-1.4 2.5 0.2 1.7-0.2 3-1.6 2.9-0.4 2.7 0.8 2.5 2.8 1.2 1 3.1-1.7 4.4 0.1 0.9 0.9 1.2-1.7 1 1 4.7-0.2-1.5-2.5-0.2-6-1.3-1.7-2.1-4.3 0.2-1.4 3.2 0.3 2.7-0.6 1.3 0.4 0.3 2.8 1.1 1.6 2.2 0 2.3 0.5 3 0.1 4.3 0.8 1.8-0.5 3.5-2-1.8-0.7-0.2-0.7 0.9-2.2 5.2-2.5 3.7-0.7 3.8-1.3 2-1.4 1.2-1.8 0.5-1.3 0.3-6.8 1-2.2 2.9-1.6 6.4-1.1 0.9-0.5 0.9 2.2 0 1.2 2.9 2.4 3.2-1 1.6 1.8 0.5 2 4.2 1.1 0.6 2 0.9-0.3 3.6 0.4 1.6 1.1-0.4 1.6 0.7 0.7-0.7 1.4 0.5 0.6 2.3 0.3 2.2-0.3 1.3-0.6 0.5-1.4 1.9-0.6-0.8 2.7 0.6 0.6 0.4 2 1.7 0.1 3.3 1.5 2.8 2.6 3.4-0.4z" id="FR">
@@ -248,7 +298,7 @@
           <h2 class="map-headings">Experiences in Barcelona</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img id="img1" class="ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img id="img2" class="ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -256,7 +306,7 @@
               <img id="img4" class="ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img id="img5" class="ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="salzburg-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -264,7 +314,7 @@
           <h2 class="map-headings">Experiences in Salzburg</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -272,7 +322,7 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="bruges-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -280,7 +330,7 @@
           <h2 class="map-headings">Experiences in Bruges</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -288,7 +338,7 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="rome-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -296,7 +346,7 @@
           <h2 class="map-headings">Experiences in Rome</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -304,7 +354,7 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="milan-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -312,7 +362,7 @@
           <h2 class="map-headings">Experiences in Milan</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -320,7 +370,7 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="budapest-mem-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -328,7 +378,7 @@
           <h2 class="map-headings">Experiences in Budapest I</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -336,7 +386,7 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="budapest-st-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -344,7 +394,7 @@
           <h2 class="map-headings">Experiences in Budapest II</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -352,7 +402,7 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="bratislava-blue-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -360,7 +410,7 @@
           <h2 class="map-headings">Experiences in Bratislava</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -368,7 +418,7 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="berlin-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -376,7 +426,7 @@
           <h2 class="map-headings">Experiences in Berlin</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -384,7 +434,7 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
         <article id="prague-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
@@ -392,7 +442,7 @@
           <h2 class="map-headings">Experiences in Prague</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           <div class="images">
-            <button type="button" class="arrow-img col-3" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-right" onclick="moveLeft('img')"><img src="images/left-arrow.png" alt=""></button>
             <div>
               <img class="img1 ex-img col-s-5" src="images/barcelona/im1.jpeg" alt="Palau Guell, colorfull towers">
               <img class="img2 ex-img col-s-5" src="images/barcelona/im2.jpeg" alt="Sant Pau Hospital from outside">
@@ -400,12 +450,13 @@
               <img class="img4 ex-img col-s-5" src="images/barcelona/im4.jpeg" alt="Museu Nacional d'Art de Catalunya from outside">
               <img class="img5 ex-img col-s-5" src="images/barcelona/im5.jpeg" alt="Cascada Moumental">
             </div>
-            <button type="button" class="arrow-img" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
+            <button type="button" class="arrow-img arr-left" onclick="moveRight('img')"><img src="images/right-arrow.png" alt=""></button>
           </div>
         </article>
       </div>
       <!--Section three contains a title and a series of experiences-->
       <h2 id="title-exp">Travel experiences</h2>
+      <p id='error-search'>No results</p>
       <!--The experiences are all inside a div container, this div contains
       3 smaller divs, each one being a column of experiences-->
       <div class="block">
@@ -488,4 +539,5 @@
   </body>
   <script src="script/popups.js"></script>
   <script src="script/maps.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 </html>
