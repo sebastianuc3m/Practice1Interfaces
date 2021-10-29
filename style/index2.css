@@ -214,9 +214,22 @@ br {
 
 /*As we said in the html file, the buttons for this section will not be shown in
 the mobile vesion*/
-.arrow-img {
+.arrow-img img{
+  height: 20px;
+}
+
+.images div{
+  overflow: hidden;
+}
+
+.ex-img{
   display: none;
 }
+
+.img1{
+  display: inline-block;
+}
+
 
 #ES, #AT, #IT {
   fill: rgba(238, 127, 68, 0.75);
@@ -587,7 +600,7 @@ background*/
 
 
   /*Depending on which column the image/video is located, it will have a
-  different width*/
+  different width
 
   .img1, .img5 {
     display: none;
@@ -597,7 +610,7 @@ background*/
   }
 
   .img3 {
-  }
+  }*/
 
   .images{
     margin-top: 20px;

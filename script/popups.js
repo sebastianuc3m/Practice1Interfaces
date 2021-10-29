@@ -131,45 +131,6 @@ function popExperienceHandler(experience){
 	$(exp).show();
 }
 
-function moveLeft(type) {
-  let elements = [];
-  for (var i=1; i<6; i++){
-    elements[i-1] = document.getElementById(type+String(i));
-  }
-  for (var i=0; i<5; i++) {
-    if (i<4) {
-      var newId = type+String(i+2);
-      elements[i].id = newId;
-    }
-    else if (i==4) {
-      var newId = type+'1';
-      elements[i].id = newId;
-    }
-  }
-  var newNode = document.getElementById(type+'1');
-  var referenceNode = document.getElementById(type+'2');
-  var insertedNode = referenceNode.parentNode.insertBefore(newNode, referenceNode);
-}
-
-function moveRight(type) {
-  let elements = [];
-  for (var i=1; i<6; i++){
-    elements[i-1] = $()
-  }
-  for (var i=0; i<5; i++) {
-    if (i == 0) {
-      elements[i].id = type+'5';
-    }
-    if (i>0) {
-      elements[i].id = type+String(i);
-    }
-  }
-
-  var newNode = document.getElementById(type+'5');
-  var referenceNode = document.getElementById(type+'4');
-  var insertedNode = referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-}
-
 // document.cookie = ["A=a"; "b=gasdf"; expires=hadsfa]
 $(document).ready(function() {
 	var e = new Event("look", {"cancelable":true});
@@ -382,37 +343,46 @@ $(document).ready(function() {
 	
 	$(".column").sortable({helper:'clone',connectWith: '.column'});
 
-	/*
-	$(".arrow-left").click(function(){
+	
+	$(".arr-left").click(function(){
 		let art = $(this).parent();
-		let imgs = $(art "div");
-		$(imgs).each(function(){
-			if ($(this).attr('class',"[class^='job']")){
+		let imgs = $(art).children('div');
+		var img1 = $(imgs).children('.img1')
+		var img2 = $(imgs).children('.img2')
+		var img3 = $(imgs).children('.img3')
+		var img4 = $(imgs).children('.img4')
+		var img5 = $(imgs).children('.img5')
+		img1.removeClass('img1');
+		img2.removeClass('img2');
+		img3.removeClass('img3');
+		img4.removeClass('img4');
+		img5.removeClass('img5');
+		img1.addClass('img5');
+		img2.addClass('img1');
+		img3.addClass('img2');
+		img4.addClass('img3');
+		img5.addClass('img4');
+	})
 
-			}
-		})
-		function moveLeft(type) {
-		  let elements = [];
-		  for (var i=1; i<6; i++){
-		    elements[i-1] = document.getElementById(type+String(i));
-		  }
-		  for (var i=0; i<5; i++) {
-		    if (i<4) {
-		      var newId = type+String(i+2);
-		      elements[i].id = newId;
-		    }
-		    else if (i==4) {
-		      var newId = type+'1';
-		      elements[i].id = newId;
-		    }
-		  }
-		  var newNode = document.getElementById(type+'1');
-		  var referenceNode = document.getElementById(type+'2');
-		  var insertedNode = referenceNode.parentNode.insertBefore(newNode, referenceNode);
-		}
-
-
-	})*/
+	$(".arr-right").click(function(){
+		let art = $(this).parent();
+		let imgs = $(art).children('div');
+		var img1 = $(imgs).children('.img1')
+		var img2 = $(imgs).children('.img2')
+		var img3 = $(imgs).children('.img3')
+		var img4 = $(imgs).children('.img4')
+		var img5 = $(imgs).children('.img5')
+		img1.removeClass('img1');
+		img2.removeClass('img2');
+		img3.removeClass('img3');
+		img4.removeClass('img4');
+		img5.removeClass('img5');
+		img1.addClass('img2');
+		img2.addClass('img3');
+		img3.addClass('img4');
+		img4.addClass('img5');
+		img5.addClass('img1');
+	})
 })
 
 
