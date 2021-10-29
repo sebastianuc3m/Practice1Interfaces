@@ -325,8 +325,9 @@ $(document).ready(function() {
 	})
 	$(".experience").click(function() {
 		let exp = $(this).attr('id');
-		exp += '-pop'
+		exp ='#' + exp + '-pop'
 		console.log(exp);
-		$('#'+exp).show()
+		$(exp).css("top", ( jQuery(window).height() - $(exp).height() ) / 2+jQuery(window).scrollTop() + "px");
+		$(exp).show()
 	})
 })

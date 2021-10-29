@@ -205,6 +205,13 @@ br {
 
 */
 
+.pop-experiences p{
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+  }
+
 /*As we said in the html file, the buttons for this section will not be shown in
 the mobile vesion*/
 .arrow-img {
@@ -256,16 +263,23 @@ on the bottom side*/
 /*Columns will be aligned using display:flex and float:left, we also center
 them using margins*/
 .block {
-  display: grid;
-  grid-template-areas:
-  'left right'
-  'bottom bottom';
-  margin: auto;
+  display: flex;
 }
 
-#col1 {grid-area: left}
-#col2 {grid-area: bottom}
-#col3 {grid-area: right}
+/*  Columns will be aligned using display:flex and float:left, we also center
+  them using margins
+  .block {
+    display: grid;
+    grid-template-areas:
+    'left right'
+    'bottom bottom';
+    margin: auto;
+  }
+
+  #col1 {grid-area: left}
+  #col2 {grid-area: bottom}
+  #col3 {grid-area: right}
+  */
 
 .column {
   display: block;
@@ -281,7 +295,7 @@ them using margins*/
 
 }
 
-#section-exp div img {
+.experience img {
   width: 30vw;
   border-radius: 5%
 } 
@@ -477,8 +491,8 @@ background*/
   text-align: left;
   display: flex;
   flex-direction: column;
-
 }
+
 
 /*For even smaller devices, we needed more changes*/
 @media only screen and (min-device-width: 601px) {
@@ -533,7 +547,7 @@ background*/
     width: 22vw;
   }
 
-  #section-exp img {
+  .block img {
     width: 22vw;
   }
   #pfp {
@@ -571,23 +585,30 @@ background*/
 
   /*Depending on which column the image/video is located, it will have a
   different width*/
-  #img1, #img5, #vid1, #vid5 {
+
+  .img1, .img5 {
     display: none;
   }
 
-  #img2, #img4, #vid2, #vid4 {
-    height: 35%;
-    width: 35%;
+  .img2, .img4 {
+    height: 30vh;
   }
 
-  #img3, #vid3 {
-    width: 100%;
-    height: 100%;
+  .img3 {
+    height: 30vh;
+  }
+
+  .images{
+    margin-top: 20px;
   }
 
   .images .videos div{
     display: flex;
     flex-direction: row;
+  }
+
+  .images img{
+    margin: 5px;
   }
 
   /*Styling for the buttons. They will not have border not background and will
@@ -605,7 +626,6 @@ background*/
   }
 
   .arrow-img img {
-    width: 20px;
     height: 20px;
     margin: auto;
   }
