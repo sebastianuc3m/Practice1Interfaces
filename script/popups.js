@@ -347,11 +347,11 @@ $(document).ready(function() {
 	$(".arr-left").click(function(){
 		let art = $(this).parent();
 		let imgs = $(art).children('div');
-		var img1 = $(imgs).children('.img1')
-		var img2 = $(imgs).children('.img2')
-		var img3 = $(imgs).children('.img3')
-		var img4 = $(imgs).children('.img4')
-		var img5 = $(imgs).children('.img5')
+		var img1 = $(imgs).children('.img1');
+		var img2 = $(imgs).children('.img2');
+		var img3 = $(imgs).children('.img3');
+		var img4 = $(imgs).children('.img4');
+		var img5 = $(imgs).children('.img5');
 		img1.removeClass('img1');
 		img2.removeClass('img2');
 		img3.removeClass('img3');
@@ -367,11 +367,11 @@ $(document).ready(function() {
 	$(".arr-right").click(function(){
 		let art = $(this).parent();
 		let imgs = $(art).children('div');
-		var img1 = $(imgs).children('.img1')
-		var img2 = $(imgs).children('.img2')
-		var img3 = $(imgs).children('.img3')
-		var img4 = $(imgs).children('.img4')
-		var img5 = $(imgs).children('.img5')
+		var img1 = $(imgs).children('.img1');
+		var img2 = $(imgs).children('.img2');
+		var img3 = $(imgs).children('.img3');
+		var img4 = $(imgs).children('.img4');
+		var img5 = $(imgs).children('.img5');
 		img1.removeClass('img1');
 		img2.removeClass('img2');
 		img3.removeClass('img3');

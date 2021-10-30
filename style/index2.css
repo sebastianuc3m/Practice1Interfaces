@@ -190,20 +190,6 @@ br {
   background-color: rgba(255,0,255,0.075);
   padding-bottom: 20px
 }
-/*
-#images, #videos {
-  display: flex;
-  flex-direction: row;
-  width: 100%
-}
-
-[id^="img"], [id^="vid"] {
-  width: 75vw;
-  margin: 0px auto 20px;
-  object-fit: cover;
-}
-
-*/
 
 .pop-experiences p{
     width: 80%;
@@ -212,14 +198,35 @@ br {
     font-family: 'Courier New', monospace;
   }
 
-/*As we said in the html file, the buttons for this section will not be shown in
-the mobile vesion*/
+
+.images{
+  display: flex;
+}
+
+.images img{
+  overflow: hidden;
+}
+
+.arrow-img {
+  display: flex;
+  height: 20px;
+  border: none;
+  background: none;
+  margin: auto;
+
+}
+
+.arrow-img:hover {
+  cursor: pointer;
+}
+
 .arrow-img img{
+  display: flex;
   height: 20px;
 }
 
-.images div{
-  overflow: hidden;
+.images {
+  text-align: center;
 }
 
 .ex-img{
@@ -228,6 +235,7 @@ the mobile vesion*/
 
 .img1{
   display: inline-block;
+  width: 95%;
 }
 
 
@@ -250,7 +258,6 @@ area, the input on the bottom-left and the button on the bottom-right*/
   grid-template-areas:
   'top top'
   'left right';
-  grid-column-gap: 5px;
   background-color: beige;
   padding: 30px 0px 50px;
 }
@@ -458,7 +465,7 @@ background*/
 #pfp-menu{
   margin: auto 0px;
   padding: 5px;
-  background-color: white;
+  background-color: beige;
 }
 
 #pfp-menu p{
@@ -600,17 +607,11 @@ background*/
 
 
   /*Depending on which column the image/video is located, it will have a
-  different width
+  different width*/
 
-  .img1, .img5 {
-    display: none;
-  }
 
-  .img2, .img4 {
-  }
 
-  .img3 {
-  }*/
+
 
   .images{
     margin-top: 20px;
@@ -620,23 +621,13 @@ background*/
     display: flex;
     flex-direction: row;
   }
-
-  .images img{
-    margin: 5px;
+   .img1, .img2{
+    display: inline-block;
+    width: 40%;
   }
 
-  /*Styling for the buttons. They will not have border not background and will
-  only display the image they have inside*/
-  .arrow-img {
+  .arrow-img{
     display: block;
-    height: 20px;
-    margin: auto;
-    border: none;
-    background: none;
-  }
-
-  .arrow-img:hover {
-    cursor: pointer;
   }
 
   .arrow-img img {
@@ -712,5 +703,8 @@ the map sizes*/
   #menu a {
     font-size: 18px;
     margin: auto, 5px;
+  }
+  .img1, .img2{
+    display: inline-block;
   }
 }
