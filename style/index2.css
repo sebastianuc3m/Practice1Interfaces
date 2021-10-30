@@ -63,7 +63,7 @@ header {
   /*Header will have a display flex and a background colour*/
   display: flex;
   background-color: beige;
-  height: 85px;
+  height: 100px;
   padding: 0px;
 }
 
@@ -280,8 +280,6 @@ on the bottom side*/
   padding-bottom: 1%
 }
 
-
-
 #title-exp {
   text-align: center;
 }
@@ -406,6 +404,8 @@ background*/
   margin-bottom: 20px
 }
 
+/*
+
 .form-container {
   display:flex;
   flex-direction: row;
@@ -413,7 +413,7 @@ background*/
 
 .form-container input{
   width: 60%;
-}
+}*/
 
 #btn-login {
   height: 45px;
@@ -426,16 +426,34 @@ background*/
 
 }
 
-.form-fields {
-  text-align: right;
+#log-form, #sign-form{
+  display: block;
+  text-align: center;
 }
+
+
+#submit-log{
+  margin: 5px auto;
+}
+
 
 .field{
-  margin: 10px, auto;
+  margin: 5px auto;
+  display: block;
 }
 
-#check-sign article{
+.field label{
+  display: inline-block;
+  margin: auto;
+}
+
+#check-sign{
   text-align: center;
+}
+
+#check-sign div{
+  display: flex;
+  flex-direction: column;
 }
 
 .field div {
@@ -446,16 +464,17 @@ background*/
 
 #sign-btns {
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: auto;
+}
+
+#sign-btns button{
   margin: auto;
 }
 
 /*pfp menu*/
 #pfp {
-  width: 30vh;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
+  display: block;
 }
 
 #pfp div {
@@ -463,24 +482,51 @@ background*/
 }
 
 #pfp-menu{
-  margin: auto 0px;
+  position: absolute;
+  top: 90px;
+  display: flex;
+  text-align: center;
+  margin: auto;
   padding: 5px;
-  background-color: beige;
+  background-color: #d1b7ab;
+  border-width: 0px;
+;
 }
 
 #pfp-menu p{
-  margin: 5px;
+  margin: auto;
   cursor: pointer;
 }
 
 #pfp-img {
-  width: 70px;
+  width: 65px;
   border-radius: 50%;
-  margin: 5px 10px auto auto;
+  margin: 3px auto;
+}
+
+#my-profile-menu div{
+  margin: 2px auto;
+}
+
+#prf-interests-div{
+  margin-bottom: 10px;
 }
 
 #prf-img{
   width: 100px;
+}
+
+.prf-sep{
+  width: 200px;
+}
+
+#change-int-form{
+  display: none;
+  margin: 10px auto;
+  padding: 5px;
+  border-color: rgb(96,20,40);
+  border-style: solid;
+  border-width: 1px;
 }
 
 /*my profile and my experiences*/
@@ -576,17 +622,58 @@ background*/
   .block img {
     width: 22vw;
   }
+
+  #log-form, #sign-form{
+    display: inline-block;
+    text-align: right;
+  }
+
+  #sign-form article{
+
+  }
+
+  #submit-log{
+    margin: 5px auto;
+    margin-right: 50%;
+    transform: translate(50%);
+  }
+
+  .field label{
+    display: inline-block;
+  }
+
+  #tou-art{
+    text-align: center;
+  }
+
   #pfp {
-    flex-direction: row;
+    text-align: center;
   }
   #pfp-img{
+    margin-left: 50%;
     width: 65px;
+  }
+  #show-username{
+    margin-left: 50%;
   }
 
   #pfp-menu{
-    background-color: transparent;
+    position: relative;
+    text-align: right;
+    top: 0px;
+    flex-direction: column;
     margin: auto;
-    margin-right: 10px;
+    background-color: transparent;
+    border-color: #d1b7ab;
+    border-style: solid;
+    border-width: 2px;
+    margin-right: 20px;
+  }
+
+  #pfp-menu p{
+    text-align: right;
+    margin: 2px auto;
+
   }
 
   /*In this version, the experiences will be divided into 5 columns an the
@@ -604,14 +691,6 @@ background*/
     flex-direction: row;
     padding-bottom: 20px;
   }
-
-
-  /*Depending on which column the image/video is located, it will have a
-  different width*/
-
-
-
-
 
   .images{
     margin-top: 20px;
@@ -688,12 +767,21 @@ the map sizes*/
     font-size: 16px;
     margin-left: 0px;
   }
-  #pfp {
+
+  #check-sign div{
+    display: flex;
     flex-direction: row;
+  }
+
+  #pfp {
+    display: inline-block;
   }
 
   #pfp-img{
     width: 80px;
+    margin: 5px auto;
+    margin-left: 50%;
+
   }
   #pfp-menu{
     background-color: transparent;

@@ -83,16 +83,20 @@ function pfpHide(){
 	var islogged = getCookie("logged");
 	if (islogged === ""){
 		$("#pfp").hide();
+		$("#pfp-menu").hide();
 		$("#button-div").show();
 		$("#add-exp").hide();
 		$("#my-profile-menu").hide();
 		$("#my-experiences-menu").hide();
+		$("#show-username").hide()
 	} else {
 		$("#pfp").show();
+		$("#pfp-menu").show();
 		$("#button-div").hide();
 		$("#add-exp").hide();
 		$("#my-profile-menu").hide();
 		$("#my-experiences-menu").hide();
+		$("#show-username").show()
 	}
 	$("#my-profile-menu").hide();		
 }

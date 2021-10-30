@@ -70,13 +70,13 @@
               <label><input type="checkbox" value="beach" class="interests" id="beach" name="beach">Beach</label>
             </div>
           </article>
-          <article class="field">
+          <article class="field" id="tou-art">
             <label for="terms-of-use">
               <input type="checkbox" name="terms-of-use" id="terms-of-use" required>I accept all the terms of use.
             </label>
           </article>
         </div>
-        <div id="sign-btns">
+        <div id="sign-btns" class="col-s-10">
           <button type="submit" id="submit-sign">Submit</button>
           <button type="reset">Reset</button>
         </div>
@@ -94,6 +94,7 @@
           <label for="prf-email">Email:</label>  
           <p id="prf-email"></p>
         </div>
+          <img class="prf-sep" src="images/separator.png" alt="separator">
         <div>
           <label for="prf-name">Name: </label>  
           <p id=prf-name></p>
@@ -102,11 +103,13 @@
           <label for="prf-surname">Surname: </label>  
           <p id=prf-surname></p>
         </div>
+          <img class="prf-sep" src="images/separator.png" alt="separator">
         <div>
           <label for="prf-birthdate">Birthdate: </label>  
           <p id=prf-birthdate></p>
         </div>
-        <div>
+          <img class="prf-sep" src="images/separator.png" alt="separator">
+        <div id="prf-interests-div">
           <label for="prf-interests">Interests: </label>  
           <p id=prf-interests></p>
           <button type="button" id="change-int">Change interests</button>
@@ -175,18 +178,19 @@
         <button type="button" id="signup-but" class="buttons">Sign-up</button>
       </nav>
       <!-- pfp menu html -->
-      <nav id="pfp" class="col-s-4 col-t-4 col-4">
+      <nav id="pfp" class="col-s-3 col-t-3 col-4">
         <div class="col-s-12 col-t-4 col-4">
           <img id="pfp-img" src="images/pfp.png">
           <h3 id="show-username"></h3>
         </div>
-        <nav id="pfp-menu" class="col-s-12 col-t-8 col-8">
+      </nav>
+      <nav id="pfp-menu" class="col-s-12 col-t-4 col-4">
           <p id="my-profile">My profile</p>
           <p id="my-exp">My experiences</p>
           <p id="log-out">Log out</p>
-        </nav>
-      </nav>
+    </nav>
     </header>
+    
     <!--Here is where the 3 sections of the website start-->
     <section id="section-map">
       <!--The first section only contains an image with a map. To implement this,
