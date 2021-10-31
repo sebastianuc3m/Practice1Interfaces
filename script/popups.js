@@ -88,7 +88,6 @@ function pfpHide(){
 		$("#add-exp").hide();
 		$("#my-profile-menu").hide();
 		$("#my-experiences-menu").hide();
-		$("#show-username").hide()
 	} else {
 		$("#pfp").show();
 		$("#pfp-menu").show();
@@ -96,7 +95,6 @@ function pfpHide(){
 		$("#add-exp").hide();
 		$("#my-profile-menu").hide();
 		$("#my-experiences-menu").hide();
-		$("#show-username").show()
 	}
 	$("#my-profile-menu").hide();		
 }
@@ -148,6 +146,13 @@ $(document).ready(function() {
 	$("#log").hide();
 	$("#sign").hide();
 	pfpHide();
+	let email = getCookie('logged');
+	if (email!==""){
+		let data = parseCookie(email);
+		$("#show-username").html(data[0]);
+		let pfp = getCookie(email+'_pfp');
+		$("#pfp-img").attr('src',pfp);
+	}
 
 	$("#login-but").click(function() {
 		if ($(this).html() == "Log-in"){
@@ -169,7 +174,7 @@ $(document).ready(function() {
 		$("#my-experiences-menu").hide();
 		$(".pop-experiences").hide()
 	})
-
+/*
 	$(".delete-exp").click(function(){
 		var title = $(this).closest('h4').html();
 		deletecookie = getCookie(title);
@@ -179,16 +184,14 @@ $(document).ready(function() {
 		let cookie = parseCookie(user);
 		cookie = cookie.filter(function(item) {
     		return item !== title})
-		console.log('mismuertos');
 		$(this).closest('article').remove();
-	})
+	})*/
 	
 	$("#log-form").submit(function(e){
 		e.preventDefault();
 		let username = $("#username-log").val();
 		let password = $("#pwd-log").val();
 		if (logIn(username, password)){
-			console.log('aaa');
 			$("#log").hide();
 			$("#show-username").html(username);
 			pfpHide();
@@ -253,7 +256,6 @@ $(document).ready(function() {
 	$("#change-user").click(function(){
 		let cookie = getCookie('logged');
 		data = parseCookie(cookie);
-		console.log(data);
 		let newuser = prompt("Type the new user:", data[0]);
 		if (newuser != null){
 			data[0] = newuser;
