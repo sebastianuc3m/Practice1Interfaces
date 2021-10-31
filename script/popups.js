@@ -88,6 +88,7 @@ function logIn(username, password){
 		$("#no-exp").show();
 		return true;
 	} else{
+		window.alert("Incorrect credentials.");
 		return false;
 	}
 }
@@ -142,6 +143,9 @@ function deleteExperience(but){
 	// we just delete the parent of the clicked button
 	var this_exp = $(but).parent();
 	this_exp.remove();
+	if($('#added-exp').children().length==0){
+		$("#no-exp").show()
+	}
 }
 
 // This function will show the user experiences menu (?)
@@ -215,6 +219,7 @@ $(document).ready(function() {
 			$("#log").hide();
 			$("#show-username").html(username);
 			pfpHide();
+			document.getElementById("log-form").reset();
 		}
 	})
 
@@ -243,15 +248,21 @@ $(document).ready(function() {
 		let data = [$('#username-sign').val(), $('#pwd-sign').val(),
 		$('#name').val(), $('#surname').val(), $('#birthdate').val()];
 		var email = $('#email').val();
-		// We will create a cookie with an arbitrary expiration date of 71 days
-		// It will have the user email as name and all other inputs as content
-		setCookie(email+'_pfp', pfp_img, 71);
-		setCookie(email+'_int', interests, 71);
-		setCookie(email, data, 71);
-		$("#sign").hide();
-		// we directly login using these inputs
-		logIn($('#username-sign').val(), $('#pwd-sign').val());
-		pfpHide();
+		if (getCookie(email)==""){
+			// We will create a cookie with an arbitrary expiration date of 71 days
+			// It will have the user email as name and all other inputs as content
+			setCookie(email+'_pfp', pfp_img, 71);
+			setCookie(email+'_int', interests, 71);
+			setCookie(email, data, 71);
+			$("#sign").hide();
+			// we directly login using these inputs
+			logIn($('#username-sign').val(), $('#pwd-sign').val());
+			pfpHide();
+			document.getElementById("sign-form").reset();
+		} else {
+			window.alert("Error. A user with the same email is already signed up.");
+		}
+		
 	})
 
 	// when clicking on the "my profile" option, we have to open a popup
@@ -346,8 +357,10 @@ $(document).ready(function() {
 		// This will be another popup form
 		if ($("#change-int-form").is(':hidden')){
 			$("#change-int-form").show();
+			$("my-profile-menu").css('max-height','80%');
 		} else {
 			$("#change-int-form").hide();
+			$("my-profile-menu").css('max-height','75%');
 		}
 	})
 
@@ -368,21 +381,24 @@ $(document).ready(function() {
 	})
 
 	//Search filter
-	$("#in-search").on("keyup", function() {
-		// we take the input from the user
-    var value = $(this).val().toLowerCase();
-    var count = 0;
-		// we create the filter for only showing elements that correspond to the user input
-    $(".experience").filter(function() {
-      if($(this).text().indexOf(value) > -1) count++;
-      	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-		});
-	  if(count == 0){
-	  	$("#error-search").show();
-	  } else {
-	  	$("#error-search").hide();
-	  }
-	});
+	$("#button-search").click(function() {
+		if($("#in-search").val()!== ""){
+			var value = $("#in-search").val().toLowerCase();
+			// we create the filter for only showing elements that correspond to the user input
+		    $(".block .experience").filter(function() {
+		      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+			if($(".block .experience:visible").length == 0){
+			  $("#error-search").show();
+				window.alert("No results for this search.");
+			} else {
+			  $("#error-search").hide();
+			}
+		} else{
+			window.alert("Introuce some text in the seacrh bar input.");
+		}
+		
+	 });
 
 	//The user can choose to change its profile picture in the profile menu
 	$("#change-pfp").change(function(){
