@@ -62,19 +62,27 @@
             <label for="input-pfp"><b>Profile picture</b></label>
             <input type="file" accept="image/png, image/gif, image/jpeg" name="input-pfp" id="input-pfp">
           </article>
-          <article class="field col-s-12" id="check-sign">
-            <label for="interests"><b>Interests</b></label>
-            <div>
-              <label><input type="checkbox" value="cultural" class="interests" id="cultural" name="cultural">Cultural</label>
-              <label><input type="checkbox" value="ecotourism" class="interests" id="ecotourism" name="ecotourism">Ecotourism</label>
-              <label><input type="checkbox" value="beach" class="interests" id="beach" name="beach">Beach</label>
+          <article id="field-int" class="col-s-12" id="check-sign">
+            <p id="interests-p"><b>Interests</b></p>
+            <div id="field-interests">
+              <div class="in-in">
+                <input type="checkbox" value="cultural" class="interests" id="cultural" name="cultural">
+                <label for="cultural">Cultural</label>
+              </div>
+              <div class="in-in">
+                <input type="checkbox" value="ecotourism" class="interests" id="ecotourism" name="ecotourism">
+                <label for="ecotourism">Ecotourism</label>
+              </div>
+              <div class="in-in">
+                <input type="checkbox" value="beach" class="interests" id="beach" name="beach">
+                <label for="beach">Beach</label>
+              </div>
             </div>
           </article>
-          <article class="field" id="tou-art">
-            <label for="terms-of-use">
-              <input type="checkbox" name="terms-of-use" id="terms-of-use" required>I accept all the terms of use.
-            </label>
-          </article>
+        </div>
+        <div id="terms-div">
+          <input type="checkbox" name="terms-of-use" id="terms-of-use" required>
+          <label for="terms-of-use" id="lab-terms">I accept all the terms of use.</label>
         </div>
         <div id="sign-btns" class="col-s-10">
           <button type="submit" id="submit-sign">Submit</button>
@@ -91,26 +99,26 @@
         <h3 id="prf-user"></h3>
         <button type="button" id="change-user">Change user</button>
         <div>
-          <label for="prf-email">Email:</label>  
+          <label for="prf-email">Email:</label>
           <p id="prf-email"></p>
         </div>
           <img class="prf-sep" src="images/separator.png" alt="separator">
         <div>
-          <label for="prf-name">Name: </label>  
+          <label for="prf-name">Name: </label>
           <p id=prf-name></p>
         </div>
         <div>
-          <label for="prf-surname">Surname: </label>  
+          <label for="prf-surname">Surname: </label>
           <p id=prf-surname></p>
         </div>
           <img class="prf-sep" src="images/separator.png" alt="separator">
         <div>
-          <label for="prf-birthdate">Birthdate: </label>  
+          <label for="prf-birthdate">Birthdate: </label>
           <p id=prf-birthdate></p>
         </div>
           <img class="prf-sep" src="images/separator.png" alt="separator">
         <div id="prf-interests-div">
-          <label for="prf-interests">Interests: </label>  
+          <label for="prf-interests">Interests: </label>
           <p id=prf-interests></p>
           <button type="button" id="change-int">Change interests</button>
         </div>
@@ -190,7 +198,7 @@
           <p id="log-out">Log out</p>
     </nav>
     </header>
-    
+
     <!--Here is where the 3 sections of the website start-->
     <section id="section-map">
       <!--The first section only contains an image with a map. To implement this,

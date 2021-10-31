@@ -322,7 +322,7 @@ them using margins*/
 .experience img {
   width: 30vw;
   border-radius: 5%
-} 
+}
 
 /*The footer needs a display flex in order to split the contents*/
 footer {
@@ -384,7 +384,7 @@ background*/
   font-size: 30px;
   margin: auto auto 25vh;
 }
-/* popup code 
+/* popup code
 .popup {
   position: absolute;
   display: none;
@@ -422,7 +422,7 @@ background*/
 
 .btn-cancel{
   /*transform: translate(50%, 0);*/
-  margin-left: 95%;
+  margin-left: 90%;
 
 }
 
@@ -436,15 +436,37 @@ background*/
   margin: 5px auto;
 }
 
+#interests-p {
+  font-size: 20px
+}
 
 .field{
   margin: 5px auto;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .field label{
-  display: inline-block;
   margin: auto;
+}
+
+.field input {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.in-in {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: auto;
+  width: 60%
+}
+
+#lab-terms {
+  font-size: 10px
 }
 
 #check-sign{
@@ -628,8 +650,30 @@ background*/
     text-align: right;
   }
 
-  #sign-form article{
+  #interests-p {
+    text-align: center;
+    font-size: 16px
+  }
 
+  .field {
+    flex-direction: row;
+  }
+
+  .field input{
+    margin: auto 5px auto auto;
+    width: 60%
+  }
+
+  .in-in {
+    width: 35%
+  }
+
+  #terms-div {
+    text-align: center;
+  }
+
+  #lab-terms {
+    font-size: 14px
   }
 
   #submit-log{
@@ -685,7 +729,7 @@ background*/
   #experiences h2 {
     margin-bottom: 5px
   }
-  
+
 
   .images, .videos {
     flex-direction: row;
