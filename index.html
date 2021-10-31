@@ -90,8 +90,9 @@
         </div>
       </form>
     </div>
-    <!-- Menus when logged in -->
+    <!-- Option menu's when logged in -->
     <section>
+      <!-- The "my profile" menu will display the data of the user. -->
       <div id="my-profile-menu" class="floating-screen">
         <button class="btn-cancel">x</button>
         <img id=prf-img alt="profile picture">
@@ -129,6 +130,7 @@
             <button type="submit" id="change-int-btn">save interests</button>
         </form>
       </div>
+      <!-- The "my experiences" menus will let the user manage its experieneces. -->
       <div id="my-experiences-menu" class="floating-screen">
         <article>
           <button class="btn-cancel">x</button>
@@ -200,9 +202,12 @@
     </header>
 
     <!--Here is where the 3 sections of the website start-->
+    <!--SECTION ONE-->
     <section id="section-map">
-      <!--The first section only contains an image with a map. To implement this,
-      we have downloaded a svg map of Europe.-->
+      <!--The first section contains an image with a map and its correspondant experiences
+      pop-ups. To implement this, we have downloaded a svg map of Europe.-->
+      <!--First we have three popups-->
+      <!--Each one of them contains a title, a description a some images.-->
       <div id="map-pop-up">
         <article id="AT-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
           <button class="btn-cancel">x</button>
@@ -264,6 +269,7 @@
           </div>
         </article>
       </div>
+      <!--Then the image vectors for the map.-->
       <svg version="1.2" viewbox="50 250 800 420" xmlns="http://www.w3.org/2000/svg">
        <path d="M423.4 528.8l-2.8 1.1-0.7-0.4 0-2.1 0.9-0.7 2.6 0.6 0 1.5z" id="AD">
        </path>
@@ -304,6 +310,7 @@
       </svg>
     </section>
     <!-- SECTION TWO -->
+    <!--In the search section the user can look for experiences using the search bar.-->
     <section id="section-search">
       <!--Section two contains a title and a useless search input and button-->
       <h2 id="title-search">Search Bar</h2>
@@ -311,8 +318,10 @@
       <button id="button-search" type="button" name="search-button" class="buttons">Search</button>
     </section>
     <!-- SECTION THREE -->
+    <!--This section will contain the different experiences and their correspondant popups.-->
     <section id="section-exp">
-      <!-- Pop-up experiences -->
+      <!-- First we have all the popups, divided in different articles. -->
+      <!-- As in the map section, each of them contains a title, a description and some images.-->
       <div id="pop-up-exp">
         <article id="barcelona-pop" class="pop-experiences floating-screen col-s-10 col-t-10 col-10">
           <button class="btn-cancel">x</button>
@@ -478,8 +487,7 @@
       <!--Section three contains a title and a series of experiences-->
       <h2 id="title-exp">Travel experiences</h2>
       <p id='error-search'>No results</p>
-      <!--The experiences are all inside a div container, this div contains
-      3 smaller divs, each one being a column of experiences-->
+      <!--The experiences are situated inside a block in different articles-->
       <div class="block">
         <article class="experience" id="barcelona">
           <!--These article containers contain an image, title and description

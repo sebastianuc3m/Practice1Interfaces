@@ -9,7 +9,7 @@ function setCookie(cname, cvalue, exdays, path="") {
 }
 
 // We needed a function to search through the cookies. This function will take
-// a cookie name as input and will return the elements inside that cookie.
+// a cookie name as input and will return the elements inside that cookie as a string.
 function getCookie(cname) {
 	let name = cname + "=";
 	let ca = document.cookie.split(';');
@@ -25,7 +25,7 @@ function getCookie(cname) {
 	return "";
 }
 
-// This function will return a string containing all cookies in the website.
+// This function will return a string containing the names of all cookies in the website in a list.
 function getAllCookies(){
 	let word = "";
 	let clist = [];
@@ -77,6 +77,9 @@ function logIn(username, password){
 		// and the profile picture preview
 		if (values[0]===username && values[1]===password){
 			setCookie('logged', cookies[i], 71);
+			// the profile picture src is changed accordingly.
+			// this profile pic changing process gives us a security error sometimes due to
+			// the browser policy but the src is correctly changed.
 			pfp = getCookie(cookies[i]+'_pfp');
 			$("#pfp-img").attr('src',pfp);
 			log = true;
@@ -117,6 +120,7 @@ function pfpHide(){
 // This function will add an experience using the input form the user in the
 // create experience form
 function addExperience(title_txt, desc_txt, location_txt, img_path){
+	// When an experience is added we need to hide the message indicating that the user has no experiences.
 	$("#no-exp").hide()
 	// We use the user inputs to create the titles and descriptions of the experience
 	var idexp = 'exp-'+title_txt;
@@ -125,6 +129,7 @@ function addExperience(title_txt, desc_txt, location_txt, img_path){
 	$('#added-exp').append(newexp);
 	// Each experience will have a delete button to remove it
 	var close_btn = $("<button></button>");
+	// We asign a handler to the delete button that will delete the experiences when required.
 	close_btn.attr('onclick', 'deleteExperience(this)');
 	close_btn.html('delete experience');
 	close_btn.attr('type', 'button');
@@ -143,26 +148,15 @@ function deleteExperience(but){
 	// we just delete the parent of the clicked button
 	var this_exp = $(but).parent();
 	this_exp.remove();
+	// The user has no experiences a message indicating it is shown.
 	if($('#added-exp').children().length==0){
 		$("#no-exp").show()
 	}
 }
 
-// This function will show the user experiences menu (?)
-function popExperienceHandler(experience){
-	let exp = $(experience).attr('id');
-	exp ='#' + exp + '-pop'
-	$(exp).css("top", (jQuery(window).height() - $(exp).height() ) / 2+jQuery(window).scrollTop() + "px");
-	$(exp).show();
-}
-
 // When the document is open, we will execute the following code:
 $(document).ready(function() {
 	var e = new Event("look", {"cancelable":true});
-	var log;
-	var pwd;
-	var username;
-	var expanded = false;
 	// By default, all menus are hidden
 	$("#my-profile-menu").hide();
 	$("#my-experiences-menu").hide();
@@ -172,6 +166,7 @@ $(document).ready(function() {
 	pfpHide();
 
 	// The program will first check for the logged user in the databse
+	// If a user is already logged its usrnameand profile picture will be shown.
 	let email = getCookie('logged');
 	if (email!==""){
 		let data = parseCookie(email);
@@ -182,11 +177,9 @@ $(document).ready(function() {
 
 	// If the login button is clicked, show the login form menu
 	$("#login-but").click(function() {
-		if ($(this).html() == "Log-in"){
-			$("#log").show();
-			// hide the signup menu just in case it is open
-			$("#sign").hide();
-		}
+		$("#log").show();
+		// hide the signup menu just in case it is open
+		$("#sign").hide();
 	})
 
 	// If the signup button is clicked, show the signup form menu
@@ -249,26 +242,29 @@ $(document).ready(function() {
 		$('#name').val(), $('#surname').val(), $('#birthdate').val()];
 		var email = $('#email').val();
 		if (getCookie(email)==""){
-			// We will create a cookie with an arbitrary expiration date of 71 days
-			// It will have the user email as name and all other inputs as content
+			// We will create a cookie with an arbitrary expiration date of 71 days.
+			// It will have the user email as name and all other inputs as content.
+			// The interests and the profile picture are saved in different cookies
+			// to facilitate their manipulation later.
+			// To distinguish them we will use the email and a sufix.
 			setCookie(email+'_pfp', pfp_img, 71);
 			setCookie(email+'_int', interests, 71);
 			setCookie(email, data, 71);
 			$("#sign").hide();
-			// we directly login using these inputs
+			// we directly login using these inputs calling the fucntion LogIn
 			logIn($('#username-sign').val(), $('#pwd-sign').val());
 			pfpHide();
 			document.getElementById("sign-form").reset();
 		} else {
 			window.alert("Error. A user with the same email is already signed up.");
 		}
-		
 	})
 
 	// when clicking on the "my profile" option, we have to open a popup
 	$("#my-profile").click(function(){
 		if ($("#my-profile-menu").is(':hidden')){
 			// This popup will contain a form with the user information
+			// The information is obtained from the cookies and displayed.
 			let logmail = getCookie('logged');
 			let loginfo = parseCookie(logmail);
 			$("#prf-email").html(logmail);
@@ -348,13 +344,13 @@ $(document).ready(function() {
 		imgurl = URL.createObjectURL(img);
 		// we call the addExperience function with the user inputs
 		addExperience(title, desc, location, imgurl);
-		// instead of closing the menu, we just reset everything to an empty form
+		// We just reset everything to an empty form and hide it.
 		document.getElementById("add-exp-form").reset();
+		$("#add-exp").hide();
 	})
 
-	// The user can change their interests in the profile menu
+	// The form used to change the interests can be displayed or hidden using a button.
 	$("#change-int").click(function(){
-		// This will be another popup form
 		if ($("#change-int-form").is(':hidden')){
 			$("#change-int-form").show();
 			$("my-profile-menu").css('max-height','80%');
@@ -364,7 +360,7 @@ $(document).ready(function() {
 		}
 	})
 
-	//Change interests
+	// The user can change its interests clicking on a saving button in the "my profile" menu
 	$("#change-int-form").submit(function(e){
 		e.preventDefault();
 		let interests="";
@@ -373,14 +369,14 @@ $(document).ready(function() {
 			function() {
 				interests+=$(this).val() + ","
 			})
-			// we then insert them in the cookies and change the html
+		// we insert them in its respective cookie and change the interests information in "my profile".
 		interests = interests.slice(0, -1)
 		$("#prf-interests").html(interests);
 		var email = getCookie('logged');
 		setCookie(email+'_int', interests, 71);
 	})
 
-	//Search filter
+	// The search filter will display the experiences based on what the user writes in the search bar input.
 	$("#button-search").click(function() {
 		if($("#in-search").val()!== ""){
 			var value = $("#in-search").val().toLowerCase();
@@ -389,18 +385,19 @@ $(document).ready(function() {
 		      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
 			if($(".block .experience:visible").length == 0){
+				// if there is not a match in the search an error message will be dispalyed.
 			  $("#error-search").show();
 				window.alert("No results for this search.");
 			} else {
 			  $("#error-search").hide();
 			}
 		} else{
-			window.alert("Introuce some text in the seacrh bar input.");
+			window.alert("Introduce some text in the seacrh bar input.");
 		}
 		
 	 });
 
-	//The user can choose to change its profile picture in the profile menu
+	// The user can choose to change its profile picture in the profile menu
 	$("#change-pfp").change(function(){
 		// in this case, we take the input and create an url object
 		let img = document.getElementById('change-pfp').files[0];
@@ -408,18 +405,24 @@ $(document).ready(function() {
 		email = getCookie('logged');
 		// we change the image in the cookies
 		setCookie(email+"_pfp",pfp_img,71);
+		// we set the image in the profile picture and the sample image in the "my prfile" menu.
 		$("#prf-img").attr('src',pfp_img);
 		$("#pfp-img").attr('src',pfp_img);
 	})
 
+	// When an experience is clicked its correspondant pop-up will be shown.
 	$(".experience").click(function(){
-		popExperienceHandler(this);
+		let exp = $(this).attr('id');
+		exp ='#' + exp + '-pop'
+		$(exp).css("top", (jQuery(window).height() - $(exp).height() ) / 2+jQuery(window).scrollTop() + "px");
+		$(exp).show();
 	})
 
-	// all experiences in the bottom section are sortable with this function
-	$(".block").sortable({helper:'clone',connectWith: '.block'});
+	// all experiences in the bottom section can be sorted with this function
+	// we set the helper:'clone' attribute to avoid activating the click handler for the experiences.
+	$(".block").sortable({helper:'clone'});
 
-	// After clicking a point in the map, we have a scrollable image gallery, with
+	// After clicking a point in the map or an experience, we have a scrollable image gallery, with
 	// right and left buttons
 	$(".arr-left").click(function(){
 		let art = $(this).parent();

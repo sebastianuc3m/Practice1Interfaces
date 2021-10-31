@@ -192,11 +192,11 @@ br {
 }
 
 .pop-experiences p{
-    width: 80%;
-    margin: 10px auto;
-    text-align: center;
-    font-family: 'Courier New', monospace;
-  }
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
 
 
 .images{
@@ -233,6 +233,7 @@ br {
   display: none;
 }
 
+/*In the mobile version, only one image is shown in the popup experiences.*/
 .img1{
   display: inline-block;
   width: 95%;
@@ -283,8 +284,8 @@ on the bottom side*/
   text-align: center;
 }
 
-/*Columns will be aligned using display:flex and float:left, we also center
-them using margins */
+/*We will show the experiences in columns. In the mobile version we will
+only have two. However in the tablet and desktop version we will display three.*/
 .block {
   display: grid;
   grid-template-areas: 'left right';
@@ -293,22 +294,6 @@ them using margins */
 .block img{
   width: 30vw;
 }
-
-
-/*  Columns will be aligned using display:flex and float:left, we also center
-  them using margins
-  .block {
-    display: grid;
-    grid-template-areas:
-    'left right'
-    'bottom bottom';
-    margin: auto;
-  }
-
-  #col1 {grid-area: left}
-  #col2 {grid-area: bottom}
-  #col3 {grid-area: right}
-  */
 
 .column {
   display: block;
@@ -388,19 +373,6 @@ background*/
   font-size: 30px;
   margin: auto auto 25vh;
 }
-/* popup code
-.popup {
-  position: absolute;
-  display: none;
-  top: 35vh;
-  left: 35vw;
-  flex-direction: column;
-  text-align: right;
-  width: 400px;
-  margin: auto;
-  background-color: beige;
-  padding: 5px;
-}*/
 
 .title-pop{
   display: flex;
@@ -408,26 +380,14 @@ background*/
   margin-bottom: 20px
 }
 
-/*
-
-.form-container {
-  display:flex;
-  flex-direction: row;
-}
-
-.form-container input{
-  width: 60%;
-}*/
-
 #btn-login {
   height: 45px;
   margin-left: 10px;
 }
 
+/*The cancel buttons have to be moved to the right in the forms.*/
 .btn-cancel{
-  /*transform: translate(50%, 0);*/
   margin-left: 90%;
-
 }
 
 #log-form, #sign-form{
@@ -508,6 +468,8 @@ background*/
   margin-right: 15px;
 }
 
+/*The menu of options showed when logged in has an absolute position
+in the mobile version and it is displayed bellow the header.*/
 #pfp-menu{
   position: absolute;
   top: 90px;
@@ -557,7 +519,8 @@ background*/
   border-width: 1px;
 }
 
-/*my profile and my experiences*/
+/*General design of a popup window.*/
+/*The will be displayed always in the center of the screen.*/
 .floating-screen {
   text-align: center;
   top: 30%;
@@ -707,7 +670,9 @@ background*/
     margin-left: 70%;
     width: 65px;
   }
-
+  /*The option menu showed when logged in will be inside the header when using the
+  tablet of desktop version. Instead of its own background color, as in the mobile version,
+  this time it will have a border.*/
   #pfp-menu{
     position: relative;
     text-align: right;
@@ -751,6 +716,8 @@ background*/
     display: flex;
     flex-direction: row;
   }
+
+  /*In the tablet and desktop version, two images are shown in the popup experiences.*/
    .img1, .img2{
     display: inline-block;
     width: 40%;
@@ -765,8 +732,6 @@ background*/
     margin: auto;
   }
 }
-
-
 
 /*For devices with screens thiker than 768px, we only to change the header and
 the map sizes*/
