@@ -287,7 +287,8 @@ on the bottom side*/
 /*Columns will be aligned using display:flex and float:left, we also center
 them using margins*/
 .block {
-  display: flex;
+  display: grid;
+  grid-template-areas: 'left mid right';
 }
 
 /*  Columns will be aligned using display:flex and float:left, we also center
@@ -313,7 +314,7 @@ them using margins*/
 
 /*As the columns have display:block, the experiences will align vertically*/
 .experience {
-  margin-top: 10px;
+  margin: 5px auto;
   width: 30vw;
   cursor: pointer;
 
@@ -631,10 +632,6 @@ background*/
   #section-map svg {
     width: 90vw;
     margin: auto
-  }
-
-  .block {
-    display: flex;
   }
 
   .experience {
